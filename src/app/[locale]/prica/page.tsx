@@ -68,29 +68,43 @@ export default async function StoryPage({
           </div>
         </div>
 
-        {/* Poglavlja, Netflix stil: slika + tekst preko */}
+        {/* Poglavlja — editorijalni layout: slika uz tekst */}
         <article className="bg-paper py-14 sm:py-20">
-          <div className="container-content max-w-4xl space-y-6">
-            {s.sections.map((sec, i) => (
-              <div key={i} className="relative overflow-hidden rounded-[2rem] shadow-card">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={STORY_IMAGES[i % STORY_IMAGES.length]}
-                  alt={sec.heading}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/75 to-ink/30" />
-                <div className="relative flex min-h-[420px] flex-col justify-end p-7 sm:p-10">
-                  <h2 className="font-display text-2xl font-bold text-cream drop-shadow sm:text-3xl">{sec.heading}</h2>
-                  <div className="mt-3 max-w-2xl space-y-3 text-justify text-lg leading-relaxed text-cream/90 drop-shadow">
-                    {sec.paragraphs.map((p, j) => (
-                      <p key={j}>{rich(p, "font-extrabold text-cream")}</p>
-                    ))}
+          <div className="container-content max-w-4xl space-y-16 sm:space-y-20">
+            {s.sections.map((sec, i) => {
+              const imgRight = i % 2 === 0;
+              return (
+                <div
+                  key={i}
+                  className="grid items-center gap-8 sm:grid-cols-[1fr_1fr] lg:gap-14"
+                >
+                  {/* Slika */}
+                  <div className={imgRight ? "sm:order-2" : "sm:order-1"}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={STORY_IMAGES[i % STORY_IMAGES.length]}
+                      alt={sec.heading}
+                      loading="lazy"
+                      className="w-full rounded-2xl shadow-card"
+                    />
+                  </div>
+                  {/* Tekst */}
+                  <div className={imgRight ? "sm:order-1" : "sm:order-2"}>
+                    <div className="mb-3 text-xs font-bold uppercase tracking-widest text-amber-deep">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <h2 className="font-display text-2xl font-bold leading-snug text-ink text-balance sm:text-3xl">
+                      {sec.heading}
+                    </h2>
+                    <div className="mt-4 space-y-3 text-justify text-base leading-relaxed text-ink/80 sm:text-lg">
+                      {sec.paragraphs.map((p, j) => (
+                        <p key={j}>{rich(p, "font-extrabold text-ink")}</p>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
 
             <div className="rounded-[2rem] bg-amber/10 p-8 text-center">
               <Link href={`/${locale}#prvi-krug`} className="btn-primary">
