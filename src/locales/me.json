@@ -33,10 +33,22 @@
       "I čulo se. Akcija „Svjetlo za Svrčuge“ dobila je ogroman odjek u medijima i na društvenim mrežama, prikupljena su sredstva za prvu fazu rasvjete, a ekipu je u Herceg Novom dočekalo preko 200 ljudi."
     ],
     "stats": [
-      { "value": "5.137 km", "label": "put do Pariza i nazad" },
-      { "value": "11", "label": "ljudi u ekipi" },
-      { "value": "200+", "label": "ljudi na dočeku" },
-      { "value": "5", "label": "stanovnika sela" }
+      {
+        "value": "5.137 km",
+        "label": "put do Pariza i nazad"
+      },
+      {
+        "value": "11",
+        "label": "ljudi u ekipi"
+      },
+      {
+        "value": "200+",
+        "label": "ljudi na dočeku"
+      },
+      {
+        "value": "5",
+        "label": "stanovnika sela"
+      }
     ],
     "mediaLink": "Pogledaj šta su pisali mediji",
     "readMore": "Pročitaj cijelu priču",
@@ -45,9 +57,21 @@
     "whatTitle": "Šta je crowdfunding kampanja?",
     "intro": "Crowdfunding znači da veliki broj ljudi da po malo, i zajedno finansiramo ono što niko ne bi sam. Tako su Svrčuge već dobile novac za stubove rasvjete. Isto tako gradimo i ono što slijedi.",
     "steps": [
-      { "num": "1", "title": "Okupljamo prvi krug", "text": "Prije nego kampanja krene, skupljamo prijave ljudi koji žele da budu prvi obaviješteni." },
-      { "num": "2", "title": "Pokrećemo kampanju", "text": "Lansiramo crowdfunding kampanju (GoFundMe). Prvi dani su najvažniji, što više malih donacija odmah, to kampanja dobija veći zamah." },
-      { "num": "3", "title": "Gradimo selo", "text": "Sredstva idu, fazu po fazu, u dječije igralište, seosku pijacu i konobu, uz redovne izvještaje i fotografije." }
+      {
+        "num": "1",
+        "title": "Okupljamo prvi krug",
+        "text": "Prije nego kampanja krene, skupljamo prijave ljudi koji žele da budu prvi obaviješteni."
+      },
+      {
+        "num": "2",
+        "title": "Pokrećemo kampanju",
+        "text": "Lansiramo crowdfunding kampanju (GoFundMe). Prvi dani su najvažniji, što više malih donacija odmah, to kampanja dobija veći zamah."
+      },
+      {
+        "num": "3",
+        "title": "Gradimo selo",
+        "text": "Sredstva idu, fazu po fazu, u dječije igralište, seosku pijacu i konobu, uz redovne izvještaje i fotografije."
+      }
     ],
     "note": "Cilj nam je da pažnju na Svrčuge skrenemo **ljudima iz cijelog svijeta**. A ti, ako si naš čovjek, najviše pomažeš ako se **prijaviš na newsletter**, prvi dobiješ sve informacije o kampanji i podijeliš priču dalje.",
     "cta": "Prijavi se na newsletter"
@@ -67,10 +91,22 @@
     "title": "Šta je akcija već postigla",
     "intro": "Priča o malom selu obišla je region i svijet, sa nevjerovatnim odjekom na mrežama i među ljudima.",
     "items": [
-      { "value": "10.000.000+", "label": "pregleda tokom akcije" },
-      { "value": "16.000", "label": "pratilaca na Instagramu" },
-      { "value": "11.000", "label": "pratilaca na Facebooku" },
-      { "value": "200+", "label": "donatora iz 24 države, sa 4 kontinenta" }
+      {
+        "value": "10.000.000+",
+        "label": "pregleda tokom akcije"
+      },
+      {
+        "value": "16.000",
+        "label": "pratilaca na Instagramu"
+      },
+      {
+        "value": "11.000",
+        "label": "pratilaca na Facebooku"
+      },
+      {
+        "value": "200+",
+        "label": "donatora iz 24 države, sa 4 kontinenta"
+      }
     ]
   },
   "storyPage": {
@@ -120,16 +156,33 @@
       }
     ],
     "ctaText": "Pridruži se prvom krugu",
-    "back": "Nazad na početnu"
+    "back": "Nazad na početnu",
+    "crew": {
+      "eyebrow": "Ekipa ekspedicije",
+      "title": "11 putnika koji su krenuli u Pariz",
+      "subtitle": "Jedanaest mještana i prijatelja Svrčuga koji su u starim Reno 4 automobilima prešli put do Pariza i vratili se kao junaci."
+    }
   },
   "status": {
     "title": "Prva faza je pokrenuta: rasvjeta za Svrčuge",
     "text": "Zahvaljujući akciji „Svjetlo za Svrčuge“, prikupljen je novac za prvu fazu razvoja sela. Od prikupljenih sredstava **kupljeni su stubovi za rasvjetu**, a njihovo postavljanje i spajanje planirano je u narednim mjesecima, **najkasnije do oktobra**.",
     "cards": [
-      { "label": "Novac za rasvjetu", "value": "Prikupljen" },
-      { "label": "Stubovi", "value": "Kupljeni" },
-      { "label": "Postavljanje", "value": "Planirano do oktobra" },
-      { "label": "Sljedeća faza", "value": "Crowdfunding za razvoj sela" }
+      {
+        "label": "Novac za rasvjetu",
+        "value": "Prikupljen"
+      },
+      {
+        "label": "Stubovi",
+        "value": "Kupljeni"
+      },
+      {
+        "label": "Postavljanje",
+        "value": "Planirano do oktobra"
+      },
+      {
+        "label": "Sljedeća faza",
+        "value": "Crowdfunding za razvoj sela"
+      }
     ]
   },
   "story": {
@@ -212,7 +265,8 @@
     "title": "Pridruži se prvom krugu prijatelja Svrčuga",
     "text": "Prije nego što pokrenemo crowdfunding kampanju, okupljamo ljude koji žele da **prvi dobiju link, prvi podijele priču i prvi pomognu** da kampanja dobije zamah.",
     "subtext": "Ne moraš čekati da možeš donirati mnogo. Kada kampanja krene, i **simbolična donacija od 5€, jedna kafa za Svrčuge**, može pomoći da se priča pokrene, proširi i dođe do većih donatora.",
-    "cta": "Ulazim u prvi krug"
+    "cta": "Ulazim u prvi krug",
+    "waitingCount": "157 prijavljenih u prvom krugu"
   },
   "coffee": {
     "title": "Jedna kafa može pogurati cijelu kampanju",
@@ -227,12 +281,30 @@
     "intro": "Svi koji podrže kampanju određenim iznosom mogu dobiti personalizovanu digitalnu Počasnu ličnu kartu Svrčuga, simbol pripadnosti i zahvalnosti.",
     "tiersTitle": "Nivoi podrške",
     "tiers": [
-      { "amount": "5€", "label": "Kafa za Svrčuge" },
-      { "amount": "20€", "label": "Počasna lična karta Svrčuga" },
-      { "amount": "50€", "label": "Prijatelj Svrčuga" },
-      { "amount": "100€", "label": "Čuvar Svrčuga" },
-      { "amount": "250€+", "label": "Veliki prijatelj sela" },
-      { "amount": "1000€+", "label": "Sponzor faze" }
+      {
+        "amount": "5€",
+        "label": "Kafa za Svrčuge"
+      },
+      {
+        "amount": "20€",
+        "label": "Počasna lična karta Svrčuga"
+      },
+      {
+        "amount": "50€",
+        "label": "Prijatelj Svrčuga"
+      },
+      {
+        "amount": "100€",
+        "label": "Čuvar Svrčuga"
+      },
+      {
+        "amount": "250€+",
+        "label": "Veliki prijatelj sela"
+      },
+      {
+        "amount": "1000€+",
+        "label": "Sponzor faze"
+      }
     ],
     "card": {
       "heading": "Počasna lična karta",
@@ -243,10 +315,15 @@
       "number": "SVR-000123",
       "locationLabel": "Grad / država",
       "dateLabel": "Datum izdavanja",
-      "stamp": "Od svjetla do života"
+      "stamp": "Od svjetla do života",
+      "statusValue": "Prijatelj Svrčuga"
     },
     "disclaimer": "Počasna lična karta Svrčuga je simbolična digitalna zahvalnica i znak pripadnosti projektu. Ona nije zvanični, pravni, finansijski ili identifikacioni dokument.",
-    "benefits": "Vlasnici Počasne lične karte Svrčuga imaće posebne pozive, pogodnosti i simbolične benefite kada buduća konoba / kuća okupljanja bude otvorena, u skladu sa mogućnostima projekta."
+    "benefits": "Vlasnici Počasne lične karte Svrčuga imaće posebne pozive, pogodnosti i simbolične benefite kada buduća konoba / kuća okupljanja bude otvorena, u skladu sa mogućnostima projekta.",
+    "nameLabel": "Tvoje ime",
+    "namePlaceholder": "Upiši kako želiš da piše na kartici",
+    "downloadCta": "Preuzmi svoju kartu",
+    "downloadNote": "PNG fajl, možeš podijeliti na društvenim mrežama"
   },
   "partners": {
     "title": "Svrčuge traže partnere, ne samo donatore",
@@ -279,7 +356,8 @@
     "title": "Zid prijatelja Svrčuga",
     "text": "Ovdje ćemo prikazati donatore, sponzore, volontere, ljude koji su pomogli kontaktima, medije i organizacije, javno imenom, anonimno ili kao porodica / firma, po želji.",
     "placeholder": "Zid prijatelja Svrčuga popunjavamo kako kampanja bude rasla. Tvoje ime može biti među prvima.",
-    "cta": "Postani prijatelj Svrčuga"
+    "cta": "Postani prijatelj Svrčuga",
+    "navLabel": "Donatori"
   },
   "faq": {
     "title": "Često postavljana pitanja",
@@ -388,7 +466,9 @@
     "viber": "Viber",
     "twitter": "X / Twitter",
     "copy": "Kopiraj link",
-    "copied": "Link kopiran!"
+    "copied": "Link kopiran!",
+    "title": "Podijeli priču",
+    "intro": "Svaka podjela donosi novu osobu koja po prvi put čuje za Svrčuge."
   },
   "common": {
     "statusLabels": {
@@ -398,5 +478,75 @@
       "next": "Sljedeća faza",
       "planned": "U planu"
     }
+  },
+  "donors": {
+    "eyebrow": "Zahvalnost",
+    "pageTitle": "Prijatelji Svrčuga",
+    "pageSubtitle": "Ovi ljudi su vjerovali u ideju i pomogli da postane stvarnost. Hvala svima iz srca.",
+    "statDonors": "Donatora",
+    "statCountries": "Država",
+    "statContinents": "Kontinenta",
+    "searchPlaceholder": "Pretraži po imenu…",
+    "noResults": "Nije pronađeno. Provjeri pravopis ili prijavi donaciju ispod.",
+    "countLabel": "prijatelja Svrčuga",
+    "countOf": "od",
+    "notOnList": "Nijesam na spisku",
+    "notOnListEyebrow": "Nijesam na spisku?",
+    "notOnListText": "Ponekad platforma za donacije ne proslijedi sve podatke. Javi nam se i provjerit ćemo na osnovu transakcija.",
+    "formName": "Ime i prezime",
+    "formNamePlaceholder": "Kako si se potpisao/la pri doniranju",
+    "formEmail": "Email",
+    "formNote": "Napomena (opciono)",
+    "formNotePlaceholder": "Kada si donirao/la, platforma, iznos…",
+    "formSubmit": "Pošalji prijavu",
+    "formSending": "Šalje se…",
+    "formError": "Greška pri slanju. Pokušaj ponovo.",
+    "formSuccess": "Hvala, primili smo tvoju poruku!",
+    "formSuccessNote": "Provjerit ćemo i dodati te na spisak.",
+    "back": "Nazad na naslovnu",
+    "navLabel": "Donatori"
+  },
+  "privacy": {
+    "title": "Politika privatnosti",
+    "metaTitle": "Politika privatnosti, Svrčuge",
+    "intro": "Ova politika objašnjava kako projekat Svrčuge prikuplja i koristi lične podatke koje ostavljaš putem formi na ovom sajtu.",
+    "h_collect": "Koje podatke prikupljamo",
+    "p_collect": "Kada se prijaviš na našu listu, prikupljamo: ime (opciono), e-mail adresu, grad i državu (opciono) i jezik. Kod forme za partnere prikupljamo i naziv organizacije, telefon i tvoju poruku.",
+    "h_why": "Zašto prikupljamo podatke",
+    "p_why": "E-mail adresu koristimo isključivo da te obavijestimo kada crowdfunding kampanja krene i da ti povremeno pošaljemo važne novosti o projektu. Ne prodajemo i ne dijelimo tvoje podatke trećim stranama u marketinške svrhe.",
+    "h_consent": "Saglasnost i odjava",
+    "p_consent": "Podatke čuvamo na osnovu tvoje saglasnosti, koju daješ označavanjem polja u formi. U svakom trenutku se možeš odjaviti putem linka u dnu svake e-mail poruke ili nam pisati na",
+    "h_retention": "Čuvanje podataka",
+    "p_retention": "Podatke čuvamo dok traje projekat ili dok ne zatražiš brisanje. Možeš zatražiti uvid, ispravku ili brisanje svojih podataka u skladu sa važećim propisima o zaštiti podataka.",
+    "h_contact": "Kontakt",
+    "p_contact": "Za sva pitanja o privatnosti piši nam na"
+  },
+  "terms": {
+    "title": "Uslovi i napomene",
+    "metaTitle": "Uslovi i napomene, Svrčuge",
+    "intro": "Ovaj sajt je informativna i kampanjska platforma projekta razvoja sela Svrčuge. Trenutno služi za okupljanje zainteresovanih ljudi prije pokretanja crowdfunding kampanje.",
+    "h_status": "Status projekta",
+    "p_status": "Prva faza (rasvjeta) je finansirana i u realizaciji. Stubovi za rasvjetu su kupljeni, a postavljanje i spajanje planirano je najkasnije do oktobra. Naredne faze zavise od uspjeha buduće crowdfunding kampanje i mogućnosti organizatora.",
+    "h_card": "Počasna lična karta Svrčuga",
+    "p_card": "Počasna lična karta Svrčuga je simbolična digitalna zahvalnica i znak pripadnosti projektu. Ona nije zvanični, pravni, finansijski ili identifikacioni dokument. Vlasnici kartice mogu imati posebne pozive, pogodnosti i simbolične benefite kada projekat zaživi, u skladu sa mogućnostima organizatora. Ne obećavamo fiksne ni garantovane popuste.",
+    "h_donations": "Donacije",
+    "p_donations": "U trenutnoj fazi sajt ne prikuplja donacije. Kada crowdfunding kampanja krene, donacije će se odvijati preko zvanične platforme (npr. GoFundMe), pod uslovima te platforme.",
+    "h_contact": "Kontakt",
+    "p_contact": "Za sva pitanja piši nam na"
+  },
+  "mapSection": {
+    "eyebrow": "Lokacija",
+    "title": "Gdje se nalaze Svrčuge",
+    "intro": "Svrčuge su u kamenitom zaleđu Herceg Novog, 10 km od centra i 15 km od Dubrovnika. Malo selo, laka dostupnost.",
+    "caption": "Klikni na mapu za interaktivni prikaz"
+  },
+  "socialSection": {
+    "eyebrow": "Pratite priču",
+    "title": "Priča traje i van sajta",
+    "intro": "Svakodnevne vijesti, fotografije i video iz prve ruke na Instagramu i TikToku.",
+    "igFollowers": "16.000 pratilaca na Instagramu",
+    "igCta": "Prati @svrcuge.me",
+    "ttFollowers": "TikTok",
+    "ttCta": "Prati na TikToku"
   }
 }

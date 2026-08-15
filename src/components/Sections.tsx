@@ -4,6 +4,7 @@ import { rich } from "@/lib/rich";
 import { GALLERY } from "@/lib/gallery";
 import { Icon, IconCheck, IconCoffee } from "./Icons";
 import EmailSignupForm from "./EmailSignupForm";
+import { SOCIAL, SITE_URL } from "@/lib/config";
 
 function Heading({ eyebrow, title }: { eyebrow?: string; title: string }) {
   return (
@@ -301,6 +302,12 @@ export function FirstCircleSection({ dict, locale }: { dict: Dictionary; locale:
           <h2 className="font-display text-3xl font-extrabold text-ink sm:text-4xl">{c.title}</h2>
           <p className="mt-5 text-justify text-lg leading-relaxed text-muted">{rich(c.text)}</p>
           <p className="mt-4 rounded-2xl bg-amber/10 p-4 text-justify text-lg leading-relaxed text-ink/80">{rich(c.subtext)}</p>
+          {c.waitingCount && (
+            <div className="mt-5 flex items-center gap-3 rounded-2xl border border-amber/30 bg-amber/8 px-4 py-3">
+              <span className="text-xl">⏳</span>
+              <span className="font-semibold text-ink/80">{c.waitingCount}</span>
+            </div>
+          )}
         </div>
         <div className="card sm:p-7">
           <EmailSignupForm dict={dict} locale={locale} variant="first-circle" />
@@ -334,70 +341,6 @@ export function CoffeeSection({ dict }: { dict: Dictionary }) {
   );
 }
 
-/* ── Počasna lična karta Svrčuga ─────────────────────────── */
-export function IdentityCardSection({ dict }: { dict: Dictionary }) {
-  const id = dict.identityCard;
-  const card = id.card;
-  return (
-    <section className="section">
-      <div className="container-content">
-        <Heading title={id.title} />
-        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">{id.intro}</p>
-
-        <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
-          {/* Vizual kartice */}
-          <div className="mx-auto w-full max-w-md">
-            <div className="relative aspect-[1.586/1] overflow-hidden rounded-3xl bg-gradient-to-br from-ink to-[#5A4327] p-6 text-cream shadow-soft">
-              <div className="pointer-events-none absolute -right-6 -top-8 text-[9rem] opacity-10">✦</div>
-              <div className="flex items-center justify-between">
-                <span className="font-display text-sm font-bold uppercase tracking-widest text-amber">Svrčuge</span>
-                <span className="text-xs text-cream/70">{card.heading}</span>
-              </div>
-              <div className="mt-6">
-                <div className="text-xs uppercase tracking-wide text-cream/60">{card.name}</div>
-                <div className="font-display text-2xl font-bold">,,,</div>
-              </div>
-              <div className="mt-4 grid grid-cols-2 gap-3 text-xs">
-                <div>
-                  <div className="text-cream/60">{card.statusLabel}</div>
-                  <div className="font-semibold">{card.status}</div>
-                </div>
-                <div>
-                  <div className="text-cream/60">{card.numberLabel}</div>
-                  <div className="font-semibold">{card.number}</div>
-                </div>
-              </div>
-              <div className="absolute bottom-5 right-6 flex items-center gap-2">
-                <span className="grid h-12 w-12 place-items-center rounded-full border-2 border-amber/60 text-center text-[8px] font-bold leading-tight text-amber">
-                  {card.stamp}
-                </span>
-                <span className="grid h-10 w-10 place-items-center rounded bg-cream/90 text-ink">▦</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Nivoi podrške */}
-          <div>
-            <h3 className="font-display text-xl font-bold text-ink">{id.tiersTitle}</h3>
-            <ul className="mt-4 space-y-2.5">
-              {id.tiers.map((t, i) => (
-                <li key={i} className="flex items-center justify-between rounded-2xl border border-line bg-white/70 px-4 py-3">
-                  <span className="font-display text-lg font-bold text-amber-deep">{t.amount}</span>
-                  <span className="font-semibold text-ink/80">{t.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mx-auto mt-8 max-w-3xl space-y-3 text-center">
-          <p className="rounded-2xl bg-sand p-4 text-sm leading-relaxed text-muted">{id.benefits}</p>
-          <p className="text-xs leading-relaxed text-muted/80">{id.disclaimer}</p>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ── Transparentnost ─────────────────────────────────────── */
 export function TransparencySection({ dict }: { dict: Dictionary }) {
@@ -481,6 +424,117 @@ export function FAQ({ dict }: { dict: Dictionary }) {
               </summary>
               <p className="mt-3 leading-relaxed text-muted">{item.a}</p>
             </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Mapa lokacije ───────────────────────────────────────── */
+export function MapSection({ dict }: { dict: Dictionary }) {
+  const m = dict.mapSection;
+  return (
+    <section className="section bg-sand">
+      <div className="container-content">
+        <Heading eyebrow={`✦ ${m.eyebrow}`} title={m.title} />
+        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">{m.intro}</p>
+        <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-3xl border border-line shadow-card">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=18.35%2C42.40%2C18.62%2C42.60&layer=mapnik&marker=42.5071%2C18.4783"
+            className="h-[420px] w-full"
+            title={m.title}
+            loading="lazy"
+          />
+        </div>
+        <p className="mt-3 text-center text-sm text-muted">
+          <a
+            href="https://www.openstreetmap.org/?mlat=42.5071&mlon=18.4783#map=13/42.5071/18.4783"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-amber-deep hover:underline"
+          >
+            {m.caption} →
+          </a>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ── Društvene mreže ────────────────────────────────────── */
+export function SocialSection({ dict }: { dict: Dictionary }) {
+  const s = dict.socialSection;
+  return (
+    <section className="section">
+      <div className="container-content">
+        <Heading eyebrow={`✦ ${s.eyebrow}`} title={s.title} />
+        <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">{s.intro}</p>
+        <div className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-2">
+          <a
+            href={SOCIAL.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 rounded-3xl border border-line bg-white/80 p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft"
+          >
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#bc1888] text-2xl text-white">
+              📷
+            </div>
+            <div>
+              <div className="font-display text-lg font-bold text-ink">Instagram</div>
+              <div className="text-sm text-muted">{s.igFollowers}</div>
+              <div className="mt-1 text-sm font-semibold text-amber-deep group-hover:underline">{s.igCta} →</div>
+            </div>
+          </a>
+          <a
+            href={SOCIAL.tiktok}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 rounded-3xl border border-line bg-white/80 p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft"
+          >
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-2xl text-white">
+              🎵
+            </div>
+            <div>
+              <div className="font-display text-lg font-bold text-ink">TikTok</div>
+              <div className="text-sm text-muted">{s.ttFollowers}</div>
+              <div className="mt-1 text-sm font-semibold text-amber-deep group-hover:underline">{s.ttCta} →</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Podijeli priču ─────────────────────────────────────── */
+export function ShareSection({ dict, locale }: { dict: Dictionary; locale: string }) {
+  const s = dict.share;
+  const url = `${SITE_URL}/${locale}`;
+  const msg = dict.thankYou?.shareMessage ?? "Pogledaj priču o Svrčugama";
+  const enc = encodeURIComponent;
+  const links = [
+    { label: s.facebook, href: `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}`, bg: "bg-[#1877F2] text-white" },
+    { label: s.whatsapp, href: `https://wa.me/?text=${enc(`${msg} ${url}`)}`, bg: "bg-[#25D366] text-white" },
+    { label: s.viber, href: `viber://forward?text=${enc(`${msg} ${url}`)}`, bg: "bg-[#7360F2] text-white" },
+    { label: s.twitter, href: `https://twitter.com/intent/tweet?text=${enc(msg)}&url=${enc(url)}`, bg: "bg-ink text-white" },
+  ];
+  return (
+    <section className="section bg-sand">
+      <div className="container-content text-center">
+        <Heading eyebrow="✦" title={s.title} />
+        <p className="mx-auto mt-4 max-w-xl text-lg text-muted">{s.intro}</p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`rounded-full px-6 py-3 text-sm font-bold transition hover:-translate-y-0.5 ${l.bg}`}
+            >
+              {l.label}
+            </a>
           ))}
         </div>
       </div>

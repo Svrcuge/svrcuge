@@ -12,7 +12,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Ime i email su obavezni." }, { status: 400 });
     }
     const { error } = await supabase
-      .from("svrcuge_pending_donors")
+      .from("pending_donors")
       .insert({ name: name.trim(), email: email.trim(), donation_note: donation_note?.trim() ?? "" });
     if (error) throw error;
     return NextResponse.json({ ok: true });

@@ -33,10 +33,22 @@
       "Und man hat es gehört. Die Aktion „Licht für Svrčuge“ fand ein riesiges Echo in den Medien und in den sozialen Netzwerken, es wurden Mittel für die erste Phase der Beleuchtung gesammelt, und in Herceg Novi empfingen die Truppe über 200 Menschen."
     ],
     "stats": [
-      { "value": "5.137 km", "label": "Weg nach Paris und zurück" },
-      { "value": "11", "label": "Leute in der Truppe" },
-      { "value": "200+", "label": "Menschen beim Empfang" },
-      { "value": "5", "label": "Einwohner des Dorfes" }
+      {
+        "value": "5.137 km",
+        "label": "Weg nach Paris und zurück"
+      },
+      {
+        "value": "11",
+        "label": "Leute in der Truppe"
+      },
+      {
+        "value": "200+",
+        "label": "Menschen beim Empfang"
+      },
+      {
+        "value": "5",
+        "label": "Einwohner des Dorfes"
+      }
     ],
     "mediaLink": "Schau, was die Medien geschrieben haben",
     "readMore": "Die ganze Geschichte lesen",
@@ -45,9 +57,21 @@
     "whatTitle": "Was ist eine Crowdfunding-Kampagne?",
     "intro": "Crowdfunding bedeutet: Viele Menschen geben jeweils ein wenig, und gemeinsam finanzieren wir, was allein niemand könnte. So hat Svrčuge bereits das Geld für die Beleuchtungsmasten gesammelt. Genauso bauen wir, was als Nächstes kommt.",
     "steps": [
-      { "num": "1", "title": "Wir sammeln den ersten Kreis", "text": "Bevor die Kampagne startet, sammeln wir die Anmeldungen der Menschen, die als Erste informiert werden wollen." },
-      { "num": "2", "title": "Wir starten die Kampagne", "text": "Wir gehen mit einer Crowdfunding-Kampagne (GoFundMe) live. Die ersten Tage zählen am meisten, je mehr kleine Spenden sofort, desto größer der Schwung." },
-      { "num": "3", "title": "Wir bauen das Dorf", "text": "Die Mittel fließen Schritt für Schritt in den Kinderspielplatz, den Dorfmarkt und die Taverne, mit regelmäßigen Berichten und Fotos." }
+      {
+        "num": "1",
+        "title": "Wir sammeln den ersten Kreis",
+        "text": "Bevor die Kampagne startet, sammeln wir die Anmeldungen der Menschen, die als Erste informiert werden wollen."
+      },
+      {
+        "num": "2",
+        "title": "Wir starten die Kampagne",
+        "text": "Wir gehen mit einer Crowdfunding-Kampagne (GoFundMe) live. Die ersten Tage zählen am meisten, je mehr kleine Spenden sofort, desto größer der Schwung."
+      },
+      {
+        "num": "3",
+        "title": "Wir bauen das Dorf",
+        "text": "Die Mittel fließen Schritt für Schritt in den Kinderspielplatz, den Dorfmarkt und die Taverne, mit regelmäßigen Berichten und Fotos."
+      }
     ],
     "note": "Unser Ziel ist es, die Aufmerksamkeit von **Menschen aus der ganzen Welt** auf Svrčuge zu lenken. Und du, wenn du von hier bist, hilfst am meisten, indem du **dich für den Newsletter anmeldest**, als Erster alle Infos zur Kampagne bekommst und die Geschichte weiterträgst.",
     "cta": "Für den Newsletter anmelden"
@@ -67,10 +91,22 @@
     "title": "Was die Aktion schon erreicht hat",
     "intro": "Die Geschichte eines winzigen Dorfes ging durch die Region und die Welt, mit einem unglaublichen Echo online und unter den Menschen.",
     "items": [
-      { "value": "10.000.000+", "label": "Aufrufe während der Aktion" },
-      { "value": "16.000", "label": "Follower auf Instagram" },
-      { "value": "11.000", "label": "Follower auf Facebook" },
-      { "value": "200+", "label": "Spender aus 24 Ländern, von 4 Kontinenten" }
+      {
+        "value": "10.000.000+",
+        "label": "Aufrufe während der Aktion"
+      },
+      {
+        "value": "16.000",
+        "label": "Follower auf Instagram"
+      },
+      {
+        "value": "11.000",
+        "label": "Follower auf Facebook"
+      },
+      {
+        "value": "200+",
+        "label": "Spender aus 24 Ländern, von 4 Kontinenten"
+      }
     ]
   },
   "storyPage": {
@@ -78,24 +114,75 @@
     "title": "Mit dem Renault 4 nach Paris: wie ein kleines Dorf Europa eroberte",
     "lead": "Svrčuge ist ein Dorf im Hinterland von Herceg Novi mit gerade einmal fünf Einwohnern und ohne Straßenbeleuchtung. Statt zu warten, machten sich die Bewohner und Freunde des Dorfes in alten Renault 4 auf den weiten Weg bis nach Paris, damit **ganz Europa von Svrčuge hört. Und sie haben es geschafft.**",
     "sections": [
-      { "heading": "Ein Dorf, das sich weigert zu verschwinden", "paragraphs": ["Svrčuge liegt im steinigen Hinterland von Herceg Novi. Heute leben dort **nur noch fünf Menschen**, und eine Straßenbeleuchtung gibt es nicht. Trotzdem wurde das Dorf bekannt als das einzige auf der Welt, das eine eigene Website und Profile in den sozialen Netzwerken hat, aber kein Licht auf der Straße.", "Aus dieser ungewöhnlichen Geschichte entstand die Aktion „Licht für Svrčuge“: die Idee, den Weg durch das Dorf zu beleuchten und die Gemeinschaft wieder um ein klares Ziel zu versammeln. Keine einzige Institution hat sie ersonnen, sie kam aus dem Herzen."] },
-      { "heading": "Der Weg nach Paris im „kleinen Riesen“", "paragraphs": ["Damit die Geschichte über die Bucht von Kotor hinausreicht, dachte sich die Gruppe etwas Ungewöhnliches aus: nach Paris in alten Renault 4 zu reisen, den „kleinen Riesen“, die diese Gegenden jahrzehntelang befahren hatten.", "Der Konvoi startete am **16. April 2026**. Elf Menschen, mehrere alte Renault 4 und Begleitfahrzeuge, und **über 5.000 Kilometer** vor sich. Unterwegs besuchten sie das Renault-Werk in Slowenien und reparierten Pannen an Fahrzeugen, die teils mehrere Jahrzehnte alt waren. An einem Punkt gab ihnen ein französischer Mechaniker **ein Lager für nur einen Euro**, mit einem Lächeln, dass schon seit zwanzig Jahren niemand mehr ein Teil für den Renault 4 verlangt hatte."] },
-      { "heading": "Paris und das Treffen mit der Diaspora", "paragraphs": ["In Paris kamen sie am 23. April an. Dort empfingen sie unsere Landsleute aus der Diaspora, jene, deren Wurzeln in der Bucht von Kotor und in der Umgebung von Herceg Novi liegen. Die Geschichte vom kleinen Dorf, das in alten Autos halb Europa durchquert hatte, berührte viele und verbreitete sich schnell."] },
-      { "heading": "Ein Empfang, der in Erinnerung bleibt", "paragraphs": ["Nach Herceg Novi kehrte der Konvoi am **29. April** zurück, nach **5.137 zurückgelegten Kilometern**. Beim Empfang waren **über 200 Menschen**, mit Applaus, Tränen und Stolz. Das Dorf mit fünf Einwohnern hatte an diesem Tag eine ganze Armee von Freunden."] },
-      { "heading": "Was die Aktion erreicht hat", "paragraphs": ["Die Geschichte von Svrčuge ging durch die regionalen und europäischen Medien, Fernsehsender und sozialen Netzwerke. Auch Spenden kamen an, aus Novi Pazar, Belgrad, Ljubljana, Istrien und vielen anderen Orten. Es wurden Mittel für die erste Phase gesammelt, die Beleuchtungsmasten, und ihre Aufstellung ist für die kommenden Monate geplant.", "Auch die Gemeinde Herceg Novi hat ihre Unterstützung gegeben. Über die gesamte Reise wird zudem ein Dokumentarfilm gedreht."] },
-      { "heading": "Vom Licht zum Leben", "paragraphs": ["**Paris war erst der Anfang.** Das Licht ist nicht das Ende der Geschichte, sondern ihr erster Schritt. Das nächste Ziel ist, dass Svrčuge ein kleiner Ausflugsort wird: ein Kinderspielplatz, ein kleiner Markt, eine Taverne und ein Raum für Veranstaltungen.", "Deshalb bereiten wir eine Crowdfunding-Kampagne vor. Wenn du Teil der Fortsetzung sein möchtest, melde dich an und sei unter den Ersten, die den Link bekommen, sobald die Kampagne startet."] }
+      {
+        "heading": "Ein Dorf, das sich weigert zu verschwinden",
+        "paragraphs": [
+          "Svrčuge liegt im steinigen Hinterland von Herceg Novi. Heute leben dort **nur noch fünf Menschen**, und eine Straßenbeleuchtung gibt es nicht. Trotzdem wurde das Dorf bekannt als das einzige auf der Welt, das eine eigene Website und Profile in den sozialen Netzwerken hat, aber kein Licht auf der Straße.",
+          "Aus dieser ungewöhnlichen Geschichte entstand die Aktion „Licht für Svrčuge“: die Idee, den Weg durch das Dorf zu beleuchten und die Gemeinschaft wieder um ein klares Ziel zu versammeln. Keine einzige Institution hat sie ersonnen, sie kam aus dem Herzen."
+        ]
+      },
+      {
+        "heading": "Der Weg nach Paris im „kleinen Riesen“",
+        "paragraphs": [
+          "Damit die Geschichte über die Bucht von Kotor hinausreicht, dachte sich die Gruppe etwas Ungewöhnliches aus: nach Paris in alten Renault 4 zu reisen, den „kleinen Riesen“, die diese Gegenden jahrzehntelang befahren hatten.",
+          "Der Konvoi startete am **16. April 2026**. Elf Menschen, mehrere alte Renault 4 und Begleitfahrzeuge, und **über 5.000 Kilometer** vor sich. Unterwegs besuchten sie das Renault-Werk in Slowenien und reparierten Pannen an Fahrzeugen, die teils mehrere Jahrzehnte alt waren. An einem Punkt gab ihnen ein französischer Mechaniker **ein Lager für nur einen Euro**, mit einem Lächeln, dass schon seit zwanzig Jahren niemand mehr ein Teil für den Renault 4 verlangt hatte."
+        ]
+      },
+      {
+        "heading": "Paris und das Treffen mit der Diaspora",
+        "paragraphs": [
+          "In Paris kamen sie am 23. April an. Dort empfingen sie unsere Landsleute aus der Diaspora, jene, deren Wurzeln in der Bucht von Kotor und in der Umgebung von Herceg Novi liegen. Die Geschichte vom kleinen Dorf, das in alten Autos halb Europa durchquert hatte, berührte viele und verbreitete sich schnell."
+        ]
+      },
+      {
+        "heading": "Ein Empfang, der in Erinnerung bleibt",
+        "paragraphs": [
+          "Nach Herceg Novi kehrte der Konvoi am **29. April** zurück, nach **5.137 zurückgelegten Kilometern**. Beim Empfang waren **über 200 Menschen**, mit Applaus, Tränen und Stolz. Das Dorf mit fünf Einwohnern hatte an diesem Tag eine ganze Armee von Freunden."
+        ]
+      },
+      {
+        "heading": "Was die Aktion erreicht hat",
+        "paragraphs": [
+          "Die Geschichte von Svrčuge ging durch die regionalen und europäischen Medien, Fernsehsender und sozialen Netzwerke. Auch Spenden kamen an, aus Novi Pazar, Belgrad, Ljubljana, Istrien und vielen anderen Orten. Es wurden Mittel für die erste Phase gesammelt, die Beleuchtungsmasten, und ihre Aufstellung ist für die kommenden Monate geplant.",
+          "Auch die Gemeinde Herceg Novi hat ihre Unterstützung gegeben. Über die gesamte Reise wird zudem ein Dokumentarfilm gedreht."
+        ]
+      },
+      {
+        "heading": "Vom Licht zum Leben",
+        "paragraphs": [
+          "**Paris war erst der Anfang.** Das Licht ist nicht das Ende der Geschichte, sondern ihr erster Schritt. Das nächste Ziel ist, dass Svrčuge ein kleiner Ausflugsort wird: ein Kinderspielplatz, ein kleiner Markt, eine Taverne und ein Raum für Veranstaltungen.",
+          "Deshalb bereiten wir eine Crowdfunding-Kampagne vor. Wenn du Teil der Fortsetzung sein möchtest, melde dich an und sei unter den Ersten, die den Link bekommen, sobald die Kampagne startet."
+        ]
+      }
     ],
     "ctaText": "Schließe dich dem ersten Kreis an",
-    "back": "Zurück zur Startseite"
+    "back": "Zurück zur Startseite",
+    "crew": {
+      "eyebrow": "Das Expeditionsteam",
+      "title": "11 Reisende auf dem Weg nach Paris",
+      "subtitle": "Elf Einwohner und Freunde von Svrčuge, die in alten Renault 4 bis nach Paris fuhren und als Helden zurückkehrten."
+    }
   },
   "status": {
     "title": "Die erste Phase hat begonnen: Beleuchtung für Svrčuge",
     "text": "Dank der Aktion „Licht für Svrčuge“ wurde das Geld für die erste Entwicklungsphase des Dorfes gesammelt. Von den gesammelten Mitteln **wurden die Beleuchtungsmasten gekauft**, und ihre Aufstellung und der Anschluss sind für die kommenden Monate geplant, **spätestens bis Oktober**.",
     "cards": [
-      { "label": "Geld für die Beleuchtung", "value": "Gesammelt" },
-      { "label": "Masten", "value": "Gekauft" },
-      { "label": "Aufstellung", "value": "Geplant bis Oktober" },
-      { "label": "Nächste Phase", "value": "Crowdfunding für die Dorfentwicklung" }
+      {
+        "label": "Geld für die Beleuchtung",
+        "value": "Gesammelt"
+      },
+      {
+        "label": "Masten",
+        "value": "Gekauft"
+      },
+      {
+        "label": "Aufstellung",
+        "value": "Geplant bis Oktober"
+      },
+      {
+        "label": "Nächste Phase",
+        "value": "Crowdfunding für die Dorfentwicklung"
+      }
     ]
   },
   "story": {
@@ -178,7 +265,8 @@
     "title": "Werde Teil des ersten Kreises der Freunde von Svrčuge",
     "text": "Bevor wir die Crowdfunding-Kampagne starten, versammeln wir Menschen, **die als Erste den Link erhalten, als Erste die Geschichte teilen und als Erste dabei helfen wollen**, dass die Kampagne Schwung bekommt.",
     "subtext": "Du musst nicht warten, bis du viel spenden kannst. Wenn die Kampagne startet, kann schon **eine symbolische Spende von 5€, ein Kaffee für Svrčuge**, helfen, dass die Geschichte ins Rollen kommt, sich verbreitet und größere Spender erreicht.",
-    "cta": "Ich trete dem ersten Kreis bei"
+    "cta": "Ich trete dem ersten Kreis bei",
+    "waitingCount": "157 Personen im ersten Kreis"
   },
   "coffee": {
     "title": "Ein Kaffee kann die ganze Kampagne voranbringen",
@@ -193,12 +281,30 @@
     "intro": "Alle, die die Kampagne mit einem bestimmten Betrag unterstützen, können einen personalisierten digitalen Ehren-Ausweis von Svrčuge erhalten, ein Symbol der Zugehörigkeit und der Dankbarkeit.",
     "tiersTitle": "Unterstützungsstufen",
     "tiers": [
-      { "amount": "5€", "label": "Ein Kaffee für Svrčuge" },
-      { "amount": "20€", "label": "Ehren-Ausweis von Svrčuge" },
-      { "amount": "50€", "label": "Freund von Svrčuge" },
-      { "amount": "100€", "label": "Hüter von Svrčuge" },
-      { "amount": "250€+", "label": "Großer Freund des Dorfes" },
-      { "amount": "1000€+", "label": "Sponsor einer Phase" }
+      {
+        "amount": "5€",
+        "label": "Ein Kaffee für Svrčuge"
+      },
+      {
+        "amount": "20€",
+        "label": "Ehren-Ausweis von Svrčuge"
+      },
+      {
+        "amount": "50€",
+        "label": "Freund von Svrčuge"
+      },
+      {
+        "amount": "100€",
+        "label": "Hüter von Svrčuge"
+      },
+      {
+        "amount": "250€+",
+        "label": "Großer Freund des Dorfes"
+      },
+      {
+        "amount": "1000€+",
+        "label": "Sponsor einer Phase"
+      }
     ],
     "card": {
       "heading": "Ehren-Ausweis",
@@ -209,10 +315,15 @@
       "number": "SVR-000123",
       "locationLabel": "Stadt / Land",
       "dateLabel": "Ausstellungsdatum",
-      "stamp": "Vom Licht zum Leben"
+      "stamp": "Vom Licht zum Leben",
+      "statusValue": "Freund von Svrčuge"
     },
     "disclaimer": "Der Ehren-Ausweis von Svrčuge ist eine symbolische digitale Dankeskarte und ein Zeichen der Zugehörigkeit zum Projekt. Er ist kein offizielles, rechtliches, finanzielles oder Identitätsdokument.",
-    "benefits": "Inhaber des Ehren-Ausweises von Svrčuge erhalten besondere Einladungen, Vorteile und symbolische Vergünstigungen, wenn die künftige Taverne / das Haus der Begegnung eröffnet wird, im Rahmen der Möglichkeiten des Projekts."
+    "benefits": "Inhaber des Ehren-Ausweises von Svrčuge erhalten besondere Einladungen, Vorteile und symbolische Vergünstigungen, wenn die künftige Taverne / das Haus der Begegnung eröffnet wird, im Rahmen der Möglichkeiten des Projekts.",
+    "nameLabel": "Ihr Name",
+    "namePlaceholder": "Geben Sie ein, wie es auf der Karte stehen soll",
+    "downloadCta": "Ihre Karte herunterladen",
+    "downloadNote": "PNG-Datei, auf sozialen Medien teilbar"
   },
   "partners": {
     "title": "Svrčuge sucht Partner, nicht nur Spender",
@@ -245,7 +356,8 @@
     "title": "Die Wand der Freunde von Svrčuge",
     "text": "Hier werden wir Spender, Sponsoren, Freiwillige, Menschen, die mit Kontakten geholfen haben, Medien und Organisationen darstellen, öffentlich mit Namen, anonym oder als Familie / Unternehmen, ganz nach Wunsch.",
     "placeholder": "Die Wand der Freunde von Svrčuge füllt sich, während die Kampagne wächst. Dein Name kann unter den Ersten sein.",
-    "cta": "Werde ein Freund von Svrčuge"
+    "cta": "Werde ein Freund von Svrčuge",
+    "navLabel": "Spender"
   },
   "faq": {
     "title": "Häufig gestellte Fragen",
@@ -354,7 +466,9 @@
     "viber": "Viber",
     "twitter": "X / Twitter",
     "copy": "Link kopieren",
-    "copied": "Link kopiert!"
+    "copied": "Link kopiert!",
+    "title": "Geschichte teilen",
+    "intro": "Jedes Teilen bringt eine neue Person, die zum ersten Mal von Svrčuge hört."
   },
   "common": {
     "statusLabels": {
@@ -364,5 +478,75 @@
       "next": "Nächste Phase",
       "planned": "In Planung"
     }
+  },
+  "donors": {
+    "eyebrow": "Dankbarkeit",
+    "pageTitle": "Freunde von Svrčuge",
+    "pageSubtitle": "Diese Menschen haben an die Idee geglaubt und geholfen, sie Wirklichkeit werden zu lassen. Von Herzen danke an alle.",
+    "statDonors": "Spender",
+    "statCountries": "Länder",
+    "statContinents": "Kontinente",
+    "searchPlaceholder": "Nach Namen suchen…",
+    "noResults": "Nicht gefunden. Überprüfen Sie die Schreibweise oder melden Sie eine Spende unten.",
+    "countLabel": "Freunde von Svrčuge",
+    "countOf": "von",
+    "notOnList": "Ich stehe nicht auf der Liste",
+    "notOnListEyebrow": "Nicht auf der Liste?",
+    "notOnListText": "Manchmal übermittelt die Spendenplattform nicht alle Daten. Melden Sie sich bei uns und wir prüfen anhand der Transaktionen.",
+    "formName": "Vor- und Nachname",
+    "formNamePlaceholder": "Wie Sie beim Spenden unterschrieben haben",
+    "formEmail": "E-Mail",
+    "formNote": "Anmerkung (optional)",
+    "formNotePlaceholder": "Wann gespendet, Plattform, Betrag…",
+    "formSubmit": "Anfrage senden",
+    "formSending": "Wird gesendet…",
+    "formError": "Sendefehler. Bitte erneut versuchen.",
+    "formSuccess": "Danke, wir haben Ihre Nachricht erhalten!",
+    "formSuccessNote": "Wir prüfen und fügen Sie zur Liste hinzu.",
+    "back": "Zurück zur Startseite",
+    "navLabel": "Spender"
+  },
+  "privacy": {
+    "title": "Datenschutzrichtlinie",
+    "metaTitle": "Datenschutzrichtlinie, Svrčuge",
+    "intro": "Diese Richtlinie erläutert, wie das Projekt Svrčuge persönliche Daten sammelt und verwendet, die Sie über Formulare auf dieser Website hinterlassen.",
+    "h_collect": "Welche Daten wir sammeln",
+    "p_collect": "Wenn Sie sich eintragen, sammeln wir: Name (optional), E-Mail-Adresse, Stadt und Land (optional) und Sprache. Beim Partnerformular erfassen wir zusätzlich Organisationsname, Telefon und Ihre Nachricht.",
+    "h_why": "Warum wir Daten sammeln",
+    "p_why": "Wir verwenden Ihre E-Mail-Adresse ausschliesslich um Sie über den Kampagnenstart zu informieren und gelegentlich wichtige Neuigkeiten zu senden. Wir verkaufen oder teilen Ihre Daten nicht zu Marketingzwecken mit Dritten.",
+    "h_consent": "Einwilligung und Abmeldung",
+    "p_consent": "Wir speichern Daten auf Grundlage Ihrer Einwilligung. Sie können sich jederzeit über den Link am Ende jeder E-Mail abmelden oder uns schreiben an",
+    "h_retention": "Datenspeicherung",
+    "p_retention": "Wir speichern Daten so lange wie das Projekt läuft oder bis Sie die Löschung beantragen. Sie können Auskunft, Berichtigung oder Löschung Ihrer Daten gemäss den geltenden Datenschutzbestimmungen beantragen.",
+    "h_contact": "Kontakt",
+    "p_contact": "Bei allen Fragen zum Datenschutz schreiben Sie uns an"
+  },
+  "terms": {
+    "title": "Bedingungen und Hinweise",
+    "metaTitle": "Bedingungen und Hinweise, Svrčuge",
+    "intro": "Diese Website ist eine Informations- und Kampagnenplattform für das Dorfentwicklungsprojekt Svrčuge. Sie dient dazu, interessierte Menschen vor dem Kampagnenstart zu sammeln.",
+    "h_status": "Projektstatus",
+    "p_status": "Phase eins (Beleuchtung) ist finanziert und in Umsetzung. Die Lichtmasten wurden gekauft, die Installation ist spätestens bis Oktober geplant. Die nächsten Phasen hängen vom Erfolg der künftigen Crowdfunding-Kampagne und den Möglichkeiten der Organisatoren ab.",
+    "h_card": "Ehren-Ausweis von Svrčuge",
+    "p_card": "Der Ehren-Ausweis von Svrčuge ist ein symbolisches digitales Dankeschön und ein Zeichen der Zugehörigkeit zum Projekt. Es handelt sich nicht um ein offizielles, rechtliches, finanzielles oder Identifikationsdokument. Karteninhaber können besondere Einladungen und symbolische Vorteile erhalten, wenn das Projekt realisiert wird. Wir versprechen keine festen oder garantierten Rabatte.",
+    "h_donations": "Spenden",
+    "p_donations": "In der aktuellen Phase sammelt die Website keine Spenden. Wenn die Crowdfunding-Kampagne startet, werden Spenden über die offizielle Plattform (z. B. GoFundMe) nach deren Bedingungen abgewickelt.",
+    "h_contact": "Kontakt",
+    "p_contact": "Bei allen Fragen schreiben Sie uns an"
+  },
+  "mapSection": {
+    "eyebrow": "Standort",
+    "title": "Wo liegt Svrčuge",
+    "intro": "Svrčuge liegt im felsigen Hinterland von Herceg Novi, 10 km vom Stadtzentrum und 15 km von Dubrovnik entfernt. Ein kleines Dorf, leicht erreichbar.",
+    "caption": "Klicken Sie auf die Karte für eine interaktive Ansicht"
+  },
+  "socialSection": {
+    "eyebrow": "Folgen Sie der Geschichte",
+    "title": "Die Geschichte geht über diese Website hinaus",
+    "intro": "Tägliche Nachrichten, Fotos und Videos aus erster Hand auf Instagram und TikTok.",
+    "igFollowers": "16.000 Follower auf Instagram",
+    "igCta": "Folgen @svrcuge.me",
+    "ttFollowers": "TikTok",
+    "ttCta": "Auf TikTok folgen"
   }
 }

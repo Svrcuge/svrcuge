@@ -11,10 +11,12 @@ import {
   Roadmap,
   FirstCircleSection,
   CoffeeSection,
-  IdentityCardSection,
   TransparencySection,
   DonorWall,
   FAQ,
+  MapSection,
+  SocialSection,
+  ShareSection,
 } from "@/components/Sections";
 import PartnerSection from "@/components/PartnerSection";
 import Footer from "@/components/Footer";
@@ -35,15 +37,17 @@ export default async function HomePage({
       <main>
         <Hero dict={dict} locale={locale} />
         <CrowdfundingSection dict={dict} locale={locale} />
+        <MapSection dict={dict} />
         <StatusSection dict={dict} />
         <BuildSection dict={dict} />
         <VisionSection dict={dict} />
         <ReachSection dict={dict} />
+        <SocialSection dict={dict} />
+        <ShareSection dict={dict} locale={locale} />
         <Roadmap dict={dict} />
         <FirstCircleSection dict={dict} locale={locale} />
         <CoffeeSection dict={dict} />
-        <IdentityCardSection dict={dict} />
-        <PartnerSection dict={dict} locale={locale} />
+<PartnerSection dict={dict} locale={locale} />
         <TransparencySection dict={dict} />
         <DonorWall dict={dict} locale={locale} />
         <FAQ dict={dict} />

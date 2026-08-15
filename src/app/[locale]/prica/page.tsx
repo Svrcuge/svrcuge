@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getDictionary, isLocale } from "@/lib/i18n";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CrewCards from "@/components/CrewCards";
 import { rich } from "@/lib/rich";
 
 // Slika po poglavlju (Netflix stil): selo, put, Pariz, doček, zajednica, vizija
@@ -103,6 +104,9 @@ export default async function StoryPage({
             </div>
           </div>
         </article>
+
+        {/* Sports cards for the 11 Paris travellers */}
+        <CrewCards dict={dict} />
       </main>
       <Footer dict={dict} locale={locale} />
     </>

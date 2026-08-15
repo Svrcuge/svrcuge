@@ -16,7 +16,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
     { href: `${home}#prvi-krug`, label: dict.nav.firstCircle },
     { href: `${home}/mediji`, label: dict.media.navLabel },
     { href: `${home}#partneri`, label: dict.nav.partners },
-    { href: `${home}#transparentnost`, label: dict.nav.transparency },
+    { href: `${home}/donatori`, label: dict.donorWall.navLabel },
   ];
 
   return (
