@@ -34,10 +34,9 @@ export default async function TermsPage({
           <h1 className="font-display text-3xl font-extrabold text-ink sm:text-4xl">{t.title}</h1>
           <div className="mt-6 space-y-5 leading-relaxed text-muted [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-ink">
             <p>{t.intro}</p>
+            <p>{t.p1}</p>
             <h2>{t.h_status}</h2>
             <p>{t.p_status}</p>
-            <h2>{t.h_card}</h2>
-            <p>{t.p_card}</p>
             <h2>{t.h_donations}</h2>
             <p>{t.p_donations}</p>
             <h2>{t.h_contact}</h2>

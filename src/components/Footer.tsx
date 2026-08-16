@@ -5,15 +5,19 @@ import { SOCIAL } from "@/lib/config";
 
 export default function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const f = dict.footer;
+  const n = dict.nav;
   const home = `/${locale}`;
 
-  const siteLinks = [
-    { href: `${home}/prica`, label: dict.nav.story },
-    { href: `${home}#plan`, label: dict.nav.plan },
-    { href: `${home}#prvi-krug`, label: dict.nav.firstCircle },
-    { href: `${home}/mediji`, label: dict.media.navLabel },
-    { href: `${home}#partneri`, label: dict.nav.partners },
-    { href: `${home}/donatori`, label: dict.donorWall.navLabel },
+  const links = [
+    { href: `${home}/prica`, label: n.story },
+    { href: `${home}/donatori`, label: n.friends },
+    { href: `${home}/mediji`, label: n.media },
+    { href: `${home}/novosti`, label: n.news },
+    { href: `${home}/dogadjaji`, label: n.events },
+    { href: `${home}/istorija`, label: n.history },
+    { href: `${home}/posjeti`, label: n.visit },
+    { href: `${home}/knjiga`, label: n.guestbook },
+    { href: `${home}/prodavnica`, label: n.shop },
     { href: `${home}/privatnost`, label: f.privacy },
     { href: `${home}/uslovi`, label: f.terms },
   ];
@@ -35,7 +39,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
 
         {/* Linkovi */}
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm mb-6">
-          {siteLinks.map((l) => (
+          {links.map((l) => (
             <Link key={l.href} href={l.href} className="text-muted transition hover:text-amber-deep">
               {l.label}
             </Link>
@@ -72,7 +76,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
         </p>
 
         <p className="mt-5 text-center text-xs text-muted/60">
-          © {new Date().getFullYear()} Svrčuge. {f.rights}
+          © 2026 Svrčuge. {f.rights}
         </p>
       </div>
     </footer>

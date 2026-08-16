@@ -1,552 +1,415 @@
 {
   "meta": {
-    "title": "Svrčuge : De la lumière à la vie",
-    "description": "La première phase du développement de Svrčuge est lancée. Les mâts d'éclairage ont été achetés, et nous préparons maintenant une campagne de financement participatif pour une aire de jeux pour enfants, un marché de village et un chalet en rondins. Rejoins le premier cercle des amis de Svrčuge.",
-    "ogTitle": "Svrčuge : De la lumière à la vie",
-    "ogDescription": "La première phase est lancée. Les mâts d'éclairage ont été achetés, et nous préparons maintenant une campagne de financement participatif pour une aire de jeux pour enfants, un marché de village et un chalet en rondins. Rejoins le premier cercle des amis de Svrčuge."
+    "title": "Svrčuge — Selo koje se budi iz zaborava",
+    "description": "Svrčuge su selo u zaleđu Herceg Novog sa svega petoro mještana. Korak po korak, projekat po projekat, vraćamo život u selo.",
+    "ogTitle": "Svrčuge — Od svjetla do života",
+    "ogDescription": "Selo u zaleđu Herceg Novog koje se budi. Pratite svaki korak obnove."
   },
   "nav": {
-    "story": "Notre histoire",
-    "plan": "Plan de développement",
-    "firstCircle": "Premier cercle",
-    "partners": "Partenaires",
-    "transparency": "Transparence",
-    "contact": "Contact",
-    "follow": "Suivre la campagne",
-    "languageLabel": "Langue"
+    "story": "Naša priča",
+    "news": "Novosti",
+    "events": "Događaji",
+    "visit": "Posjeti selo",
+    "shop": "Prodavnica",
+    "friends": "Prijatelji Svrčuga",
+    "media": "Mediji",
+    "history": "Istorija sela",
+    "projects": "Projekti",
+    "guestbook": "Knjiga gostiju",
+    "languageLabel": "Jezik"
   },
   "hero": {
-    "badge": "Un village dans l'arrière-pays de Herceg Novi",
-    "title": "Svrčuge : De la lumière à la vie",
-    "subtitle": "Les mâts d'éclairage ont été achetés. Maintenant, nous construisons un lieu où les gens reviendront, où les enfants joueront, où les producteurs locaux vendront leurs produits, et où le village revivra.",
-    "formIntro": "Nous préparons une campagne de financement participatif pour la prochaine phase de développement du village. Laisse ton e-mail et sois le premier à savoir quand la campagne démarrera.",
-    "ctaPrimary": "Préviens-moi quand la campagne démarre",
-    "ctaSecondary": "Découvre le plan de développement",
-    "mapCaption": "Carte illustrée de Svrčuge, éclairage, aire de jeux, marché, chalet en rondins et espace pour les événements.",
-    "mapPlaceholder": "Ici viendra la carte illustrée du village"
+    "badge": "Selo u zaleđu Herceg Novog",
+    "title": "Od svjetla do života",
+    "subtitle": "Svrčuge su selo u zelenom zaleđu Boke: 14 km od Herceg Novog, 29 km od Trebinja. Nekad puno života, danas broji svega petoro mještana. Ali selo je odlučilo da ne nestane: prvo se vraća svjetlo, pa onda sve ostalo.",
+    "subtitle2": "Selo koje se budi iz zaborava",
+    "jovicaLabel": "Čovjek iza svega",
+    "jovicaName": "Jovica Tušup",
+    "jovicaText": "Porijeklom iz Svrčuga, odbio je da gleda kako mu selo nestaje. Njegova misija: spasiti Svrčuge od zaborava — svjetlo po svjetlo, projekat po projekat.",
+    "jovicaLink": "Pročitaj Jovičinu priču",
+    "ctaPrimary": "Budi uz selo",
+    "ctaSecondary": "Pročitaj priču",
+    "mapCaption": "Svrčuge, zaleđe Herceg Novog"
   },
-  "crowdfunding": {
-    "eyebrow": "Paris est conquis",
-    "title": "Paris est conquis. Et maintenant ?",
-    "paris": [
-      "En avril 2026, une petite équipe de Svrčuge a pris la route de Paris en caravane de vieilles « Renault 4 ». **Onze personnes et plus de 5 000 kilomètres**, du 16 au 29 avril 2026, avec un seul objectif : faire entendre, partout en Europe, le nom d'un village de **cinq habitants seulement**.",
-      "Et on a entendu parler de Svrčuge. L'action « De la lumière pour Svrčuge » a connu un immense écho dans les médias et sur les réseaux sociaux, les fonds de la première phase d'éclairage ont été réunis, et à Herceg Novi plus de 200 personnes ont accueilli l'équipe."
-    ],
-    "stats": [
-      {
-        "value": "5 137 km",
-        "label": "aller-retour jusqu'à Paris"
-      },
-      {
-        "value": "11",
-        "label": "personnes dans l'équipe"
-      },
-      {
-        "value": "200+",
-        "label": "personnes à l'accueil"
-      },
-      {
-        "value": "5",
-        "label": "habitants du village"
-      }
-    ],
-    "mediaLink": "Découvrez ce que les médias ont écrit",
-    "readMore": "Lire l'histoire complète",
-    "nextTitle": "Et maintenant ?",
-    "nextText": "Paris n'était qu'un début. **La prochaine étape est une campagne de financement participatif** qui nous permettra de continuer à bâtir le village : une aire de jeux pour enfants, un petit marché de village, un chalet et un espace pour les événements.",
-    "whatTitle": "Qu'est-ce qu'une campagne de financement participatif ?",
-    "intro": "Le financement participatif, c'est beaucoup de gens qui donnent un peu, et ensemble, nous finançons ce que personne ne pourrait seul. C'est ainsi que Svrčuge a déjà réuni l'argent des mâts d'éclairage. Nous construisons la suite de la même façon.",
-    "steps": [
-      {
-        "num": "1",
-        "title": "Nous réunissons le premier cercle",
-        "text": "Avant le lancement de la campagne, nous recueillons les inscriptions des personnes qui veulent être informées les premières."
-      },
-      {
-        "num": "2",
-        "title": "Nous lançons la campagne",
-        "text": "Nous lançons une campagne de financement participatif (GoFundMe). Les premiers jours comptent le plus : plus il y a de petits dons tout de suite, plus l'élan est grand."
-      },
-      {
-        "num": "3",
-        "title": "Nous construisons le village",
-        "text": "Les fonds servent, étape par étape, à l'aire de jeux, au marché du village et au chalet, avec des rapports et des photos réguliers."
-      }
-    ],
-    "note": "Notre objectif est d'attirer l'attention **du monde entier** sur Svrčuge. Et toi, si tu es des nôtres, la meilleure façon d'aider, c'est de **t'inscrire à la newsletter**, de recevoir le premier toutes les informations sur la campagne et de partager l'histoire autour de toi.",
-    "cta": "S'inscrire à la newsletter"
-  },
-  "media": {
-    "eyebrow": "Les médias parlent de Svrčuge",
-    "title": "Ce que les médias ont écrit",
-    "intro": "L'histoire de Svrčuge et du voyage jusqu'à Paris a fait le tour des médias régionaux et européens, des télévisions et des réseaux sociaux. Nous en rassemblons ici une partie.",
-    "note": "Nous ajouterons bientôt des reportages vidéo, des passages télé et des données issues des réseaux sociaux.",
-    "visit": "Ouvrir l'article",
-    "back": "Retour à l'accueil",
-    "navLabel": "Médias",
-    "more": "Plus dans les médias"
-  },
-  "reach": {
-    "eyebrow": "La force de la communauté",
-    "title": "Ce que la campagne a déjà accompli",
-    "intro": "L'histoire d'un petit village a parcouru la région et le monde, avec un écho incroyable en ligne et auprès des gens.",
+  "projects": {
+    "eyebrow": "Projekti sela",
+    "intro": "Korak po korak vraćamo život, sve javno i transparentno.",
     "items": [
-      {
-        "value": "10 000 000+",
-        "label": "vues pendant la campagne"
-      },
-      {
-        "value": "16 000",
-        "label": "abonnés sur Instagram"
-      },
-      {
-        "value": "11 000",
-        "label": "abonnés sur Facebook"
-      },
-      {
-        "value": "200+",
-        "label": "donateurs de 24 pays, sur 4 continents"
-      }
+      { "num": 1, "title": "Rasvjeta: stubovi kupljeni", "status": "in-progress" },
+      { "num": 2, "title": "Dječije igralište", "status": "soon" },
+      { "num": 3, "title": "Seoska pijaca", "status": "planned" },
+      { "num": 4, "title": "Brvnara / konoba", "status": "planned" },
+      { "num": 5, "title": "Program događaja u selu", "status": "planned" }
+    ]
+  },
+  "events": {
+    "eyebrow": "Događaji u selu",
+    "subtitle": "Dođi, selo živi.",
+    "allLink": "Svi događaji",
+    "items": [
+      { "day": "29.", "month": "AVGUST", "title": "Dječiji bioskop pod zvijezdama", "sub": "Kraj raspusta", "date": "2026-08-29" },
+      { "day": "05.", "month": "SEPTEMBAR", "title": "Kraj ljeta", "sub": "Adio Mare", "date": "2026-09-05" }
+    ]
+  },
+  "expedition": {
+    "eyebrow": "Ekspedicija 2026",
+    "title": "U Pariz po svjetlost",
+    "text": "Jedanaest ljudi krenulo je iz Svrčuga u Pariz: 5.137 km u koloni od pet automobila, među njima tri stara Reno 4, da svijetu ispriča priču o selu. Na povratku ih je u Herceg Novom dočekalo preko 200 ljudi.",
+    "stats": [
+      { "value": "5.137 KM", "label": "" },
+      { "value": "3x", "label": "Renault 4" },
+      { "value": "11", "label": "putnika" },
+      { "value": "5", "label": "automobila" },
+      { "value": "14", "label": "dana" }
+    ],
+    "cta": "Cijela priča o putu u Pariz"
+  },
+  "location": {
+    "title": "Gdje su Svrčuge?",
+    "subtitle": "Zaleđe Herceg Novog · 14 km od Herceg Novog · 29 km od Trebinja"
+  },
+  "blockquote": {
+    "text": "PRVO VRAĆAMO SVJETLO. ONDA, PROJEKAT PO PROJEKAT, VRAĆAMO ŽIVOT.",
+    "author": "Jovica, Svrčuge"
+  },
+  "emailSignup": {
+    "eyebrow": "Budi uz selo",
+    "intro": "Ostavi email i javljamo ti svaki novi projekat, kad selo kreće na novi put, i svaku dobru vijest iz Svrčuga.",
+    "label": "Javljajte mi novosti iz sela",
+    "note": "Bez spama: samo kad selo ima šta da javi.",
+    "success": "Hvala! Na listi si.",
+    "successNote": "Javljamo ti se čim bude novosti iz sela."
+  },
+  "coffee": {
+    "title": "Časti selo kafom: €5",
+    "text": "Simbolična podrška projektima sela: €5 kao kafa koju bi popio na seoskoj konobi, kad jednog dana bude otvorena. Do sada je kafu častilo 157 ljudi iz 24 zemlje.",
+    "cta": "Častim kafu",
+    "donorLink": "Pogledaj sve prijatelje Svrčuga"
+  },
+  "transparency": {
+    "title": "Sve javno, od prvog dana",
+    "items": [
+      "Svaki trošak se objavljuje",
+      "Fotografije svake kupovine i radova",
+      "Redovni izvještaji o projektima",
+      "Javna lista svih prijatelja sela"
+    ]
+  },
+  "shareSection": {
+    "title": "Podijeli priču o selu",
+    "text": "Svaka podjela dovede nekog ko prvi put čuje za Svrčuge. To ništa ne košta, a selu znači sve.",
+    "cta": "Podijeli",
+    "copied": "Link kopiran!"
+  },
+  "partnersSection": {
+    "title": "Hvala partnerima",
+    "text": "Institucije, mediji i kompanije koje su stale uz selo."
+  },
+  "faq": {
+    "title": "Pitanja i odgovori",
+    "items": [
+      { "q": "Šta su Svrčuge?", "a": "Selo u zaleđu Herceg Novog, 14 km od grada. Danas u njemu živi petoro mještana, a selo se korak po korak budi iz zaborava." },
+      { "q": "Ko stoji iza svega?", "a": "Jovica Tušup, porijeklom iz Svrčuga, i zajednica prijatelja sela iz cijelog svijeta. Sve odluke i troškovi su javni." },
+      { "q": "Šta je do sada urađeno?", "a": "Prvi projekat (rasvjeta) je finansiran, stubovi su kupljeni i postavljanje je u toku. Selo uskoro dobija prvo svjetlo." },
+      { "q": "Kako mogu pomoći?", "a": "Ostavi email da pratiš novosti, časti selo simboličnom kafom od €5, ili podijeli priču: svaka podjela dovede nekog ko prvi put čuje za Svrčuge." },
+      { "q": "Na šta ide novac?", "a": "Isključivo na projekte sela. Svaki trošak se objavljuje, uz fotografije i izvještaje." }
     ]
   },
   "storyPage": {
-    "eyebrow": "De la lumière pour Svrčuge",
-    "title": "Renault 4 jusqu'à Paris : comment un petit village a conquis l'Europe",
-    "lead": "Svrčuge est un village de l'arrière-pays de Herceg Novi, avec seulement cinq habitants et sans éclairage public. Plutôt que d'attendre, les villageois et les amis du village ont pris la route dans de vieilles « Renault 4 », jusqu'à Paris, pour que **l'Europe entière entende parler de Svrčuge. Et ils ont réussi.**",
+    "eyebrow": "Putni dnevnik sela",
+    "title": "Ovo je priča o ljudima koji ne odustaju od svojih korijena",
+    "titleSub": "6 poglavlja · 11 ljudi · 5.137 km",
+    "lead": "Ovo je zapis o tome kako se jedno selo od pet mještana odlučilo boriti za svoje ime, i kako je ta borba stigla do Pariza i nazad.",
     "sections": [
       {
-        "heading": "Un village qui refuse de disparaître",
-        "paragraphs": [
-          "Svrčuge se niche dans l'arrière-pays rocailleux de Herceg Novi. Aujourd'hui, **cinq personnes seulement** y vivent, et il n'y a pas d'éclairage public. Pourtant, le village est devenu célèbre comme le seul au monde à avoir son propre site et ses comptes sur les réseaux sociaux, mais pas de lumière sur sa route.",
-          "De cette histoire insolite est née l'action « De la lumière pour Svrčuge » : l'idée d'éclairer la route qui traverse le village et de rassembler à nouveau la communauté autour d'un objectif clair. Aucune institution ne l'a imaginée, elle est venue du cœur."
-        ]
+        "heading": "I. Selo koje odbija da nestane",
+        "paragraphs": ["Svrčuge su nekad bile pune djece, stoke i smijeha. Onda su se, kuća po kuća, gasila svjetla, dok ih nije ostalo samo petoro. Jovica Tušup, porijeklom iz Svrčuga, odlučio je da posljednje svjetlo ne smije da se ugasi."]
       },
       {
-        "heading": "La route vers Paris dans le « petit géant »",
-        "paragraphs": [
-          "Pour que l'histoire dépasse les Bouches de Kotor, l'équipe a imaginé quelque chose d'inhabituel : rejoindre Paris dans de vieilles « Renault 4 », ces « petits géants » qui ont parcouru ces contrées pendant des décennies.",
-          "La caravane est partie le **16 avril 2026**. Onze personnes, quelques vieilles Renault 4 et des véhicules d'accompagnement, et **plus de 5 000 kilomètres** devant eux. En chemin, ils ont visité l'usine Renault en Slovénie et réparé les pannes de véhicules vieux de plusieurs décennies. À un moment, un mécanicien français leur a donné **un roulement pour un seul euro**, avec le sourire : personne n'avait demandé de pièce pour une Renault 4 depuis vingt ans."
-        ]
+        "heading": "II. Ideja: u Pariz po svjetlost",
+        "paragraphs": ["Kako da cijeli svijet čuje za selo od petoro ljudi? Tako što će jedanaest prijatelja sela sjesti u kolonu od pet automobila (među njima tri stara Reno 4) i odvesti priču o Svrčugama pravo u Pariz."]
       },
       {
-        "heading": "Paris et la rencontre avec la diaspora",
-        "paragraphs": [
-          "Ils sont arrivés à Paris le 23 avril. Là-bas, ils ont été accueillis par nos compatriotes de la diaspora, ceux dont les racines plongent dans les Bouches de Kotor et les environs de Herceg Novi. L'histoire de ce petit village qui a traversé la moitié de l'Europe dans de vieilles voitures a touché beaucoup de monde et s'est vite répandue."
-        ]
+        "heading": "III. Maršruta ekspedicije",
+        "paragraphs": ["Karavana je krenula iz Svrčuga i prošla kroz Banja Luku, Novo Mesto, Monfalcone, Parmu, Menton, Marsej i Montlucon, pa do Pariza. Na povratku — kroz Strazbur, Salzburg, Novo Mesto i Banja Luku — dočekali su ih u Herceg Novom."]
       },
       {
-        "heading": "Un accueil mémorable",
-        "paragraphs": [
-          "La caravane est rentrée à Herceg Novi le **29 avril**, après **5 137 kilomètres** parcourus. **Plus de 200 personnes** étaient présentes à l'accueil, avec des applaudissements, des larmes et de la fierté. Ce jour-là, le village de cinq habitants avait toute une armée d'amis."
-        ]
+        "heading": "IV. Pariz i dijaspora",
+        "paragraphs": ["U Parizu je kolonu dočekala naša dijaspora. Te večeri je priča o selu od petoro mještana obišla pola svijeta: kampanja je imala 10.250.000 pregleda na društvenim mrežama i više od 190 objava u regionalnim medijima."]
       },
       {
-        "heading": "Ce que l'action a accompli",
-        "paragraphs": [
-          "L'histoire de Svrčuge a fait le tour des médias régionaux et européens, des télévisions et des réseaux sociaux. Des dons sont arrivés, de Novi Pazar, de Belgrade, de Ljubljana, d'Istrie et de bien d'autres endroits. Les fonds de la première phase ont été réunis, ceux des mâts d'éclairage, et leur installation est prévue dans les prochains mois.",
-          "La municipalité de Herceg Novi a également apporté son soutien. Un film documentaire est par ailleurs en cours de tournage sur tout ce voyage."
-        ]
+        "heading": "V. Doček u Herceg Novom",
+        "paragraphs": ["Na povratku, u Herceg Novom, kolonu je čekalo preko 200 ljudi. Aplauz, suze i pitanje koje se čulo sa svih strana: \"Šta selo radi sljedeće?\""]
       },
       {
-        "heading": "De la lumière à la vie",
-        "paragraphs": [
-          "**Paris n'était qu'un début.** La lumière n'est pas la fin de l'histoire, mais son premier pas. Le prochain objectif est de faire de Svrčuge un petit lieu de promenade : une aire de jeux pour enfants, un petit marché, un chalet et un espace pour les événements.",
-          "C'est pourquoi nous préparons une campagne de financement participatif. Si tu veux faire partie de la suite, inscris-toi et sois parmi les premiers à recevoir le lien dès le lancement de la campagne."
-        ]
+        "heading": "VI. Od svjetla do života",
+        "paragraphs": ["Zahvaljujući pažnji koju je put donio, prvi projekat (rasvjeta) je finansiran: stubovi su kupljeni i uskoro se pale prva svjetla poslije decenija mraka. Prijatelji sela sada dolaze iz 24 zemlje, sa 4 kontinenta.", "Svjetlo je tek početak. Slijede novi projekti koji vraćaju život: igralište za djecu, seoska pijaca, konoba, događaji. Korak po korak, dok se u Svrčuge ne vrati smijeh."]
       }
     ],
-    "ctaText": "Rejoins le premier cercle",
-    "back": "Retour à l'accueil",
+    "routeTitle": "Maršruta ekspedicije",
+    "route": [
+      { "label": "Svrčuge", "sub": "start", "highlight": true },
+      { "label": "Banja Luka · Novo Mesto · Monfalcone", "sub": "", "highlight": false },
+      { "label": "Parma · Menton · Marsej · Montlucon", "sub": "", "highlight": false },
+      { "label": "Pariz", "sub": "", "highlight": true },
+      { "label": "Strazbur · Salzburg · Novo Mesto · Banja Luka", "sub": "", "highlight": false },
+      { "label": "Herceg Novi", "sub": "cilj i doček, 200+ ljudi", "highlight": true }
+    ],
+    "ctaText": "Budi uz selo",
+    "back": "Nazad na početnu",
     "crew": {
-      "eyebrow": "L'équipe de l'expédition",
-      "title": "11 voyageurs partis pour Paris",
-      "subtitle": "Onze habitants et amis de Svrčuge qui ont traversé l'Europe en vieilles Renault 4 jusqu'à Paris."
-    }
-  },
-  "status": {
-    "title": "La première phase est lancée : l'éclairage pour Svrčuge",
-    "text": "Grâce à l'action « De la lumière pour Svrčuge », les fonds nécessaires à la première phase de développement du village ont été réunis. Avec ces fonds, **les mâts d'éclairage ont été achetés**, et leur installation et leur raccordement sont prévus dans les prochains mois, **au plus tard d'ici octobre**.",
-    "cards": [
-      {
-        "label": "Fonds pour l'éclairage",
-        "value": "Réunis"
-      },
-      {
-        "label": "Mâts",
-        "value": "Achetés"
-      },
-      {
-        "label": "Installation",
-        "value": "Prévue d'ici octobre"
-      },
-      {
-        "label": "Prochaine phase",
-        "value": "Financement participatif pour le développement du village"
-      }
-    ]
-  },
-  "story": {
-    "title": "Comment tout a commencé : le chemin jusqu'à Paris pour apporter la lumière au village",
-    "paragraphs": [
-      "Svrčuge est un petit village avec une grande histoire. La première action a relié le village, Paris et une idée toute simple, celle qu'un village mérite la lumière.",
-      "Les gens se sont engagés. Les habitants, la diaspora et les amis du village ont montré qu'une communauté peut accomplir quelque chose de concret lorsqu'elle se rassemble autour d'un objectif clair.",
-      "Les fonds pour les mâts d'éclairage ont été réunis. C'était la preuve que Svrčuge pouvait se relancer.",
-      "Mais la lumière n'est pas une fin. La lumière est le premier chapitre de cette histoire, et non le dernier."
-    ]
-  },
-  "build": {
-    "title": "Que construisons-nous ensuite ?",
-    "intro": "L'éclairage est la première phase. Viennent ensuite les espaces qui donneront aux gens une raison de venir et de rester.",
-    "cards": [
-      {
-        "icon": "playground",
-        "title": "Aire de jeux pour enfants",
-        "text": "Un lieu où les enfants auront une raison de venir, de rester et de garder du village le souvenir du jeu."
-      },
-      {
-        "icon": "market",
-        "title": "Petit marché de village",
-        "text": "Un espace pour les produits locaux, les producteurs du coin, les petites foires, l'artisanat et les rencontres."
-      },
-      {
-        "icon": "cabin",
-        "title": "Chalet en rondins / taverne",
-        "text": "Un espace chaleureux pour les rassemblements, les expositions, les ateliers, les concerts, les spectacles, les soirées et les invités."
-      },
-      {
-        "icon": "events",
-        "title": "Programme d'événements",
-        "text": "Une fois l'infrastructure en place, Svrčuge pourra devenir un lieu de foires, d'expositions, d'ateliers pour enfants, de concerts, de spectacles et de journées du village."
-      }
-    ]
-  },
-  "vision": {
-    "title": "Le nouveau petit lieu d'excursion de Herceg Novi",
-    "text": "Le but n'est pas seulement de construire quelques bâtiments. Le but est que Svrčuge devienne un lieu où les gens peuvent venir en excursion, emmener leurs enfants, acheter un produit local, assister à un petit événement et **sentir que le village revit**.",
-    "highlight": "Nous ne construisons pas que des bâtiments. Nous construisons une raison de revenir."
-  },
-  "roadmap": {
-    "title": "Plan de développement",
-    "intro": "De la première donation à un village qui vit toute l'année.",
-    "phases": [
-      {
-        "status": "in-progress",
-        "title": "Éclairage",
-        "text": "Financé, réalisation en cours, installation prévue au plus tard d'ici octobre."
-      },
-      {
-        "status": "soon",
-        "title": "Campagne de financement participatif",
-        "text": "Bientôt. Nous rassemblons le premier cercle des amis avant le lancement."
-      },
-      {
-        "status": "next",
-        "title": "Aire de jeux pour enfants",
-        "text": "La prochaine phase, le premier espace pour les familles et les enfants."
-      },
-      {
-        "status": "planned",
-        "title": "Marché de village",
-        "text": "Développement de l'offre locale et espace pour les producteurs du coin."
-      },
-      {
-        "status": "planned",
-        "title": "Chalet en rondins / taverne",
-        "text": "Un objectif à long terme, un espace pour les rassemblements et les événements."
-      },
-      {
-        "status": "planned",
-        "title": "Programme d'événements",
-        "text": "Le village vit toute l'année, foires, concerts, ateliers, journées du village."
-      }
-    ]
-  },
-  "firstCircle": {
-    "title": "Rejoins le premier cercle des amis de Svrčuge",
-    "text": "Avant de lancer la campagne de financement participatif, nous rassemblons les personnes qui veulent **être les premières à recevoir le lien, les premières à partager l'histoire et les premières à aider la campagne à prendre de l'élan**.",
-    "subtext": "Tu n'as pas besoin d'attendre de pouvoir donner beaucoup. Quand la campagne démarrera, même une **donation symbolique de 5€, un café pour Svrčuge**, peut aider l'histoire à se lancer, à se répandre et à atteindre de plus grands donateurs.",
-    "cta": "J'entre dans le premier cercle",
-    "waitingCount": "157 personnes dans le premier cercle"
-  },
-  "coffee": {
-    "title": "Un seul café peut faire avancer toute la campagne",
-    "text": "Quand la campagne de financement participatif sera active, ce sont les premiers jours qui compteront le plus. Si beaucoup de gens soutiennent la campagne, même symboliquement, elle prend de l'élan, gagne en confiance et a plus de chances d'atteindre de plus grands donateurs.",
-    "text2": "C'est pourquoi nous inviterons les amis de Svrčuge à donner dès le premier jour au moins **5€, un café pour Svrčuge**, et à partager la campagne avec leurs proches.",
-    "highlight": "Partager la campagne vaut presque autant qu'une donation.",
-    "amount": "5€",
-    "amountLabel": "un café pour Svrčuge"
-  },
-  "identityCard": {
-    "title": "Carte d'honneur de Svrčuge",
-    "intro": "Tous ceux qui soutiennent la campagne avec un certain montant peuvent recevoir une Carte d'honneur de Svrčuge numérique et personnalisée, un symbole d'appartenance et de gratitude.",
-    "tiersTitle": "Niveaux de soutien",
-    "tiers": [
-      {
-        "amount": "5€",
-        "label": "Un café pour Svrčuge"
-      },
-      {
-        "amount": "20€",
-        "label": "Carte d'honneur de Svrčuge"
-      },
-      {
-        "amount": "50€",
-        "label": "Ami de Svrčuge"
-      },
-      {
-        "amount": "100€",
-        "label": "Gardien de Svrčuge"
-      },
-      {
-        "amount": "250€+",
-        "label": "Grand ami du village"
-      },
-      {
-        "amount": "1000€+",
-        "label": "Parrain d'une phase"
-      }
-    ],
-    "card": {
-      "heading": "Carte d'honneur",
-      "name": "Nom et prénom",
-      "statusLabel": "Statut",
-      "status": "Ami d'honneur de Svrčuge",
-      "numberLabel": "Numéro de carte",
-      "number": "SVR-000123",
-      "locationLabel": "Ville / pays",
-      "dateLabel": "Date d'émission",
-      "stamp": "De la lumière à la vie",
-      "statusValue": "Ami de Svrčuge"
+      "eyebrow": "Karte posade",
+      "title": "11 putnika koji su krenuli u Pariz",
+      "subtitle": "Jedanaest mještana i prijatelja Svrčuga koji su u starim Reno 4 automobilima prešli put do Pariza.",
+      "captain": "Kapetan ekspedicije",
+      "roleLabel": "Pariz 2026"
     },
-    "disclaimer": "La Carte d'honneur de Svrčuge est un remerciement numérique symbolique et un signe d'appartenance au projet. Ce n'est pas un document officiel, juridique, financier ou d'identité.",
-    "benefits": "Les titulaires de la Carte d'honneur de Svrčuge bénéficieront d'invitations spéciales, d'avantages et de petits privilèges symboliques lorsque la future taverne / maison de rassemblement ouvrira, dans la mesure des possibilités du projet.",
-    "nameLabel": "Votre nom",
-    "namePlaceholder": "Entrez comment vous voulez que ce soit écrit sur la carte",
-    "downloadCta": "Téléchargez votre carte",
-    "downloadNote": "Fichier PNG, partageable sur les réseaux sociaux"
+    "emailCta": "Priča se nastavlja",
+    "emailText": "Budi uz selo: javljamo ti svaki novi projekat i svaku dobru vijest."
   },
-  "partners": {
-    "title": "Svrčuge cherche des partenaires, pas seulement des donateurs",
-    "text": "Si vous êtes une entreprise, une organisation, une ambassade, une fondation ou une institution qui soutient le développement local, la culture, la famille, le tourisme durable ou la préservation des villages, Svrčuge peut être un projet petit mais visible, à forte portée sociale.",
-    "groups": [
-      "Entreprises et parrains",
-      "Ambassades",
-      "Fondations",
-      "Institutions",
-      "Médias",
-      "Bénévoles",
-      "Diaspora"
+  "newsPage": {
+    "eyebrow": "Dnevnik obnove",
+    "title": "Šta se dešava u selu",
+    "intro": "Svaki korak obnove, javno i sa datumom. Ovdje se vidi da se stvarno radi.",
+    "empty": "Još nema novosti. Radovi su u pripremi. Ostavi email na Početnoj i javljamo ti prvu vijest.",
+    "back": "Nazad na početnu"
+  },
+  "eventsPage": {
+    "eyebrow": "Selo živi",
+    "title": "Događaji u selu",
+    "intro": "Svrčuge više nisu samo priča o prošlosti. Dođi, druži se i budi dio buđenja sela.",
+    "notifyTitle": "Ne propusti sljedeći događaj",
+    "notifyText": "Ostavi email na Početnoj i javljamo ti svaku najavu na vrijeme.",
+    "notifyCta": "Budi uz selo"
+  },
+  "historyPage": {
+    "eyebrow": "Ko smo i odakle",
+    "title": "Istorija Svrčuga",
+    "intro": "Prije nego što je selo počelo da se gasi, ovdje se vjekovima živjelo. Ovo je mjesto gdje čuvamo tu priču.",
+    "sections": [
+      { "heading": "I. Staro selo u brdima iznad Novog", "text": "Svrčuge su malo istorijsko selo u brdima iznad Herceg Novog, na crnogorskoj obali Jadrana. Na samo nekoliko kilometara od mora i gradske gužve, a ipak dovoljno daleko da sačuvaju tišinu, mir i duh nekih prošlih vremena." },
+      { "heading": "II. Selo koje nije nastalo juče", "text": "Svrčuge postoje više stotina godina. Kamene kuće, stari seoski putevi, suhozidi i maslinjaci svjedoče o generacijama ljudi koji su ovdje živjeli skromno, ali dostojanstveno: od zemlje, rada i međusobne pomoći." },
+      { "heading": "III. Porodice i kuće", "text": "Koje su porodice živjele u selu, koje kuće i danas stoje. Ovo je i poziv dijaspori: javite nam svoje priče i fotografije predaka, ovdje im je mjesto." },
+      { "heading": "IV. Kako se selo gasilo", "text": "Odlazak za poslom u grad i preko granice, kuća po kuća. Do danas, kada je ostalo petoro mještana i odluka da je to dno od kog se odbijamo. Uprkos svemu, selo je sačuvalo bogatu istoriju i mediteranski duh, i danas mu dolazi mnogo gostiju." }
     ],
-    "cta": "Envoyez une proposition de collaboration"
+    "albumTitle": "Porodični album sela",
+    "albumCta": "Imaš stare fotografije ili priče?",
+    "albumText": "Ako su tvoji korijeni u Svrčugama, pomozi nam da sastavimo istoriju sela.",
+    "back": "Nazad na početnu"
   },
-  "transparency": {
-    "title": "En toute transparence, de la première donation à la dernière vis",
-    "text": "Le projet publiera régulièrement ce qui a été réuni, ce qui a été acheté, ce qui vient ensuite, les budgets prévus par phase, les photos de réalisation, les rapports et les donateurs qui souhaitent être affichés publiquement.",
-    "placeholder": "Nous publierons bientôt un rapport détaillé de la première phase, des photos des mâts et les prochaines étapes de la réalisation.",
-    "items": [
-      "Ce qui a été réuni jusqu'à présent",
-      "Ce qui a été acheté",
-      "Ce qui vient ensuite",
-      "Phases et budgets prévus",
-      "Photos de réalisation",
-      "Rapports et donateurs publics"
-    ]
+  "visitPage": {
+    "eyebrow": "Dobrodošli",
+    "title": "Posjeti Svrčuge",
+    "subtitle": "14 km od Herceg Novog · 29 km od Trebinja",
+    "intro": "Selo je otvoreno za svakog dobronamjernog gosta. Nema ulaznica ni radnog vremena, ima brda, kamena, tišine i zelenila koje te obuzme čim izađeš iz auta.",
+    "routes": [
+      { "from": "Iz Herceg Novog", "dist": "14 KM", "time": "15 MIN", "note": "Uz brdo iz grada, kratka i laka vožnja." },
+      { "from": "Iz Trebinja", "dist": "29 KM", "time": "40 MIN", "note": "Preko granice, ugodna vožnja kroz Hercegovinu." },
+      { "from": "Pješke", "dist": "2 SATA", "time": "", "note": "Hajking staza od centra Herceg Novog, za dobre patike." }
+    ],
+    "mapTitle": "Gdje su Svrčuge?",
+    "whatTitle": "Šta te čeka",
+    "whatItems": [
+      { "title": "Stare kamene kuće", "text": "Arhitektura kakve više nema, svaka kuća ima priču." },
+      { "title": "Zelenilo i staze", "text": "Rastinje je preuzelo selo, staze vode kroz pravu divljinu." },
+      { "title": "Mještani", "text": "Petoro ljudi koji će te dočekati kao svog." },
+      { "title": "Selo koje se budi", "text": "Vidi uživo kako se život vraća, projekat po projekat." }
+    ],
+    "tipsTitle": "Dobro je znati",
+    "tips": [
+      "Ponesi vodu i užinu, u selu još nema kafane ni prodavnice",
+      "Dobre patike ili planinarske cipele",
+      "Javi se prije dolaska da te neko od mještana dočeka"
+    ],
+    "formTitle": "Najavi svoj dolazak",
+    "formText": "Ostavi podatke i javljamo ti se da dogovorimo dan, mještani vole goste.",
+    "formName": "Ime",
+    "formEmail": "Email",
+    "formDate": "Planirani datum dolaska",
+    "formNote": "Napomena",
+    "formNotePlaceholder": "Koliko vas dolazi, šta vas zanima...",
+    "formCta": "Najavljujem dolazak",
+    "formSuccess": "Hvala! Vidimo se u selu.",
+    "formSuccessNote": "Javljamo ti se uskoro da potvrdimo dan.",
+    "formSubmitting": "Šalje se...",
+    "back": "Nazad na početnu"
   },
-  "donorWall": {
-    "title": "Le mur des amis de Svrčuge",
-    "text": "Ici, nous afficherons les donateurs, les parrains, les bénévoles, les personnes qui ont aidé par leurs contacts, les médias et les organisations, publiquement par leur nom, anonymement ou en tant que famille / entreprise, selon leur souhait.",
-    "placeholder": "Nous remplissons le mur des amis de Svrčuge au fur et à mesure que la campagne grandit. Ton nom peut être parmi les premiers.",
-    "cta": "Deviens un ami de Svrčuge",
-    "navLabel": "Donateurs"
+  "kafaPage": {
+    "eyebrow": "Podrži selo",
+    "title": "Časti selo kafom",
+    "intro": "Svaki doprinos ide direktno na projekte sela: javno, uz fotografije i izvještaje.",
+    "friendsLink": "Tvoje ime staje na zid prijatelja Svrčuga",
+    "monthlyLabel": "Jednom svaki mjesec",
+    "monthlyText": "Redovni prijatelj sela. Mjesečna podrška znači da selo može da planira: struja za rasvjetu, održavanje, sljedeći projekat. Otkažeš kad hoćeš, jednim mailom.",
+    "amountOptions": [
+      { "amount": "€5", "name": "Kafa", "desc": "Simbolična podrška" },
+      { "amount": "€10", "name": "Dvije kafe", "desc": "Za dvoje" },
+      { "amount": "€20", "name": "Prijatelj sela", "desc": "Ime na zidu" },
+      { "amount": "€50", "name": "Veliki prijatelj", "desc": "Posebna zahvalnost" }
+    ],
+    "publicWall": "Želim da moje ime bude na javnom zidu prijatelja Svrčuga",
+    "paymentTitle": "Način plaćanja",
+    "payCard": "Kartica",
+    "payTransfer": "Uplata na račun",
+    "transferTitle": "Uplatnica",
+    "transferRecipient": "Primalac",
+    "transferRecipientValue": "Mjesna zajednica, za selo Svrčuge",
+    "transferAccount": "Žiro račun",
+    "transferAccountValue": "XXX-XXXXXXXXXX-XX",
+    "transferPurpose": "Svrha uplate",
+    "transferPurposeValue": "Podrška projektima sela Svrčuge",
+    "spendingTitle": "Na šta ide novac?",
+    "spendingItems": [
+      "Isključivo na projekte sela: rasvjeta, pa dalje redom",
+      "Svaki trošak javno objavljen, uz fotografije",
+      "Redovni izvještaji svim prijateljima sela"
+    ],
+    "back": "Nazad na početnu"
   },
-  "faq": {
-    "title": "Questions fréquentes",
-    "items": [
-      {
-        "q": "Le projet d'éclairage est-il terminé ?",
-        "a": "Non. La première phase est financée. Les mâts d'éclairage ont été achetés, et leur installation et leur raccordement sont prévus au plus tard d'ici octobre."
-      },
-      {
-        "q": "Pourquoi collectez-vous des adresses e-mail ?",
-        "a": "Pour rassembler, avant la campagne de financement participatif, les personnes qui veulent être les premières à recevoir le lien, à soutenir la campagne et à aider l'histoire à se répandre."
-      },
-      {
-        "q": "Pourquoi une petite donation de 5€ est-elle importante ?",
-        "a": "Parce que beaucoup de petites donations le premier jour peuvent aider la campagne à prendre de l'élan, à gagner en confiance et en visibilité."
-      },
-      {
-        "q": "Qu'est-ce qu'« Un café pour Svrčuge » ?",
-        "a": "Une donation symbolique de 5€ au lancement de la campagne de financement participatif. Ce n'est pas une grosse somme pour une personne, mais cela peut beaucoup compter si un grand nombre de gens s'y joignent."
-      },
-      {
-        "q": "Qu'est-ce que la Carte d'honneur de Svrčuge ?",
-        "a": "Un remerciement numérique personnalisé pour les amis du projet. Ce n'est pas un document juridique, mais un symbole d'appartenance et de gratitude."
-      },
-      {
-        "q": "Sera-t-il possible de faire un don depuis l'étranger ?",
-        "a": "Oui, l'objectif est que la campagne de financement participatif soit accessible aux personnes de la diaspora et aux donateurs internationaux."
-      },
-      {
-        "q": "Comment puis-je aider autrement qu'avec de l'argent ?",
-        "a": "Vous pouvez partager la campagne, nous mettre en relation avec des parrains, suggérer des fonds ou des ambassades, aider avec du matériel, de l'équipement, un soutien médiatique ou du bénévolat."
-      }
-    ]
+  "guestbookPage": {
+    "eyebrow": "Poruke selu",
+    "title": "Knjiga gostiju",
+    "intro": "Ostavi poruku selu, mještani čitaju svaku. Ovo je moderna verzija sveske sa seoske slave.",
+    "formCta": "Upiši se u knjigu",
+    "formSuccess": "Hvala na poruci!",
+    "formSuccessNote": "Tvoja poruka je upisana ispod.",
+    "namePlaceholder": "Tvoje ime ili grad",
+    "textPlaceholder": "Poruka selu...",
+    "submitLabel": "Pošalji poruku",
+    "submitting": "Šalje se...",
+    "back": "Nazad na početnu"
+  },
+  "media": {
+    "eyebrow": "Pisali su o nama",
+    "title": "Svrčuge u medijima",
+    "intro": "Kampanja je imala 10.250.000 pregleda na društvenim mrežama i više od 190 objava u regionalnim medijima. Ovdje skupljamo sve što je objavljeno.",
+    "videoTitle": "Video prilozi",
+    "textTitle": "Tekstovi",
+    "pressContact": "Za novinare",
+    "pressText": "Radiš priču o Svrčugama? Javi se: fotografije, brojke i Jovica su na raspolaganju.",
+    "visit": "Otvori članak",
+    "back": "Nazad na početnu",
+    "navLabel": "Mediji",
+    "more": "Još objava u medijima",
+    "note": "Pošalji mi YouTube linkove i linkove tekstova da zamijenim primjere."
+  },
+  "donors": {
+    "eyebrow": "Zid zahvalnosti",
+    "pageTitle": "Prijatelji Svrčuga",
+    "pageSubtitle": "Svako ime na ovom zidu je neko ko je častio selo kafom ili podržao projekat. Hvala vam, selo pamti.",
+    "statFriends": "200+ prijatelja",
+    "statCountries": "24 zemlje",
+    "statContinents": "4 kontinenta",
+    "searchPlaceholder": "Pretraži po imenu",
+    "noResults": "Nema imena za tu pretragu.",
+    "addCta": "Dodaj svoje ime na zid",
+    "addText": "Časti selo kafom od €5 i tvoje ime staje uz ova iznad.",
+    "addBtn": "Častim kafu (€5)",
+    "back": "Nazad na početnu",
+    "navLabel": "Prijatelji Svrčuga",
+    "statDonors": "Donatora",
+    "statCountriesNum": "Država",
+    "statContinentsNum": "Kontinenta",
+    "formName": "Ime i prezime",
+    "formNamePlaceholder": "Kako si se potpisao/la pri doniranju",
+    "formEmail": "Email",
+    "formNote": "Napomena (opciono)",
+    "formNotePlaceholder": "Kada si donirao/la, platforma, iznos…",
+    "formSubmit": "Pošalji prijavu",
+    "formSending": "Šalje se…",
+    "formError": "Greška pri slanju. Pokušaj ponovo.",
+    "formSuccess": "Hvala, primili smo tvoju poruku!",
+    "formSuccessNote": "Provjerit ćemo i dodati te na spisak.",
+    "notOnList": "Nijesam na spisku",
+    "notOnListEyebrow": "Nijesam na spisku?",
+    "notOnListText": "Ponekad platforma za donacije ne proslijedi sve podatke. Javi nam se i provjerit ćemo.",
+    "countLabel": "prijatelja Svrčuga",
+    "countOf": "od"
+  },
+  "privacy": {
+    "title": "Politika privatnosti",
+    "metaTitle": "Politika privatnosti, Svrčuge",
+    "intro": "Tvoj email koristimo isključivo da ti javimo novosti iz sela: nove projekte, putovanja i početak kampanje. Ne dijelimo ga ni sa kim i možeš se odjaviti jednim klikom u svakoj poruci.",
+    "p1": "Imena prijatelja Svrčuga objavljujemo na zidu zahvalnosti samo uz izričitu saglasnost.",
+    "p2": "U svakom trenutku možeš tražiti izmjenu ili brisanje svojih podataka na zdravo@svrcuge.me.",
+    "h_collect": "Koje podatke prikupljamo",
+    "p_collect": "Kada ostavljaš email, prikupljamo: ime (opciono), email adresu, grad i državu (opciono) i jezik.",
+    "h_why": "Zašto prikupljamo podatke",
+    "p_why": "Email koristimo isključivo da te obavijestimo o novostima iz sela. Ne prodajemo i ne dijelimo podatke trećim stranama.",
+    "h_consent": "Saglasnost i odjava",
+    "p_consent": "Podatke čuvamo na osnovu tvoje saglasnosti. U svakom trenutku se možeš odjaviti putem linka u svakoj poruci ili nam pisati na",
+    "h_retention": "Čuvanje podataka",
+    "p_retention": "Podatke čuvamo dok traje projekat ili dok ne zatražiš brisanje.",
+    "h_contact": "Kontakt",
+    "p_contact": "Za sva pitanja o privatnosti piši nam na"
+  },
+  "terms": {
+    "title": "Uslovi i napomene",
+    "metaTitle": "Uslovi i napomene, Svrčuge",
+    "intro": "Podrška projektima sela (uključujući simboličnu kafu od €5) je dobrovoljan doprinos, a ne kupovina proizvoda ili usluge. Svi prikupljeni doprinosi idu isključivo na projekte sela, uz javne izvještaje o trošenju.",
+    "p1": "Sadržaj sajta (fotografije, tekstovi, snimci) pripada zajednici Svrčuga; za preuzimanje u medijske svrhe javi se na zdravo@svrcuge.me.",
+    "h_status": "Status projekta",
+    "p_status": "Prva faza (rasvjeta) je finansirana i u realizaciji. Stubovi za rasvjetu su kupljeni, a postavljanje planirano najkasnije do oktobra.",
+    "h_donations": "Donacije i podrška",
+    "p_donations": "Podrška je dobrovoljna. Sredstva idu isključivo na projekte sela, uz javne izvještaje.",
+    "h_contact": "Kontakt",
+    "p_contact": "Za sva pitanja piši nam na"
   },
   "footer": {
-    "tagline": "Svrčuge, un village dans l'arrière-pays de Herceg Novi qui revient sur la carte. De la lumière à la vie.",
-    "linksTitle": "Site",
-    "legalTitle": "Mentions légales",
-    "privacy": "Politique de confidentialité",
-    "terms": "Conditions / Avertissement",
-    "cookies": "Cookies",
-    "languagesTitle": "Langue",
-    "socialTitle": "Suivez-nous",
-    "contactTitle": "Contact",
-    "rights": "Tous droits réservés.",
-    "madeWith": "Fait avec amour pour Svrčuge."
+    "tagline": "Svrčuge, selo u zaleđu Herceg Novog koje se vraća na mapu. Od svjetla do života.",
+    "privacy": "Politika privatnosti",
+    "terms": "Uslovi korišćenja",
+    "rights": "Sva prava zadržana."
   },
   "form": {
-    "name": "Nom",
-    "namePlaceholder": "Ton nom",
+    "name": "Ime",
+    "namePlaceholder": "Tvoje ime",
     "email": "E-mail",
-    "emailPlaceholder": "vous@exemple.com",
-    "city": "Ville",
-    "cityPlaceholder": "Ta ville",
-    "country": "Pays",
-    "countryPlaceholder": "Ton pays",
-    "language": "Langue",
-    "optional": "facultatif",
-    "consentCampaign": "Je veux être prévenu(e) quand la campagne démarre",
-    "consentFirstCircle": "Je veux faire partie du premier cercle des amis de Svrčuge",
-    "consentShare": "Je peux partager la campagne quand elle démarre",
-    "consentGdpr": "J'accepte que Svrčuge conserve mon e-mail afin de m'informer au sujet de la campagne. Je peux me désinscrire à tout moment.",
-    "submit": "Préviens-moi quand la campagne démarre",
-    "submitFirstCircle": "J'entre dans le premier cercle",
-    "submitting": "Envoi...",
-    "successTitle": "Merci !",
-    "success": "Tu es entré(e) dans le premier cercle des amis de Svrčuge. Nous te contacterons dès que la campagne démarrera.",
-    "error": "Quelque chose n'a pas fonctionné. Réessaie dans un instant.",
-    "errorEmail": "Saisis une adresse e-mail valide.",
-    "errorConsent": "Ton consentement est nécessaire pour que nous puissions te prévenir.",
-    "privacyNote": "Nous utilisons ton e-mail uniquement pour t'informer au sujet de la campagne. Sans spam."
-  },
-  "partnerForm": {
-    "title": "Proposition de collaboration",
-    "name": "Nom et prénom",
-    "organization": "Organisation",
-    "email": "E-mail",
-    "phone": "Téléphone",
-    "type": "Type de collaboration",
-    "types": [
-      "Parrainage",
-      "Donation",
-      "Fondation / subvention",
-      "Soutien médiatique",
-      "Aide bénévole",
-      "Matériel / équipement",
-      "Autre"
-    ],
-    "message": "Message",
-    "messagePlaceholder": "Dites-nous comment vous aimeriez soutenir Svrčuge...",
-    "submit": "Envoyer la proposition de collaboration",
-    "submitting": "Envoi...",
-    "success": "Merci ! Votre proposition de collaboration nous est bien parvenue. Nous vous répondrons bientôt.",
-    "error": "Quelque chose n'a pas fonctionné. Veuillez réessayer."
+    "emailPlaceholder": "ti@primjer.com",
+    "city": "Grad",
+    "cityPlaceholder": "Tvoj grad",
+    "country": "Država",
+    "countryPlaceholder": "Tvoja država",
+    "language": "Jezik",
+    "optional": "opciono",
+    "consentCampaign": "Želim da dobijem novosti iz sela",
+    "consentFirstCircle": "Želim da budem dio zajednice prijatelja Svrčuga",
+    "consentShare": "Mogu podijeliti kampanju kad bude aktivna",
+    "consentGdpr": "Saglasan/na sam da Svrčuge čuvaju moj e-mail radi obavještavanja o novostima. Mogu se odjaviti u svakom trenutku.",
+    "submit": "Javljajte mi novosti",
+    "submitFirstCircle": "Budi uz selo",
+    "submitting": "Šaljem...",
+    "successTitle": "Hvala!",
+    "success": "Na listi si. Javljamo se čim bude novosti iz sela.",
+    "error": "Nešto nije u redu. Pokušaj ponovo za koji trenutak.",
+    "errorEmail": "Unesi ispravnu e-mail adresu.",
+    "errorConsent": "Potrebna je saglasnost da bismo te mogli obavijestiti.",
+    "privacyNote": "Tvoj e-mail koristimo isključivo da te obavijestimo o novostima. Bez spama."
   },
   "thankYou": {
-    "title": "Merci ! Tu es entré(e) dans le premier cercle des amis de Svrčuge.",
-    "text": "Nous t'enverrons une notification dès que la campagne de financement participatif démarrera. La plus grande aide sera alors de soutenir la campagne, ne serait-ce que symboliquement, et de la partager avec tes proches.",
-    "shareTitle": "Partage cette page",
-    "shareMessage": "Svrčuge prépare une nouvelle campagne de financement participatif, de l'éclairage à l'aire de jeux pour enfants, au marché et au chalet en rondins. Rejoins le premier cercle des amis du village.",
-    "backHome": "Retour à l'accueil"
+    "title": "Hvala! Na listi si.",
+    "text": "Javljamo ti se čim bude novosti iz sela. Svaka podjela priče dovede nekog ko po prvi put čuje za Svrčuge.",
+    "shareTitle": "Podijeli priču o selu",
+    "shareMessage": "Svrčuge — selo u zaleđu Herceg Novog koje se budi. Pratite svaki korak obnove.",
+    "backHome": "Nazad na početnu"
   },
   "share": {
     "facebook": "Facebook",
     "whatsapp": "WhatsApp",
     "viber": "Viber",
     "twitter": "X / Twitter",
-    "copy": "Copier le lien",
-    "copied": "Lien copié !",
-    "title": "Partagez l'histoire",
-    "intro": "Chaque partage apporte une nouvelle personne qui entend parler de Svrčuge pour la première fois."
+    "copy": "Kopiraj link",
+    "copied": "Link kopiran!",
+    "title": "Podijeli priču",
+    "intro": "Svaka podjela donosi novu osobu koja po prvi put čuje za Svrčuge."
   },
   "common": {
     "statusLabels": {
-      "done": "Terminé",
-      "in-progress": "Réalisation en cours",
-      "soon": "Bientôt",
-      "next": "Prochaine phase",
-      "planned": "Prévu"
+      "done": "Završeno",
+      "in-progress": "U toku",
+      "soon": "Uskoro",
+      "next": "Sljedeće",
+      "planned": "Planirano"
     }
-  },
-  "donors": {
-    "eyebrow": "Gratitude",
-    "pageTitle": "Amis de Svrčuge",
-    "pageSubtitle": "Ces personnes ont cru en l'idée et ont aidé à la concrétiser. Merci à tous du fond du cœur.",
-    "statDonors": "Donateurs",
-    "statCountries": "Pays",
-    "statContinents": "Continents",
-    "searchPlaceholder": "Rechercher par nom…",
-    "noResults": "Introuvable. Vérifiez l'orthographe ou signalez un don ci-dessous.",
-    "countLabel": "amis de Svrčuge",
-    "countOf": "sur",
-    "notOnList": "Je ne suis pas sur la liste",
-    "notOnListEyebrow": "Pas sur la liste ?",
-    "notOnListText": "Parfois, la plateforme de dons ne transmet pas toutes les données. Contactez-nous et nous vérifierons à partir des transactions.",
-    "formName": "Nom complet",
-    "formNamePlaceholder": "Comme vous vous êtes signé lors du don",
-    "formEmail": "Email",
-    "formNote": "Note (optionnel)",
-    "formNotePlaceholder": "Quand vous avez donné, plateforme, montant…",
-    "formSubmit": "Envoyer la demande",
-    "formSending": "Envoi…",
-    "formError": "Erreur d'envoi. Veuillez réessayer.",
-    "formSuccess": "Merci, nous avons reçu votre message !",
-    "formSuccessNote": "Nous vérifierons et vous ajouterons à la liste.",
-    "back": "Retour à l'accueil",
-    "navLabel": "Donateurs"
-  },
-  "privacy": {
-    "title": "Politique de confidentialité",
-    "metaTitle": "Politique de confidentialité, Svrčuge",
-    "intro": "Cette politique explique comment le projet Svrčuge collecte et utilise les données personnelles que vous laissez via les formulaires de ce site.",
-    "h_collect": "Quelles données nous collectons",
-    "p_collect": "Lorsque vous vous inscrivez, nous collectons: prénom (optionnel), adresse e-mail, ville et pays (optionnel) et langue. Pour le formulaire partenaire, nous collectons aussi le nom de l'organisation, le téléphone et votre message.",
-    "h_why": "Pourquoi nous collectons des données",
-    "p_why": "Nous utilisons votre adresse e-mail uniquement pour vous informer du lancement de la campagne et vous envoyer des nouvelles importantes. Nous ne vendons ni ne partageons vos données avec des tiers à des fins commerciales.",
-    "h_consent": "Consentement et désinscription",
-    "p_consent": "Nous conservons les données sur la base de votre consentement. Vous pouvez vous désinscrire à tout moment via le lien en bas de chaque e-mail ou nous écrire à",
-    "h_retention": "Conservation des données",
-    "p_retention": "Nous conservons les données aussi longtemps que dure le projet ou jusqu'à ce que vous demandiez leur suppression. Vous pouvez demander l'accès, la correction ou la suppression de vos données conformément aux réglementations en vigueur.",
-    "h_contact": "Contact",
-    "p_contact": "Pour toute question relative à la confidentialité, écrivez-nous à"
-  },
-  "terms": {
-    "title": "Conditions et remarques",
-    "metaTitle": "Conditions et remarques, Svrčuge",
-    "intro": "Ce site est une plateforme d'information et de campagne pour le projet de développement du village de Svrčuge. Il sert à rassembler des personnes intéressées avant le lancement de la campagne.",
-    "h_status": "Statut du projet",
-    "p_status": "La première phase (éclairage) est financée et en cours. Les poteaux ont été achetés et l'installation est prévue au plus tard en octobre. Les phases suivantes dépendent du succès de la future campagne et des capacités des organisateurs.",
-    "h_card": "Carte d'identité honorifique de Svrčuge",
-    "p_card": "La carte d'identité honorifique de Svrčuge est un remerciement numérique symbolique et un signe d'appartenance au projet. Ce n'est pas un document officiel, juridique, financier ou d'identification. Les titulaires peuvent bénéficier d'invitations spéciales et d'avantages symboliques. Nous ne promettons pas de réductions fixes ou garanties.",
-    "h_donations": "Dons",
-    "p_donations": "À ce stade, le site ne collecte pas de dons. Lorsque la campagne débutera, les dons se feront via la plateforme officielle (ex. GoFundMe) selon ses conditions.",
-    "h_contact": "Contact",
-    "p_contact": "Pour toute question, écrivez-nous à"
-  },
-  "mapSection": {
-    "eyebrow": "Localisation",
-    "title": "Où se trouve Svrčuge",
-    "intro": "Svrčuge se trouve dans l'arrière-pays rocheux de Herceg Novi, à 10 km du centre-ville et à 15 km de Dubrovnik. Un petit village facilement accessible.",
-    "caption": "Cliquez sur la carte pour une vue interactive"
-  },
-  "socialSection": {
-    "eyebrow": "Suivez l'histoire",
-    "title": "L'histoire continue au-delà de ce site",
-    "intro": "Actualités quotidiennes, photos et vidéos de première main sur Instagram et TikTok.",
-    "igFollowers": "16 000 abonnés sur Instagram",
-    "igCta": "Suivre @svrcuge.me",
-    "ttFollowers": "TikTok",
-    "ttCta": "Suivre sur TikTok"
   }
 }

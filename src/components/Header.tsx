@@ -10,14 +10,28 @@ import { SOCIAL } from "@/lib/config";
 export default function Header({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const [open, setOpen] = useState(false);
   const home = `/${locale}`;
+  const n = dict.nav;
 
-  const links = [
-    { href: `${home}/prica`, label: dict.nav.story },
-    { href: `${home}#plan`, label: dict.nav.plan },
-    { href: `${home}#prvi-krug`, label: dict.nav.firstCircle },
-    { href: `${home}/mediji`, label: dict.media.navLabel },
-    { href: `${home}#partneri`, label: dict.nav.partners },
-    { href: `${home}/donatori`, label: dict.donorWall.navLabel },
+  const desktopLinks = [
+    { href: `${home}/prica`, label: n.story },
+    { href: `${home}/novosti`, label: n.news },
+    { href: `${home}/dogadjaji`, label: n.events },
+    { href: `${home}/posjeti`, label: n.visit },
+    { href: `${home}/prodavnica`, label: n.shop },
+  ];
+
+  const mobileLinks = [
+    { href: home, label: "Početna" },
+    { href: `${home}/prica`, label: n.story },
+    { href: `${home}/novosti`, label: n.news },
+    { href: `${home}/dogadjaji`, label: n.events },
+    { href: `${home}/istorija`, label: n.history },
+    { href: `${home}/posjeti`, label: n.visit },
+    { href: `${home}/projekti`, label: n.projects },
+    { href: `${home}/donatori`, label: n.friends },
+    { href: `${home}/mediji`, label: n.media },
+    { href: `${home}/prodavnica`, label: n.shop },
+    { href: `${home}/knjiga`, label: n.guestbook },
   ];
 
   return (
@@ -27,7 +41,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
         style={{ borderBottom: "3px double #452D18" }}
       >
         <div className="container-content flex items-center justify-between gap-4 py-3.5">
-          {/* Logo + naziv */}
+          {/* Logo */}
           <Link
             href={home}
             className="flex items-center gap-2.5 text-ink"
@@ -40,7 +54,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-5 lg:flex">
-            {links.map((l) => (
+            {desktopLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
@@ -53,12 +67,6 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
 
           <div className="flex items-center gap-2.5">
             <LanguageSwitcher current={locale} />
-            <Link
-              href={`${home}#prvi-krug`}
-              className="hidden btn-primary !px-4 !py-2 !text-xs sm:inline-flex"
-            >
-              {dict.nav.follow}
-            </Link>
             {/* Hamburger */}
             <button
               type="button"
@@ -92,16 +100,16 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
           </div>
 
           <nav className="mt-6 flex flex-col overflow-y-auto">
-            {links.map((l, i) => (
+            {mobileLinks.map((l, i) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-cream/20 py-3 text-cream transition hover:text-amber"
+                className="py-3 text-cream transition hover:text-amber"
                 style={{
                   fontFamily: "var(--font-alfa), Georgia, serif",
                   fontSize: "20px",
-                  borderBottom: i < links.length - 1 ? "1px dashed rgba(246,235,211,0.3)" : "none",
+                  borderBottom: i < mobileLinks.length - 1 ? "1px dashed rgba(246,235,211,0.3)" : "none",
                 }}
               >
                 {l.label}
@@ -109,7 +117,6 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
             ))}
           </nav>
 
-          {/* Jezički birač u mobu */}
           <div className="mt-6 flex flex-wrap gap-2">
             {LOCALES.map((loc) => (
               <Link

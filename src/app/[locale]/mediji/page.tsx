@@ -54,7 +54,6 @@ export default async function MediaPage({
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
   const m = dict.media;
-  const r = dict.reach;
 
   // Tačno 6 članaka iz najpopularnijih medija ide sa slikom; svi ostali u tabeli.
   const FEATURED_URLS = new Set([
@@ -80,8 +79,13 @@ export default async function MediaPage({
           </div>
 
           {/* Brojke */}
-          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-6 rounded-3xl bg-gradient-to-br from-ink to-[#5A4327] p-8 text-center text-cream lg:grid-cols-4">
-            {r.items.map((it, i) => (
+          <div className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-4 border-2 border-ink bg-ink p-8 text-center text-cream sm:grid-cols-4" style={{ borderRadius: "6px" }}>
+            {[
+              { value: "10.250.000+", label: "pregleda" },
+              { value: "190+", label: "objava u medijima" },
+              { value: "24", label: "zemlje" },
+              { value: "200+", label: "na dočeku" },
+            ].map((it, i) => (
               <div key={i}>
                 <div className="font-display text-3xl font-extrabold text-amber sm:text-4xl">{it.value}</div>
                 <div className="mt-1 text-xs font-semibold text-cream/80">{it.label}</div>
