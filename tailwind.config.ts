@@ -8,32 +8,40 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Topla, ilustrativna paleta — "od svjetla do života"
-        cream: "#FFF8EC", // pozadina
-        sand: "#FBEFD8", // alt sekcije
-        ink: "#3A2A18", // glavni tekst (topla tamno-smeđa)
-        muted: "#7A6A55", // sekundarni tekst
-        amber: "#F2A413", // svjetlo / primarni akcent
-        "amber-deep": "#E0860A",
-        terracotta: "#C9603F", // toplina, krov brvnare
-        forest: "#4C8B5B", // priroda / selo
-        "forest-deep": "#3C6F49",
-        sky: "#6FB3D2", // nebo / vedrina
-        line: "#EADBC2",
+        // Nova paleta — Claude Design (papir, braon, narandžasta)
+        cream: "#F6EBD3",         // papir — pozadina stranice
+        sand: "#FBF3E0",          // svjetliji papir — karte
+        "paper-light": "#EFDFC0", // još svjetliji — sekcije
+        ink: "#452D18",           // tamno braon — primarni tekst
+        muted: "#7A5B3D",         // srednji braon — sekundarni tekst
+        amber: "#E0A83A",         // senf/žuta — bedževi, statusne oznake
+        "amber-deep": "#D96C2C",  // narandžasta — primarni akcent, hover, CTA
+        accent: "#A5551F",        // akcenat tamni — linkovi, labele
+        terracotta: "#C9603F",    // terrakota
+        forest: "#55704F",        // zelena — završeno/uspješno
+        "forest-deep": "#3E6645",
+        sky: "#6FB3D2",
+        line: "#C0A882",          // topla granica
       },
       fontFamily: {
-        sans: ["var(--font-nunito)", "system-ui", "sans-serif"],
-        display: ["var(--font-baloo)", "var(--font-nunito)", "system-ui", "sans-serif"],
+        sans: ["var(--font-zilla)", "Georgia", "serif"],
+        display: ["var(--font-alfa)", "Georgia", "serif"],
       },
       borderRadius: {
+        sm: "4px",
+        DEFAULT: "4px",
+        md: "6px",
+        lg: "8px",
         xl: "1rem",
         "2xl": "1.5rem",
         "3xl": "2rem",
+        full: "9999px",
       },
       boxShadow: {
-        soft: "0 12px 40px -16px rgba(58, 42, 24, 0.18)",
-        card: "0 10px 30px -12px rgba(58, 42, 24, 0.15)",
-        glow: "0 18px 50px -18px rgba(242, 164, 19, 0.45)",
+        // Offset shadow — vintage/print stil
+        card: "3px 3px 0 rgba(69, 45, 24, 0.35)",
+        soft: "5px 5px 0 rgba(69, 45, 24, 0.20)",
+        glow: "0 0 0 3px rgba(224, 168, 58, 0.40)",
       },
       maxWidth: {
         content: "1180px",

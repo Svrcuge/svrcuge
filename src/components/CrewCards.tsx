@@ -25,11 +25,13 @@ function SportCard({
 }) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl shadow-card ring-1 ring-amber/20 transition-transform duration-300 hover:-translate-y-1 hover:ring-amber/50 ${
-        featured ? "aspect-[3/4]" : "aspect-[3/4]"
-      }`}
+      className="group relative overflow-hidden aspect-[3/4] transition-transform duration-300 hover:-translate-y-0.5"
+      style={{
+        border: "2px solid #C0A882",
+        borderRadius: "4px",
+        boxShadow: "3px 3px 0 rgba(246,235,211,0.15)",
+      }}
     >
-      {/* Photo */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/putnici/${num}.webp`}
@@ -37,19 +39,20 @@ function SportCard({
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
       />
-
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/30 to-transparent" />
 
-      {/* Top-right number badge */}
-      <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-amber text-xs font-black text-ink shadow-md">
+      {/* Number badge */}
+      <div
+        className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center bg-amber text-xs font-black text-ink border border-ink/30"
+        style={{ borderRadius: "50%" }}
+      >
         {num}
       </div>
 
       {/* Name at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 p-4">
+      <div className="absolute bottom-0 left-0 right-0 p-3">
         {featured && (
-          <div className="mb-1 text-[10px] font-bold uppercase tracking-widest text-amber">
+          <div className="mb-1 text-[9.5px] font-bold uppercase tracking-[0.16em] text-amber">
             ✦ Kapetan ekspedicije
           </div>
         )}
@@ -60,16 +63,9 @@ function SportCard({
         >
           {name}
         </div>
-        {!featured && (
-          <div className="mt-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber/80">
-            Pariz 2026
-          </div>
-        )}
-        {featured && (
-          <div className="mt-1 text-sm font-semibold uppercase tracking-wide text-amber/80">
-            Pariz · April 2026
-          </div>
-        )}
+        <div className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-amber/80">
+          Pariz 2026
+        </div>
       </div>
     </div>
   );
@@ -80,34 +76,36 @@ export default function CrewCards({ dict }: { dict: Dictionary }) {
   const [jovica, ...rest] = CREW;
 
   return (
-    <section className="bg-ink py-16 sm:py-20">
+    <section className="py-16 sm:py-20" style={{ background: "#452D18", borderTop: "3px double #C0A882" }}>
       <div className="container-content">
-        {/* Section header */}
+        {/* Header */}
         <div className="mb-10 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-amber/15 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-amber">
+          <div className="text-[10.5px] font-bold uppercase tracking-[0.18em] text-amber mb-2">
             ✦ {c.eyebrow}
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold text-cream sm:text-4xl">
+          </div>
+          <h2
+            className="font-display text-3xl text-cream sm:text-4xl"
+          >
             {c.title}
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-cream/70">{c.subtitle}</p>
+          <p className="mx-auto mt-3 max-w-xl text-cream/70 text-sm">{c.subtitle}</p>
         </div>
 
-        {/* Jovica — featured at top, centered */}
+        {/* Jovica featured */}
         <div className="mx-auto mb-8 max-w-xs sm:max-w-sm">
           <SportCard num={jovica.num} name={jovica.name} featured />
         </div>
 
-        {/* Decorative divider */}
+        {/* Divider */}
         <div className="mb-8 flex items-center gap-4">
           <div className="h-px flex-1 bg-amber/20" />
-          <span className="text-xs font-bold uppercase tracking-widest text-amber/50">
+          <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-amber/50">
             i još 10 sudionika
           </span>
           <div className="h-px flex-1 bg-amber/20" />
         </div>
 
-        {/* Grid of 10 */}
+        {/* Grid 10 */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {rest.map((m) => (
             <SportCard key={m.num} num={m.num} name={m.name} />

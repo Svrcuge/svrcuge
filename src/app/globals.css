@@ -17,14 +17,18 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Justify na svim paragrafima u sadržaju (naslovi su h1-h4, ne diraju se).
-   Niska specifičnost: namjerno centriran tekst (text-center klasa) ostaje
-   centriran jer Tailwind utility pobjeđuje ovo pravilo. */
 @layer base {
   main p,
   article p,
   footer p {
     text-align: justify;
+  }
+
+  /* Alfa Slab One uppercase za sve naslove font-display */
+  h1.font-display,
+  h2.font-display,
+  h3.font-display {
+    letter-spacing: 0.01em;
   }
 }
 
@@ -33,53 +37,93 @@ body {
     @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
   }
 
+  /* Sekcija — koristi double border kao u Claude Design */
   .section {
-    @apply border-t border-line py-16 sm:py-20 lg:py-24;
+    @apply border-t-2 border-line py-16 sm:py-20 lg:py-24;
   }
 
+  /* Eyebrow labela */
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full bg-amber/15 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-amber-deep;
+    @apply inline-block text-xs font-bold uppercase tracking-[0.18em] text-accent;
   }
 
+  /* Dugmad — novi stil: solid border + flat offset shadow */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-bold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 border-2 border-ink px-5 py-3 text-sm font-bold uppercase tracking-wide transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-60;
+    font-family: var(--font-alfa), Georgia, serif;
+    border-radius: 4px;
   }
 
+  /* Primarno dugme: tamno braon */
   .btn-primary {
-    @apply btn bg-amber text-ink shadow-glow hover:bg-amber-deep hover:-translate-y-0.5;
+    @apply btn bg-ink text-cream hover:bg-amber-deep hover:border-amber-deep;
+    box-shadow: 3px 3px 0 rgba(69, 45, 24, 0.35);
   }
 
+  /* Sekundarno dugme: outlined */
   .btn-secondary {
-    @apply btn border-2 border-ink/15 bg-white/70 text-ink hover:border-ink/30 hover:bg-white;
+    @apply btn bg-cream text-ink hover:bg-ink hover:text-cream;
+    box-shadow: 3px 3px 0 rgba(69, 45, 24, 0.20);
   }
 
-  .btn-forest {
-    @apply btn bg-forest text-white hover:bg-forest-deep hover:-translate-y-0.5;
+  /* Narandžasto dugme za kafu/akcent */
+  .btn-accent {
+    @apply btn bg-amber-deep border-ink text-cream hover:bg-accent;
+    box-shadow: 3px 3px 0 rgba(69, 45, 24, 0.35);
   }
 
+  /* Kartica — solid border + offset shadow (vintage print) */
   .card {
-    @apply rounded-3xl border border-line bg-white/80 p-6 shadow-card backdrop-blur-sm;
+    @apply border-2 border-ink bg-sand p-5 sm:p-6;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0 rgba(69, 45, 24, 0.30);
   }
 
   .input {
-    @apply w-full rounded-2xl border border-line bg-white px-4 py-3 text-ink placeholder:text-muted/60 outline-none transition focus:border-amber focus:ring-2 focus:ring-amber/30;
+    @apply w-full border-2 border-ink bg-white px-4 py-3 text-ink placeholder:text-muted/60 outline-none transition focus:border-amber-deep focus:ring-0;
+    font-family: var(--font-zilla), Georgia, serif;
+    border-radius: 4px;
   }
 
   .label {
-    @apply mb-1.5 block text-sm font-semibold text-ink/80;
+    @apply mb-1.5 block text-sm font-semibold text-ink;
   }
 
-  /* Stilizovani select sa toplom strelicom (umjesto ružnog native) */
   .select {
     @apply input cursor-pointer appearance-none bg-no-repeat pr-11 font-semibold;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E0860A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D96C2C' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
     background-position: right 0.85rem center;
     background-size: 1.15rem;
   }
 
-  /* Placeholder za ilustracije dok ne stignu prave */
   .illu-placeholder {
-    @apply flex items-center justify-center rounded-3xl border-2 border-dashed border-amber/40 bg-gradient-to-br from-sand to-amber/10 text-center text-sm font-semibold text-amber-deep/70;
+    @apply flex items-center justify-center border-2 border-dashed border-amber/60 bg-sand text-center text-sm font-semibold text-accent;
+    border-radius: 6px;
+  }
+
+  /* Chip/bedž za status */
+  .badge-done {
+    @apply border border-forest bg-forest text-cream text-[10px] font-bold uppercase tracking-wider px-2 py-0.5;
+    border-radius: 3px;
+  }
+  .badge-progress {
+    @apply border border-ink bg-amber text-ink text-[10px] font-bold uppercase tracking-wider px-2 py-0.5;
+    border-radius: 3px;
+  }
+  .badge-soon {
+    @apply border border-ink bg-cream text-ink text-[10px] font-bold uppercase tracking-wider px-2 py-0.5;
+    border-radius: 3px;
+  }
+  .badge-planned {
+    @apply border border-line text-muted text-[10px] font-bold uppercase tracking-wider px-2 py-0.5;
+    border-radius: 3px;
+  }
+
+  /* Statistički chip (rotirana kartica u stilu mockupa) */
+  .stat-chip {
+    @apply border-2 border-ink bg-sand px-3 py-2 text-center;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 rgba(69, 45, 24, 0.25);
   }
 }
 
@@ -87,13 +131,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-  /* Topla "papir" tekstura kroz suptilni gradient */
-  .bg-paper {
-    background-image: radial-gradient(
-        circle at 20% 10%,
-        rgba(242, 164, 19, 0.06),
-        transparent 40%
-      ),
-      radial-gradient(circle at 85% 0%, rgba(111, 179, 210, 0.07), transparent 35%);
+
+  .font-display-heading {
+    font-family: var(--font-alfa), Georgia, serif;
+    letter-spacing: 0.02em;
+  }
+
+  /* Double border — footer/header stil */
+  .border-double-ink {
+    border-bottom: 3px double theme("colors.ink");
   }
 }

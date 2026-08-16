@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Nunito, Baloo_2 } from "next/font/google";
+import { Zilla_Slab, Alfa_Slab_One } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/config";
 
-const nunito = Nunito({
-  subsets: ["latin", "latin-ext", "cyrillic"],
-  weight: ["400", "600", "700", "800"],
-  variable: "--font-nunito",
+const zillaSlab = Zilla_Slab({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  variable: "--font-zilla",
   display: "swap",
 });
 
-const baloo = Baloo_2({
+const alfaSlabOne = Alfa_Slab_One({
   subsets: ["latin", "latin-ext"],
-  weight: ["600", "700", "800"],
-  variable: "--font-baloo",
+  weight: "400",
+  variable: "--font-alfa",
   display: "swap",
 });
 
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sr">
-      <body className={`${nunito.variable} ${baloo.variable} font-sans bg-paper`}>
+      <body className={`${zillaSlab.variable} ${alfaSlabOne.variable} font-sans bg-cream text-ink`}>
         {children}
       </body>
     </html>

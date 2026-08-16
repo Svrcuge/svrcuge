@@ -17,7 +17,7 @@ export default function StickyCTA({ dict, locale }: { dict: Dictionary; locale: 
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-30 border-t border-line bg-cream/95 p-3 backdrop-blur transition-transform duration-300 lg:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-30 bg-cream p-3 transition-transform duration-300 lg:hidden ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
     >

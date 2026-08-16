@@ -13,92 +13,67 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
     { href: `${home}#prvi-krug`, label: dict.nav.firstCircle },
     { href: `${home}/mediji`, label: dict.media.navLabel },
     { href: `${home}#partneri`, label: dict.nav.partners },
-    { href: `${home}#transparentnost`, label: dict.nav.transparency },
+    { href: `${home}/donatori`, label: dict.donorWall.navLabel },
+    { href: `${home}/privatnost`, label: f.privacy },
+    { href: `${home}/uslovi`, label: f.terms },
   ];
 
   return (
-    <footer className="border-t border-line bg-ink text-cream/90">
-      <div className="container-content grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="sm:col-span-2 lg:col-span-1">
-          <div className="flex items-center gap-2 font-display text-xl font-extrabold text-cream">
-            <span className="flex h-10 w-10 shrink-0 overflow-hidden rounded-xl bg-amber p-0.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo/logo-black.png" alt="Svrčuge" className="h-full w-full object-contain" />
-            </span>
-            Svrčuge
-          </div>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/70">{f.tagline}</p>
+    <footer className="bg-paper-light" style={{ borderTop: "3px double #452D18" }}>
+      <div className="container-content py-12">
+        {/* Logo + tagline */}
+        <div className="mb-8 text-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo/logo-black.png"
+            alt="Svrčuge"
+            className="mx-auto mb-3"
+            style={{ height: "80px" }}
+          />
+          <p className="text-sm text-muted">{f.tagline}</p>
         </div>
 
-        <div>
-          <h4 className="font-display text-sm font-bold uppercase tracking-wide text-amber">{f.linksTitle}</h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            {siteLinks.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-cream/75 transition hover:text-amber">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Linkovi */}
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm mb-6">
+          {siteLinks.map((l) => (
+            <Link key={l.href} href={l.href} className="text-muted transition hover:text-amber-deep">
+              {l.label}
+            </Link>
+          ))}
         </div>
 
-        <div>
-          <h4 className="font-display text-sm font-bold uppercase tracking-wide text-amber">{f.legalTitle}</h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <Link href={`${home}/privatnost`} className="text-cream/75 transition hover:text-amber">
-                {f.privacy}
-              </Link>
-            </li>
-            <li>
-              <Link href={`${home}/uslovi`} className="text-cream/75 transition hover:text-amber">
-                {f.terms}
-              </Link>
-            </li>
-          </ul>
-          <h4 className="mt-6 font-display text-sm font-bold uppercase tracking-wide text-amber">{f.contactTitle}</h4>
-          <a href={`mailto:${SOCIAL.email}`} className="mt-3 block text-sm text-cream/75 transition hover:text-amber">
-            {SOCIAL.email}
-          </a>
+        {/* Jezici */}
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
+          {LOCALES.map((loc) => (
+            <Link
+              key={loc}
+              href={`/${loc}`}
+              className={`border px-3 py-0.5 text-xs font-bold transition ${
+                loc === locale
+                  ? "border-ink bg-ink text-cream"
+                  : "border-ink text-ink hover:bg-ink hover:text-cream"
+              }`}
+              style={{ borderRadius: "999px" }}
+            >
+              {LOCALE_LABELS[loc]}
+            </Link>
+          ))}
         </div>
 
-        <div>
-          <h4 className="font-display text-sm font-bold uppercase tracking-wide text-amber">{f.languagesTitle}</h4>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {LOCALES.map((loc) => (
-              <li key={loc}>
-                <Link
-                  href={`/${loc}`}
-                  className={`rounded-full border px-3 py-1 text-xs font-bold transition ${
-                    loc === locale ? "border-amber bg-amber/15 text-amber" : "border-cream/20 text-cream/70 hover:border-amber hover:text-amber"
-                  }`}
-                >
-                  {LOCALE_LABELS[loc]}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <h4 className="mt-6 font-display text-sm font-bold uppercase tracking-wide text-amber">{f.socialTitle}</h4>
-          <div className="mt-3 flex flex-wrap gap-3 text-sm">
-            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-cream/75 hover:text-amber">
-              Instagram
-            </a>
-            <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="text-cream/75 hover:text-amber">
-              Facebook
-            </a>
-            <a href={SOCIAL.tiktok} target="_blank" rel="noopener noreferrer" className="text-cream/75 hover:text-amber">
-              TikTok
-            </a>
-          </div>
-        </div>
-      </div>
+        {/* Social + kontakt */}
+        <p className="text-center text-xs text-muted">
+          <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-amber-deep">Instagram @svrcuge.me</a>
+          {" · "}
+          <a href={SOCIAL.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-amber-deep">TikTok</a>
+          {" · "}
+          <a href={`mailto:${SOCIAL.email}`} className="hover:text-amber-deep">{SOCIAL.email}</a>
+          <br />
+          Svrčuge · Crna Gora
+        </p>
 
-      <div className="border-t border-cream/10">
-        <div className="container-content flex flex-col items-center justify-between gap-2 py-5 text-xs text-cream/55 sm:flex-row">
-          <span>© {new Date().getFullYear()} Svrčuge. {f.rights}</span>
-          <span>{f.madeWith}</span>
-        </div>
+        <p className="mt-5 text-center text-xs text-muted/60">
+          © {new Date().getFullYear()} Svrčuge. {f.rights}
+        </p>
       </div>
     </footer>
   );

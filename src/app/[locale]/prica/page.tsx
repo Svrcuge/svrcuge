@@ -55,9 +55,7 @@ export default async function StoryPage({
             <div className="absolute inset-0 flex items-center">
               <div className="container-content">
                 <div className="max-w-2xl">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-amber px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-ink">
-                    ✦ {s.eyebrow}
-                  </span>
+                  <span className="eyebrow !text-amber">✦ {s.eyebrow}</span>
                   <h1 className="mt-4 font-display text-3xl font-extrabold leading-tight text-cream text-balance drop-shadow sm:text-4xl lg:text-5xl">
                     {s.title}
                   </h1>

@@ -9,8 +9,8 @@ import { SOCIAL, SITE_URL } from "@/lib/config";
 function Heading({ eyebrow, title }: { eyebrow?: string; title: string }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      {eyebrow && <span className="eyebrow mb-4">{eyebrow}</span>}
-      <h2 className="font-display text-3xl font-extrabold text-ink text-balance sm:text-4xl">{title}</h2>
+      {eyebrow && <div className="eyebrow mb-3 block">{eyebrow}</div>}
+      <h2 className="font-display text-3xl font-bold text-ink text-balance sm:text-4xl">{title}</h2>
     </div>
   );
 }
@@ -31,7 +31,7 @@ export function CrowdfundingSection({ dict, locale }: { dict: Dictionary; locale
         {/* Brojke */}
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {c.stats.map((s, i) => (
-            <div key={i} className="rounded-3xl border border-line bg-white/80 p-5 text-center shadow-card">
+            <div key={i} className="card text-center">
               <div className="font-display text-3xl font-extrabold text-amber-deep">{s.value}</div>
               <div className="mt-1 text-sm font-semibold text-muted">{s.label}</div>
             </div>
@@ -47,7 +47,7 @@ export function CrowdfundingSection({ dict, locale }: { dict: Dictionary; locale
         </div>
 
         {/* Šta dalje */}
-        <div className="mx-auto mt-14 max-w-2xl rounded-3xl bg-forest/10 p-7 text-center">
+        <div className="mx-auto mt-14 max-w-2xl border-2 border-forest bg-forest/10 p-7 text-center" style={{borderRadius:"6px"}}>
           <h3 className="font-display text-2xl font-bold text-forest-deep">{c.nextTitle}</h3>
           <p className="mx-auto mt-3 text-justify text-lg leading-relaxed text-ink/80">{rich(c.nextText)}</p>
         </div>
@@ -70,7 +70,7 @@ export function CrowdfundingSection({ dict, locale }: { dict: Dictionary; locale
         </div>
 
         {/* Poziv */}
-        <div className="mx-auto mt-10 max-w-2xl rounded-3xl bg-amber/10 p-6 text-center">
+        <div className="mx-auto mt-10 max-w-2xl border-2 border-ink bg-amber/10 p-6 text-center" style={{borderRadius:"6px"}}>
           <p className="text-justify text-lg leading-relaxed text-ink/80">{rich(c.note)}</p>
           <a href={`/${locale}#prvi-krug`} className="btn-primary mt-5">
             {c.cta}
@@ -97,7 +97,7 @@ export function StatusSection({ dict }: { dict: Dictionary }) {
             src="/illustrations/rasvjeta.webp"
             alt={s.title}
             loading="lazy"
-            className="w-full rounded-3xl border border-line shadow-card"
+            className="w-full border-2 border-ink shadow-card" style={{borderRadius:"6px"}}
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {s.cards.map((c, i) => (
@@ -114,7 +114,7 @@ export function StatusSection({ dict }: { dict: Dictionary }) {
           {GALLERY.map((src, i) => (
             <div
               key={i}
-              className={`aspect-[4/3] overflow-hidden rounded-2xl border border-line shadow-card ${
+              className={`aspect-[4/3] overflow-hidden border-2 border-ink shadow-card ${
                 i === 2 ? "col-span-2 sm:col-span-1" : ""
               }`}
             >
@@ -173,7 +173,7 @@ export function BuildSection({ dict }: { dict: Dictionary }) {
           {b.cards.map((c, i) => (
             <div
               key={i}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-card transition hover:-translate-y-1 hover:shadow-soft"
+              className="group flex flex-col overflow-hidden border-2 border-ink bg-sand shadow-card transition hover:shadow-soft" style={{borderRadius:"6px"}}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -225,10 +225,10 @@ export function VisionSection({ dict }: { dict: Dictionary }) {
 export function ReachSection({ dict }: { dict: Dictionary }) {
   const r = dict.reach;
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-ink to-[#5A4327] py-16 text-cream sm:py-20">
+    <section className="relative w-full overflow-hidden py-16 text-cream sm:py-20" style={{background:"#452D18", borderTop:"3px double #C0A882", borderBottom:"3px double #C0A882"}}>
       <div className="pointer-events-none absolute -right-10 -top-10 text-[12rem] opacity-10">✦</div>
       <div className="container-content relative text-center">
-        <span className="inline-flex items-center gap-2 rounded-full bg-amber px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-ink">
+        <span className="inline-block border-2 border-amber bg-amber/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-amber" style={{borderRadius:"3px"}}>
           ✦ {r.eyebrow}
         </span>
         <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl font-extrabold text-cream text-balance sm:text-4xl">
@@ -250,11 +250,11 @@ export function ReachSection({ dict }: { dict: Dictionary }) {
 
 /* ── Roadmap / plan razvoja ──────────────────────────────── */
 const STATUS_STYLES: Record<string, string> = {
-  done: "bg-forest text-white",
+  done: "bg-forest text-cream",
   "in-progress": "bg-amber text-ink",
-  soon: "bg-sky text-ink",
-  next: "bg-terracotta text-white",
-  planned: "bg-line text-ink/70",
+  soon: "bg-sand text-ink",
+  next: "bg-amber-deep text-cream",
+  planned: "bg-paper-light text-muted",
 };
 
 // Ikona po fazi: rasvjeta, kampanja, igralište, pijaca, konoba, događaji
@@ -268,16 +268,16 @@ export function Roadmap({ dict }: { dict: Dictionary }) {
       <div className="container-content">
         <Heading title={r.title} />
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">{r.intro}</p>
-        <ol className="relative mx-auto mt-12 max-w-3xl space-y-5 before:absolute before:left-[27px] before:top-3 before:h-[calc(100%-2rem)] before:w-0.5 before:bg-line">
+        <ol className="relative mx-auto mt-12 max-w-3xl space-y-5 before:absolute before:left-[27px] before:top-3 before:h-[calc(100%-2rem)] before:w-0.5 before:bg-ink/30">
           {r.phases.map((p, i) => (
             <li key={i} className="relative flex gap-5">
-              <span className={`z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border-4 border-cream shadow-card ${STATUS_STYLES[p.status] ?? STATUS_STYLES.planned}`}>
+              <span className={`z-10 grid h-14 w-14 shrink-0 place-items-center border-2 border-ink shadow-card ${STATUS_STYLES[p.status] ?? STATUS_STYLES.planned}`} style={{borderRadius:"50%"}}>
                 <Icon name={ROADMAP_ICONS[i] ?? "light"} width={26} height={26} />
               </span>
               <div className="card flex-1">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-display text-xl font-bold text-ink">{p.title}</h3>
-                  <span className={`rounded-full px-3 py-1 text-xs font-bold ${STATUS_STYLES[p.status] ?? STATUS_STYLES.planned}`}>
+                  <span className={`border border-current px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${STATUS_STYLES[p.status] ?? STATUS_STYLES.planned}`} style={{borderRadius:"3px"}}>
                     {labels[p.status] ?? p.status}
                   </span>
                 </div>
@@ -301,9 +301,9 @@ export function FirstCircleSection({ dict, locale }: { dict: Dictionary; locale:
           <span className="eyebrow mb-4">✦ {dict.nav.firstCircle}</span>
           <h2 className="font-display text-3xl font-extrabold text-ink sm:text-4xl">{c.title}</h2>
           <p className="mt-5 text-justify text-lg leading-relaxed text-muted">{rich(c.text)}</p>
-          <p className="mt-4 rounded-2xl bg-amber/10 p-4 text-justify text-lg leading-relaxed text-ink/80">{rich(c.subtext)}</p>
+          <p className="mt-4 border border-line bg-amber/10 p-4 text-justify text-lg leading-relaxed text-ink/80" style={{borderRadius:"6px"}}>{rich(c.subtext)}</p>
           {c.waitingCount && (
-            <div className="mt-5 flex items-center gap-3 rounded-2xl border border-amber/30 bg-amber/8 px-4 py-3">
+            <div className="mt-5 flex items-center gap-3 border-2 border-amber bg-amber/10 px-4 py-3" style={{borderRadius:"4px"}}>
               <span className="text-xl">⏳</span>
               <span className="font-semibold text-ink/80">{c.waitingCount}</span>
             </div>
@@ -323,8 +323,8 @@ export function CoffeeSection({ dict }: { dict: Dictionary }) {
   return (
     <section className="section bg-sand">
       <div className="container-content">
-        <div className="grid items-center gap-10 rounded-[2.5rem] border border-line bg-white/80 p-7 shadow-card sm:p-12 lg:grid-cols-[1fr_1.4fr]">
-          <div className="flex flex-col items-center justify-center rounded-3xl bg-amber/12 p-8 text-center">
+        <div className="grid items-center gap-10 border-2 border-ink bg-sand p-7 shadow-card sm:p-12 lg:grid-cols-[1fr_1.4fr]" style={{borderRadius:"6px"}}>
+          <div className="flex flex-col items-center justify-center border-2 border-ink bg-amber/20 p-8 text-center" style={{borderRadius:"6px"}}>
             <IconCoffee width={72} height={72} className="text-amber-deep" />
             <div className="mt-4 font-display text-5xl font-extrabold text-amber-deep">{c.amount}</div>
             <div className="mt-1 text-sm font-semibold uppercase tracking-wide text-muted">{c.amountLabel}</div>
@@ -386,7 +386,7 @@ export function DonorWall({ dict, locale }: { dict: Dictionary; locale: string }
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-cream/90 drop-shadow">{d.text}</p>
             <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-4">
-              <div className="rounded-2xl bg-white/10 px-6 py-3 backdrop-blur-sm">
+              <div className="border border-cream/30 bg-cream/10 px-6 py-3 backdrop-blur-sm" style={{borderRadius:"6px"}}>
                 <span className="font-display text-3xl font-extrabold text-amber">200+</span>
                 <span className="ml-2 text-sm font-semibold text-cream/80">donatora iz 24 države</span>
               </div>
@@ -415,10 +415,10 @@ export function FAQ({ dict }: { dict: Dictionary }) {
         <Heading title={f.title} />
         <div className="mt-10 space-y-3">
           {f.items.map((item, i) => (
-            <details key={i} className="group rounded-2xl border border-line bg-white/80 px-5 py-4 [&_summary::-webkit-details-marker]:hidden">
+            <details key={i} className="group border-2 border-ink bg-sand px-5 py-4 [&_summary::-webkit-details-marker]:hidden" style={{borderRadius:"6px", boxShadow:"2px 2px 0 rgba(69,45,24,.20)"}}>
               <summary className="flex cursor-pointer items-center justify-between gap-4 font-display text-lg font-bold text-ink">
                 {item.q}
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-amber/15 text-amber-deep transition group-open:rotate-45">
+                <span className="grid h-7 w-7 shrink-0 place-items-center bg-amber/20 text-amber-deep transition group-open:rotate-45" style={{borderRadius:"50%"}}>
                   +
                 </span>
               </summary>
@@ -439,7 +439,7 @@ export function MapSection({ dict }: { dict: Dictionary }) {
       <div className="container-content">
         <Heading eyebrow={`✦ ${m.eyebrow}`} title={m.title} />
         <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">{m.intro}</p>
-        <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-3xl border border-line shadow-card">
+        <div className="mx-auto mt-10 max-w-4xl overflow-hidden border-2 border-ink" style={{borderRadius:"6px"}}>
           <iframe
             src="https://www.openstreetmap.org/export/embed.html?bbox=18.35%2C42.40%2C18.62%2C42.60&layer=mapnik&marker=42.5071%2C18.4783"
             className="h-[420px] w-full"
@@ -475,7 +475,7 @@ export function SocialSection({ dict }: { dict: Dictionary }) {
             href={SOCIAL.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-3xl border border-line bg-white/80 p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft"
+            className="group flex items-center gap-4 border-2 border-ink bg-sand p-6 shadow-card transition hover:shadow-soft" style={{borderRadius:"6px"}}
           >
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#f09433] via-[#e6683c] to-[#bc1888] text-2xl text-white">
               📷
@@ -490,7 +490,7 @@ export function SocialSection({ dict }: { dict: Dictionary }) {
             href={SOCIAL.tiktok}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-4 rounded-3xl border border-line bg-white/80 p-6 shadow-card transition hover:-translate-y-1 hover:shadow-soft"
+            className="group flex items-center gap-4 border-2 border-ink bg-sand p-6 shadow-card transition hover:shadow-soft" style={{borderRadius:"6px"}}
           >
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ink text-2xl text-white">
               🎵
@@ -531,7 +531,7 @@ export function ShareSection({ dict, locale }: { dict: Dictionary; locale: strin
               href={l.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`rounded-full px-6 py-3 text-sm font-bold transition hover:-translate-y-0.5 ${l.bg}`}
+              className={`border-2 border-ink px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition hover:opacity-90 ${l.bg}`} style={{borderRadius:"4px", fontFamily:"var(--font-alfa), Georgia, serif"}}
             >
               {l.label}
             </a>
