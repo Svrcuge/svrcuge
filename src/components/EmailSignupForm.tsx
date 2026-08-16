@@ -3,48 +3,39 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Dictionary, Locale } from "@/lib/i18n";
-import { LOCALES, LOCALE_LABELS } from "@/lib/i18n";
-
-type Variant = "hero" | "first-circle";
 
 export default function EmailSignupForm({
   dict,
   locale,
-  variant = "hero",
 }: {
   dict: Dictionary;
   locale: Locale;
-  variant?: Variant;
 }) {
   const router = useRouter();
   const f = dict.form;
-  const isCircle = variant === "first-circle";
-
   const [state, setState] = useState<"idle" | "loading" | "error">("idle");
-  const [errorKey, setErrorKey] = useState<string>("");
+
+  const INPUT_STYLE: React.CSSProperties = {
+    width: "100%",
+    boxSizing: "border-box",
+    padding: "12px 14px",
+    border: "2px solid #452D18",
+    borderRadius: "4px",
+    fontSize: "14px",
+    background: "#fff",
+    color: "#452D18",
+    fontFamily: "inherit",
+    marginBottom: "8px",
+    display: "block",
+  };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setState("loading");
-    setErrorKey("");
 
     const fd = new FormData(e.currentTarget);
-    const payload = {
-      type: isCircle ? "first-circle" : "prelaunch",
-      name: fd.get("name") || undefined,
-      email: fd.get("email"),
-      city: fd.get("city") || undefined,
-      country: fd.get("country") || undefined,
-      language: fd.get("language") || locale,
-      consentCampaign: fd.get("consentCampaign") === "on",
-      consentFirstCircle: isCircle ? fd.get("consentFirstCircle") === "on" : true,
-      consentShare: fd.get("consentShare") === "on",
-      consentGdpr: fd.get("consentGdpr") === "on",
-    };
-
-    if (!payload.consentGdpr) {
+    if (fd.get("consentGdpr") !== "on") {
       setState("error");
-      setErrorKey("errorConsent");
       return;
     }
 
@@ -52,116 +43,59 @@ export default function EmailSignupForm({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          type: "prelaunch",
+          email: fd.get("email"),
+          language: locale,
+          consentCampaign: true,
+          consentGdpr: true,
+        }),
       });
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
         setState("error");
-        setErrorKey(data.error === "invalid_email" ? "errorEmail" : "error");
         return;
       }
       router.push(`/${locale}/hvala`);
     } catch {
       setState("error");
-      setErrorKey("error");
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className={isCircle ? "" : "sm:col-span-2"}>
-          <label className="label" htmlFor={`name-${variant}`}>
-            {f.name} <span className="font-normal text-muted">({f.optional})</span>
-          </label>
-          <input id={`name-${variant}`} name="name" className="input" placeholder={f.namePlaceholder} autoComplete="name" />
-        </div>
-        <div className={isCircle ? "" : "sm:col-span-2"}>
-          <label className="label" htmlFor={`email-${variant}`}>
-            {f.email}
-          </label>
-          <input
-            id={`email-${variant}`}
-            name="email"
-            type="email"
-            required
-            className="input"
-            placeholder={f.emailPlaceholder}
-            autoComplete="email"
-          />
-        </div>
-        <div>
-          <label className="label" htmlFor={`city-${variant}`}>
-            {f.city} <span className="font-normal text-muted">({f.optional})</span>
-          </label>
-          <input id={`city-${variant}`} name="city" className="input" placeholder={f.cityPlaceholder} />
-        </div>
-        <div>
-          <label className="label" htmlFor={`country-${variant}`}>
-            {f.country} <span className="font-normal text-muted">({f.optional})</span>
-          </label>
-          <input id={`country-${variant}`} name="country" className="input" placeholder={f.countryPlaceholder} />
-        </div>
-      </div>
-
-      <div>
-        <label className="label" htmlFor={`language-${variant}`}>
-          {f.language}
-        </label>
-        <select id={`language-${variant}`} name="language" defaultValue={locale} className="select">
-          {LOCALES.map((loc) => (
-            <option key={loc} value={loc}>
-              {LOCALE_LABELS[loc]}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="space-y-2.5 rounded-2xl bg-sand/60 p-4">
-        {isCircle && (
-          <>
-            <Checkbox name="consentCampaign" defaultChecked label={f.consentCampaign} />
-            <Checkbox name="consentFirstCircle" defaultChecked label={f.consentFirstCircle} />
-            <Checkbox name="consentShare" label={f.consentShare} />
-          </>
-        )}
-        {!isCircle && <Checkbox name="consentCampaign" defaultChecked label={f.consentCampaign} />}
-        <Checkbox name="consentGdpr" label={f.consentGdpr} />
-      </div>
-
-      {state === "error" && (
-        <p className="rounded-2xl bg-terracotta/10 px-4 py-3 text-sm font-semibold text-terracotta">
-          {(f as Record<string, string>)[errorKey] || f.error}
-        </p>
-      )}
-
-      <button type="submit" disabled={state === "loading"} className="btn-primary w-full">
-        {state === "loading" ? f.submitting : isCircle ? f.submitFirstCircle : f.submit}
-      </button>
-
-      <p className="text-center text-xs text-muted">{f.privacyNote}</p>
-    </form>
-  );
-}
-
-function Checkbox({
-  name,
-  label,
-  defaultChecked,
-}: {
-  name: string;
-  label: string;
-  defaultChecked?: boolean;
-}) {
-  return (
-    <label className="flex cursor-pointer items-start gap-3 text-sm text-ink/85">
+    <form onSubmit={handleSubmit}>
       <input
-        type="checkbox"
-        name={name}
-        defaultChecked={defaultChecked}
-        className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer accent-amber"
+        name="email"
+        type="email"
+        required
+        placeholder={f.emailPlaceholder}
+        autoComplete="email"
+        style={INPUT_STYLE}
       />
-      <span>{label}</span>
-    </label>
+      <label style={{ display: "flex", gap: "8px", alignItems: "flex-start", fontSize: "12.5px", lineHeight: 1.5, marginBottom: "12px", cursor: "pointer" }}>
+        <input type="checkbox" name="consentGdpr" style={{ margin: "3px 0 0", flexShrink: 0 }} required />
+        {f.consentGdpr}
+      </label>
+      {state === "error" && (
+        <p style={{ fontSize: "13px", color: "#A5551F", marginBottom: "8px" }}>{f.error}</p>
+      )}
+      <button
+        type="submit"
+        disabled={state === "loading"}
+        style={{
+          width: "100%",
+          padding: "13px",
+          background: "#452D18",
+          color: "#F6EBD3",
+          border: "none",
+          borderRadius: "4px",
+          fontFamily: "var(--font-alfa), Georgia, serif",
+          fontSize: "13px",
+          letterSpacing: ".06em",
+          cursor: "pointer",
+        }}
+      >
+        {state === "loading" ? f.submitting : f.submit}
+      </button>
+    </form>
   );
 }

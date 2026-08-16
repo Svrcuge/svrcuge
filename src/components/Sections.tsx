@@ -242,18 +242,11 @@ export function EmailSignupSection({ dict, locale }: { dict: Dictionary; locale:
   const e = dict.emailSignup;
   return (
     <div id="prijava" style={{ margin: "0 18px 16px", border: "2px dashed #A5551F", borderRadius: "6px", padding: "18px", background: "#FBF3E0" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "10px", margin: "0 0 4px" }}>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#A5551F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="5.5" width="18" height="13" rx="1.5" />
-          <path d="M3.5 6.5 12 13l8.5-6.5" />
-        </svg>
-        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", color: "#A5551F", textTransform: "uppercase" }}>
-          {e.eyebrow}
-        </div>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", color: "#A5551F", margin: "0 0 6px" }}>
+        {e.eyebrow}
       </div>
       <p style={{ fontSize: "14px", lineHeight: 1.55, margin: "0 0 12px" }}>{e.intro}</p>
       <EmailSignupForm dict={dict} locale={locale} />
-      <p style={{ fontSize: "12px", color: "#7a5b3d", marginTop: "8px", textAlign: "center" }}>{e.note}</p>
     </div>
   );
 }
