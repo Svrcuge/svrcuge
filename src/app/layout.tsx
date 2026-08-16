@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Zilla_Slab, Alfa_Slab_One } from "next/font/google";
 import "./globals.css";
 import { SITE_URL } from "@/lib/config";
+import NewVersionBanner from "@/components/NewVersionBanner";
 
 const zillaSlab = Zilla_Slab({
   subsets: ["latin", "latin-ext"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="sr">
       <body className={`${zillaSlab.variable} ${alfaSlabOne.variable} font-sans bg-cream text-ink`}>
+        <NewVersionBanner />
         {children}
       </body>
     </html>
