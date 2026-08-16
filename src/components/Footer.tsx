@@ -63,7 +63,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
         <br />
         Svrčuge · Crna Gora
       </div>
-      <div style={{ fontSize: "10px", color: "#C0A882", textAlign: "center", marginTop: "10px", letterSpacing: ".06em" }}>
+      <div style={{ fontSize: "10px", color: "#7a5b3d", textAlign: "center", marginTop: "10px", letterSpacing: ".06em" }}>
         v{process.env.BUILD_ID ?? "dev"}
       </div>
     </footer>
