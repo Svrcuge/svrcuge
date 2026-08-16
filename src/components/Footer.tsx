@@ -23,61 +23,45 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
   ];
 
   return (
-    <footer className="bg-paper-light" style={{ borderTop: "3px double #452D18" }}>
-      <div className="container-content py-12">
-        {/* Logo + tagline */}
-        <div className="mb-8 text-center">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo/logo-black.png"
-            alt="Svrčuge"
-            className="mx-auto mb-3"
-            style={{ height: "80px" }}
-          />
-          <p className="text-sm text-muted">{f.tagline}</p>
-        </div>
-
-        {/* Linkovi */}
-        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm mb-6">
-          {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-muted transition hover:text-amber-deep">
-              {l.label}
-            </Link>
-          ))}
-        </div>
-
-        {/* Jezici */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
-          {LOCALES.map((loc) => (
-            <Link
-              key={loc}
-              href={`/${loc}`}
-              className={`border px-3 py-0.5 text-xs font-bold transition ${
-                loc === locale
-                  ? "border-ink bg-ink text-cream"
-                  : "border-ink text-ink hover:bg-ink hover:text-cream"
-              }`}
-              style={{ borderRadius: "999px" }}
-            >
-              {LOCALE_LABELS[loc]}
-            </Link>
-          ))}
-        </div>
-
-        {/* Social + kontakt */}
-        <p className="text-center text-xs text-muted">
-          <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-amber-deep">Instagram @svrcuge.me</a>
-          {" · "}
-          <a href={SOCIAL.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-amber-deep">TikTok</a>
-          {" · "}
-          <a href={`mailto:${SOCIAL.email}`} className="hover:text-amber-deep">{SOCIAL.email}</a>
-          <br />
-          Svrčuge · Crna Gora
-        </p>
-
-        <p className="mt-5 text-center text-xs text-muted/60">
-          © 2026 Svrčuge. {f.rights}
-        </p>
+    <footer style={{ padding: "20px 18px", borderTop: "3px double #452D18", background: "#EFDFC0" }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/logo/logo-black.png" alt="Svrčuge" style={{ height: "80px", margin: "0 auto 12px", display: "block" }} />
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "8px 16px", fontSize: "13px", marginBottom: "12px" }}>
+        {links.map((l) => (
+          <Link key={l.href} href={l.href} style={{ color: "#452D18", textDecoration: "none" }}>
+            {l.label}
+          </Link>
+        ))}
+      </div>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap", justifyContent: "center" }}>
+        {LOCALES.map((loc) => (
+          <Link
+            key={loc}
+            href={`/${loc}`}
+            style={{
+              border: "1.5px solid #452D18",
+              borderRadius: "999px",
+              padding: "3px 10px",
+              fontSize: "11px",
+              fontWeight: 600,
+              textDecoration: "none",
+              ...(loc === locale
+                ? { background: "#452D18", color: "#F6EBD3" }
+                : { background: "transparent", color: "#452D18" }),
+            }}
+          >
+            {LOCALE_LABELS[loc]}
+          </Link>
+        ))}
+      </div>
+      <div style={{ fontSize: "12px", color: "#7a5b3d", textAlign: "center" }}>
+        <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>Instagram @svrcuge.me</a>
+        {" · "}
+        <a href={SOCIAL.tiktok} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>TikTok</a>
+        <br />
+        <a href={`mailto:${SOCIAL.email}`} style={{ color: "inherit" }}>{SOCIAL.email}</a>
+        <br />
+        Svrčuge · Crna Gora
       </div>
     </footer>
   );

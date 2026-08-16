@@ -12,9 +12,36 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  const p = getDictionary(locale).eventsPage;
-  return { title: `${p.title} — Svrčuge` };
+  const dict = getDictionary(locale);
+  return { title: `${dict.eventsPage.title} — Svrčuge` };
 }
+
+const EVENTS = [
+  {
+    id: "bioskop",
+    day: "29.",
+    month: "AVGUST",
+    bg: "#E0A83A",
+    fg: "#452D18",
+    tilt: "-2deg",
+    title: "DJEČIJI BIOSKOP POD ZVIJEZDAMA",
+    sub: "KRAJ RASPUSTA",
+    text: "Ispraćamo raspust filmom pod vedrim nebom. Ponesite ćebe, kokice su na selu!",
+    img: "/illustrations/docek.webp",
+  },
+  {
+    id: "zurka",
+    day: "05.",
+    month: "SEPTEMBAR",
+    bg: "#D96C2C",
+    fg: "#F6EBD3",
+    tilt: "2deg",
+    title: "KRAJ LJETA",
+    sub: "ADIO MARE",
+    text: "Ljeto ispraćamo tamo gdje je najljepše. Muzika, roštilj i selo puno ljudi, kao nekad.",
+    img: "/illustrations/community.webp",
+  },
+];
 
 export default async function EventsPage({
   params,
@@ -24,84 +51,72 @@ export default async function EventsPage({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
-  const p = dict.eventsPage;
-  const events = dict.events.items;
-
-  const FULL_EVENTS = [
-    {
-      ...events[0],
-      bg: "#E0A83A",
-      fg: "#452D18",
-      tilt: "-2deg",
-      desc: "Ispraćamo raspust filmom pod vedrim nebom. Ponesite ćebe, kokice su na selu!",
-    },
-    {
-      ...events[1],
-      bg: "#D96C2C",
-      fg: "#F6EBD3",
-      tilt: "2deg",
-      desc: "Ljeto ispraćamo tamo gdje je najljepše. Muzika, roštilj i selo puno ljudi, kao nekad.",
-    },
-  ];
 
   return (
     <>
       <Header dict={dict} locale={locale} />
       <main>
-        {/* Hero */}
-        <div
-          className="py-16 px-5 text-center"
-          style={{ background: "#452D18", borderBottom: "3px double #C0A882" }}
-        >
-          <div className="eyebrow !text-amber mb-3">✦ {p.eyebrow}</div>
-          <h1 className="font-display text-4xl font-bold text-cream sm:text-5xl">{p.title}</h1>
-          <p className="mt-4 max-w-xl mx-auto text-cream/75">{p.intro}</p>
+        {/* Hero text */}
+        <div style={{ padding: "26px 18px 4px", textAlign: "center" }}>
+          <div style={{ fontSize: "11px", letterSpacing: ".28em", fontWeight: 600, color: "#A5551F" }}>SELO ŽIVI</div>
+          <h1 style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontWeight: 400, fontSize: "27px", lineHeight: 1.15, margin: "8px 0 10px" }}>
+            DOGAĐAJI U SELU
+          </h1>
+          <p style={{ fontSize: "14.5px", lineHeight: 1.6, margin: "0 18px" }}>
+            Svrčuge više nisu samo priča o prošlosti. Dođi, druži se i budi dio buđenja sela.
+          </p>
         </div>
 
-        {/* Događaji */}
-        <section className="py-14" style={{ background: "#FBF3E0" }}>
-          <div className="container-content max-w-2xl space-y-6">
-            {FULL_EVENTS.map((ev, i) => (
-              <div
-                key={i}
-                className="border-2 border-ink overflow-hidden"
-                style={{
-                  borderRadius: "6px",
-                  boxShadow: `4px 4px 0 rgba(69,45,24,0.25)`,
-                  transform: `rotate(${ev.tilt})`,
-                }}
-              >
-                <div
-                  className="px-6 py-5"
-                  style={{ background: ev.bg, color: ev.fg }}
-                >
-                  <div className="text-[10px] font-black uppercase tracking-[0.2em] opacity-75 mb-1">{ev.month}</div>
-                  <div
-                    className="text-3xl font-bold leading-none mb-1"
-                    style={{ fontFamily: "var(--font-alfa), Georgia, serif" }}
-                  >
-                    {ev.day} {ev.title}
+        {/* Event cards */}
+        <div style={{ margin: "22px 18px 22px", display: "flex", flexDirection: "column", gap: "16px" }}>
+          {EVENTS.map((ev) => (
+            <div key={ev.id} style={{ border: "2px solid #452D18", borderRadius: "6px", background: "#FBF3E0", overflow: "hidden", boxShadow: "3px 3px 0 rgba(69,45,24,.35)" }}>
+              <div style={{ width: "100%", height: "180px", borderBottom: "2px solid #452D18", overflow: "hidden" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={ev.img} alt={ev.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
+              <div style={{ padding: "14px 16px 16px" }}>
+                <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <div style={{ flexShrink: 0, border: "2px solid #452D18", borderRadius: "4px", background: ev.bg, color: ev.fg, textAlign: "center", padding: "8px 12px", transform: `rotate(${ev.tilt})` }}>
+                    <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "22px", lineHeight: 1 }}>{ev.day}</div>
+                    <div style={{ fontSize: "10.5px", letterSpacing: ".1em", fontWeight: 600 }}>{ev.month}</div>
                   </div>
-                  <div className="text-sm font-semibold opacity-80">{ev.sub}</div>
-                </div>
-                <div className="bg-sand px-6 py-4 border-t-2 border-ink">
-                  <p className="text-ink/80 leading-relaxed">{ev.desc}</p>
+                  <div>
+                    <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", lineHeight: 1.25 }}>{ev.title}</div>
+                    <div style={{ fontSize: "12.5px", color: "#A5551F", fontWeight: 600, letterSpacing: ".06em", margin: "2px 0 6px" }}>{ev.sub}</div>
+                    <p style={{ fontSize: "13.5px", lineHeight: 1.55, margin: 0 }}>{ev.text}</p>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          ))}
+        </div>
 
-        {/* Ne propusti */}
-        <section className="py-12 border-t-2 border-line">
-          <div className="container-content text-center max-w-lg">
-            <h2 className="font-display text-2xl font-bold text-ink mb-2">{p.notifyTitle}</h2>
-            <p className="text-muted mb-5">{p.notifyText}</p>
-            <Link href={`/${locale}#prijava`} className="btn-primary">
-              {p.notifyCta}
-            </Link>
+        {/* Email CTA */}
+        <div style={{ margin: "0 18px 26px", border: "2px dashed #A5551F", borderRadius: "6px", padding: "16px", background: "#FBF3E0", textAlign: "center" }}>
+          <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "14px", color: "#A5551F", margin: "0 0 6px" }}>
+            NE PROPUSTI SLJEDEĆI DOGAĐAJ
           </div>
-        </section>
+          <p style={{ fontSize: "13.5px", lineHeight: 1.55, margin: "0 0 12px" }}>
+            Ostavi email na Početnoj i javljamo ti svaku najavu na vrijeme.
+          </p>
+          <Link
+            href={`/${locale}#prijava`}
+            style={{
+              display: "inline-block",
+              padding: "11px 20px",
+              background: "#452D18",
+              color: "#F6EBD3",
+              borderRadius: "4px",
+              fontFamily: "var(--font-alfa), Georgia, serif",
+              fontSize: "13px",
+              letterSpacing: ".06em",
+              textDecoration: "none",
+            }}
+          >
+            BUDI UZ SELO
+          </Link>
+        </div>
       </main>
       <Footer dict={dict} locale={locale} />
     </>

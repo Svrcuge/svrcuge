@@ -6,65 +6,64 @@ import type { Dictionary, Locale } from "@/lib/i18n";
 import EmailSignupForm from "./EmailSignupForm";
 import { SOCIAL } from "@/lib/config";
 
-function SectionHeading({ eyebrow, title }: { eyebrow?: string; title: string }) {
-  return (
-    <div className="text-center">
-      {eyebrow && <div className="eyebrow mb-3">{eyebrow}</div>}
-      <h2 className="font-display text-3xl font-bold text-ink text-balance sm:text-4xl">{title}</h2>
-    </div>
-  );
-}
-
-const STATUS_STYLES: Record<string, string> = {
-  done: "bg-forest text-cream",
-  "in-progress": "bg-amber text-ink",
-  soon: "bg-amber/40 text-ink",
-  next: "bg-paper-light text-muted",
-  planned: "bg-paper-light text-muted",
-};
-
-const STATUS_DISPLAY: Record<string, string> = {
-  done: "Završeno",
-  "in-progress": "U TOKU",
-  soon: "USKORO",
-  next: "Sljedeće",
-  planned: "",
-};
-
 /* ── Projekti sela ─────────────────────────────────────── */
 export function ProjectsSection({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const p = dict.projects;
   return (
-    <section id="projekti" className="section border-t-2 border-line py-14">
-      <div className="container-content">
-        <SectionHeading eyebrow={`✦ ${p.eyebrow}`} title={p.intro} />
-        <ul className="mt-10 mx-auto max-w-xl space-y-3">
-          {p.items.map((item) => (
-            <li
-              key={item.num}
-              className="flex items-center gap-4 border-2 border-ink bg-sand px-4 py-3"
-              style={{ borderRadius: "6px", boxShadow: "3px 3px 0 rgba(69,45,24,0.20)" }}
-            >
-              <span
-                className="flex-none flex h-8 w-8 items-center justify-center border-2 border-ink text-sm font-black"
-                style={{ borderRadius: "50%", background: "#F6EBD3", fontFamily: "var(--font-alfa), Georgia, serif" }}
-              >
-                {item.num}
-              </span>
-              <span className="flex-1 font-semibold text-ink">{item.title}</span>
-              {STATUS_DISPLAY[item.status] && (
-                <span
-                  className={`text-[10px] font-black uppercase tracking-widest px-2 py-0.5 ${STATUS_STYLES[item.status]}`}
-                  style={{ borderRadius: "3px" }}
-                >
-                  {STATUS_DISPLAY[item.status]}
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
+    <div id="projekti" style={{ padding: "0 18px 22px" }}>
+      {/* Lightbulb icon */}
+      <div style={{ display: "flex", justifyContent: "center", margin: "0 0 6px" }}>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D96C2C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 18h6M10 21h4" />
+          <path d="M12 3a6 6 0 0 1 3.5 10.9c-.6.5-.5 1.3-.5 2.1h-6c0-.8.1-1.6-.5-2.1A6 6 0 0 1 12 3z" />
+        </svg>
       </div>
-    </section>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "0 0 4px", textTransform: "uppercase" }}>
+        {p.eyebrow}
+      </div>
+      <div style={{ fontSize: "13px", textAlign: "center", color: "#7a5b3d", margin: "0 0 14px" }}>{p.intro}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        {p.items.map((item) => {
+          const isInProgress = item.status === "in-progress";
+          const isSoon = item.status === "soon";
+          const isDone = item.status === "done";
+          const rowStyle: React.CSSProperties = {
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            borderRadius: "4px",
+            padding: "10px 12px",
+            ...(isInProgress
+              ? { border: "2px solid #452D18", background: "#55704F", color: "#F6EBD3" }
+              : isSoon
+              ? { border: "2px solid #452D18", background: "#E0A83A", color: "#452D18" }
+              : isDone
+              ? { border: "2px solid #452D18", background: "#55704F", color: "#F6EBD3" }
+              : { border: "2px dashed #A5551F" }),
+          };
+          const numColor = isInProgress || isDone ? "#F6EBD3" : isSoon ? "#452D18" : "#A5551F";
+          const badgeStyle: React.CSSProperties = {
+            fontSize: "10.5px",
+            letterSpacing: ".1em",
+            borderRadius: "3px",
+            padding: "2px 6px",
+            ...(isInProgress || isDone
+              ? { border: "1px solid #F6EBD3" }
+              : isSoon
+              ? { border: "1px solid #452D18" }
+              : {}),
+          };
+          const badgeLabel = isInProgress ? "U TOKU" : isSoon ? "USKORO" : isDone ? "ZAVRŠENO" : "";
+          return (
+            <div key={item.num} style={rowStyle}>
+              <span style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "13px", color: numColor }}>{item.num}</span>
+              <span style={{ flex: 1, fontWeight: 600, fontSize: "14px" }}>{item.title}</span>
+              {badgeLabel && <span style={badgeStyle}>{badgeLabel}</span>}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -73,65 +72,63 @@ export function EventsSection({ dict, locale }: { dict: Dictionary; locale: Loca
   const e = dict.events;
   if (!e.items || e.items.length === 0) return null;
 
-  const BG_COLORS = ["#E0A83A", "#D96C2C", "#55704F", "#452D18"];
-  const FG_COLORS = ["#452D18", "#F6EBD3", "#F6EBD3", "#F6EBD3"];
-  const TILTS = ["-2deg", "2deg", "-1deg", "1.5deg"];
+  const BG: string[] = ["#E0A83A", "#D96C2C", "#55704F", "#452D18"];
+  const FG: string[] = ["#452D18", "#F6EBD3", "#F6EBD3", "#F6EBD3"];
+  const TILTS: string[] = ["-2deg", "2deg", "-1deg", "1.5deg"];
 
   return (
-    <section id="dogadjaji" className="section border-t-2 border-line py-14">
-      <div className="container-content">
-        <div className="flex items-baseline justify-between mb-8">
-          <div>
-            <div className="eyebrow mb-2">✦ {e.eyebrow}</div>
-            <h2 className="font-display text-3xl font-bold text-ink">{e.subtitle}</h2>
-          </div>
-          <Link href={`/${locale}/dogadjaji`} className="text-sm font-bold text-amber-deep hover:underline hidden sm:block">
-            {e.allLink} →
-          </Link>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {e.items.map((ev, i) => (
+    <div style={{ margin: "0 18px 22px" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "0 0 4px", textTransform: "uppercase" }}>
+        {e.eyebrow}
+      </div>
+      <div style={{ fontSize: "13px", textAlign: "center", color: "#7a5b3d", margin: "0 0 14px" }}>{e.subtitle}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        {e.items.map((ev, i) => (
+          <Link
+            key={i}
+            href={`/${locale}/dogadjaji`}
+            style={{
+              display: "flex",
+              gap: "12px",
+              alignItems: "center",
+              border: "2px solid #452D18",
+              borderRadius: "6px",
+              background: "#FBF3E0",
+              padding: "12px 14px",
+              textDecoration: "none",
+              color: "#452D18",
+              boxShadow: "3px 3px 0 rgba(69,45,24,.35)",
+            }}
+          >
             <div
-              key={i}
-              className="relative overflow-hidden border-2 border-ink p-5"
               style={{
-                borderRadius: "6px",
-                background: BG_COLORS[i % BG_COLORS.length],
-                color: FG_COLORS[i % FG_COLORS.length],
+                flexShrink: 0,
+                border: "2px solid #452D18",
+                borderRadius: "4px",
+                background: BG[i % BG.length],
+                color: FG[i % FG.length],
+                textAlign: "center",
+                padding: "6px 10px",
                 transform: `rotate(${TILTS[i % TILTS.length]})`,
-                boxShadow: "4px 4px 0 rgba(69,45,24,0.25)",
               }}
             >
-              <div
-                className="font-display text-5xl font-bold leading-none opacity-20 absolute right-4 top-2"
-                style={{ fontFamily: "var(--font-alfa), Georgia, serif" }}
-              >
-                {ev.day}
-              </div>
-              <div className="text-[10px] font-black uppercase tracking-[0.18em] mb-1 opacity-75">{ev.month}</div>
-              <div
-                className="text-xl font-bold leading-tight"
-                style={{ fontFamily: "var(--font-alfa), Georgia, serif" }}
-              >
-                {ev.title}
-              </div>
-              <div className="text-xs font-semibold mt-1 opacity-80">{ev.sub}</div>
-              <Link
-                href={`/${locale}/dogadjaji`}
-                className="mt-3 inline-block text-xs font-black uppercase tracking-widest opacity-90 hover:opacity-100"
-              >
-                →
-              </Link>
+              <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", lineHeight: 1 }}>{ev.day}</div>
+              <div style={{ fontSize: "9.5px", letterSpacing: ".1em", fontWeight: 600, textTransform: "uppercase" }}>{ev.month}</div>
             </div>
-          ))}
-        </div>
-        <div className="mt-4 text-center sm:hidden">
-          <Link href={`/${locale}/dogadjaji`} className="text-sm font-bold text-amber-deep hover:underline">
-            {e.allLink} →
+            <div style={{ flex: 1 }}>
+              <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", lineHeight: 1.25, textTransform: "uppercase" }}>{ev.title}</div>
+              <div style={{ fontSize: "12px", color: "#A5551F", fontWeight: 600, letterSpacing: ".04em", marginTop: "2px" }}>{ev.sub}</div>
+            </div>
+            <span style={{ fontFamily: "var(--font-alfa), Georgia, serif", color: "#D96C2C", fontSize: "16px", flexShrink: 0 }}>→</span>
           </Link>
-        </div>
+        ))}
       </div>
-    </section>
+      <div style={{ textAlign: "center", marginTop: "12px" }}>
+        <Link href={`/${locale}/dogadjaji`} style={{ fontSize: "13px", fontWeight: 600 }}>
+          {e.allLink} →
+        </Link>
+      </div>
+    </div>
   );
 }
 
@@ -139,74 +136,91 @@ export function EventsSection({ dict, locale }: { dict: Dictionary; locale: Loca
 export function ExpeditionSection({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const e = dict.expedition;
   return (
-    <section id="ekspedicija" className="section border-t-2 border-line py-14">
-      <div className="container-content">
-        <div className="max-w-2xl">
-          <div className="eyebrow mb-3">✦ {e.eyebrow}</div>
-          <h2 className="font-display text-3xl font-bold text-ink text-balance sm:text-4xl">{e.title}</h2>
-          <p className="mt-4 text-lg leading-relaxed text-ink/80">{e.text}</p>
+    <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", padding: "6px", background: "#EFDFC0" }}>
+      <div style={{ border: "1px dashed #452D18", borderRadius: "3px", padding: "16px", background: "#F6EBD3" }}>
+        {/* Car/truck SVG icon */}
+        <div style={{ display: "flex", justifyContent: "center", margin: "0 0 6px" }}>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#452D18" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 16v-3l2.2-4.2A1.5 1.5 0 0 1 6.5 8h7l4.5 4H20a1 1 0 0 1 1 1v3h-2.2" />
+            <circle cx="7" cy="16.5" r="1.8" />
+            <circle cx="16.5" cy="16.5" r="1.8" />
+            <path d="M8.8 16.5h5.9M3 16h2.2" />
+          </svg>
         </div>
-
+        <div style={{ fontSize: "10.5px", letterSpacing: ".16em", fontWeight: 600, color: "#A5551F", textAlign: "center", textTransform: "uppercase" }}>
+          {e.eyebrow}
+        </div>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "4px 0 10px", textTransform: "uppercase" }}>
+          {e.title}
+        </div>
+        <p style={{ fontSize: "14px", lineHeight: 1.6, margin: "0 0 12px" }}>{e.text}</p>
+        {/* Image slot */}
+        <div style={{ width: "100%", height: "190px", border: "1px solid #452D18", borderRadius: "3px", overflow: "hidden" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/illustrations/reno-put.webp" alt="Kolona na putu za Pariz" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
         {/* Stats */}
-        <div className="mt-8 flex flex-wrap gap-3">
-          {e.stats.map((s, i) => (
-            <div
-              key={i}
-              className="border-2 border-ink bg-sand px-4 py-2 text-center"
-              style={{ borderRadius: "6px", boxShadow: "3px 3px 0 rgba(69,45,24,0.20)" }}
-            >
-              <div
-                className="text-2xl font-bold text-amber-deep leading-none"
-                style={{ fontFamily: "var(--font-alfa), Georgia, serif" }}
-              >
-                {s.value}
-              </div>
-              {s.label && <div className="text-[10px] font-bold uppercase tracking-[0.1em] text-muted mt-0.5">{s.label}</div>}
-            </div>
-          ))}
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", margin: "12px 0 0" }}>
+          <div style={{ display: "flex", gap: "8px", justifyContent: "center", flexWrap: "wrap" }}>
+            <span style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "6px 10px", background: "#E0A83A", fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "13px" }}>5.137 KM</span>
+            <span style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "6px 10px", background: "#D96C2C", color: "#F6EBD3", fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "13px" }}>3x RENAULT 4</span>
+          </div>
+          <div style={{ display: "flex", gap: "8px", justifyContent: "center", flexWrap: "wrap" }}>
+            <span style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "6px 10px", fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "13px" }}>11 PUTNIKA</span>
+            <span style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "6px 10px", background: "#F6EBD3", fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "13px" }}>5 AUTOMOBILA</span>
+            <span style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "6px 10px", background: "#55704F", color: "#F6EBD3", fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "13px" }}>14 DANA</span>
+          </div>
         </div>
-
-        <div className="mt-7">
-          <Link href={`/${locale}/prica`} className="btn-primary">
-            {e.cta}
-          </Link>
-        </div>
+        {/* CTA */}
+        <Link
+          href={`/${locale}/prica`}
+          style={{
+            display: "block",
+            textAlign: "center",
+            boxSizing: "border-box",
+            width: "100%",
+            marginTop: "14px",
+            padding: "12px",
+            background: "transparent",
+            color: "#452D18",
+            border: "2px solid #452D18",
+            borderRadius: "4px",
+            fontFamily: "var(--font-alfa), Georgia, serif",
+            fontSize: "12.5px",
+            letterSpacing: ".06em",
+            textDecoration: "none",
+            textTransform: "uppercase",
+          }}
+        >
+          {e.cta}
+        </Link>
       </div>
-    </section>
+    </div>
   );
 }
 
-/* ── Gdje su Svrčuge ───────────────────────────────────── */
-export function LocationSection({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+/* ── Gdje su Svrčuge (mapa) ────────────────────────────── */
+export function LocationSection({ dict }: { dict: Dictionary }) {
   const l = dict.location;
   return (
-    <section id="lokacija" className="section border-t-2 border-line py-14 bg-sand">
-      <div className="container-content">
-        <div className="text-center mb-6">
-          <h2 className="font-display text-2xl font-bold text-ink sm:text-3xl">{l.title}</h2>
-          <p className="mt-2 text-sm font-semibold text-muted tracking-wide">{l.subtitle}</p>
+    <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", overflow: "hidden", background: "#FBF3E0" }}>
+      <div style={{ padding: "14px 16px 10px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D96C2C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 21s-6.5-5.6-6.5-10.3a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z" />
+            <circle cx="12" cy="10.5" r="2.3" />
+          </svg>
+          <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "16px", textTransform: "uppercase" }}>{l.title}</div>
         </div>
-        {/* Map placeholder */}
-        <div
-          className="w-full border-2 border-ink overflow-hidden"
-          style={{ borderRadius: "6px", aspectRatio: "16/7", background: "#EFDFC0" }}
-        >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2872.0!2d18.5380!3d42.4420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134c72c4d0bbcb29%3A0x8a5b1e3c0b5c5a2!2sSvr%C4%8Duge!5e0!3m2!1sen!2sme!4v1"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            loading="lazy"
-            title="Lokacija Svrčuga"
-          />
-        </div>
-        <div className="mt-4 text-center">
-          <Link href={`/${locale}/posjeti`} className="btn-secondary">
-            Kako doći →
-          </Link>
-        </div>
+        <div style={{ fontSize: "13px", color: "#7a5b3d", marginTop: "2px" }}>{l.subtitle}</div>
       </div>
-    </section>
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=18.40%2C42.42%2C18.72%2C42.60&layer=mapnik&marker=42.51%2C18.56"
+        style={{ width: "100%", height: "240px", border: "none", borderTop: "2px solid #452D18", display: "block" }}
+        title="Mapa: Svrčuge"
+        loading="lazy"
+      />
+    </div>
   );
 }
 
@@ -214,22 +228,12 @@ export function LocationSection({ dict, locale }: { dict: Dictionary; locale: Lo
 export function BlockquoteSection({ dict }: { dict: Dictionary }) {
   const q = dict.blockquote;
   return (
-    <section
-      className="py-14 px-5 text-center"
-      style={{ background: "#452D18", borderTop: "3px double #C0A882", borderBottom: "3px double #C0A882" }}
-    >
-      <blockquote className="mx-auto max-w-2xl">
-        <p
-          className="text-cream leading-tight text-balance"
-          style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "clamp(20px, 4vw, 30px)" }}
-        >
-          „{q.text}"
-        </p>
-        <footer className="mt-4 text-[11px] font-bold uppercase tracking-[0.18em] text-amber/80">
-          — {q.author}
-        </footer>
-      </blockquote>
-    </section>
+    <div style={{ margin: "0 18px 22px", padding: "22px 18px", background: "#452D18", color: "#F6EBD3", borderRadius: "6px", textAlign: "center" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px", lineHeight: 1.35 }}>
+        „{q.text}"
+      </div>
+      <div style={{ marginTop: "10px", fontSize: "13px", color: "#E0A83A" }}>{q.author}</div>
+    </div>
   );
 }
 
@@ -237,24 +241,20 @@ export function BlockquoteSection({ dict }: { dict: Dictionary }) {
 export function EmailSignupSection({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const e = dict.emailSignup;
   return (
-    <section id="prijava" className="section border-t-2 border-line py-14">
-      <div className="container-content">
-        <div className="mx-auto max-w-xl">
-          <div className="eyebrow mb-3">✦ {e.eyebrow}</div>
-          <h2 className="font-display text-2xl font-bold text-ink text-balance sm:text-3xl mb-2">
-            {e.label}
-          </h2>
-          <p className="text-muted mb-6">{e.intro}</p>
-          <div
-            className="border-2 border-ink bg-sand p-6"
-            style={{ borderRadius: "6px", boxShadow: "3px 3px 0 rgba(69,45,24,0.20)" }}
-          >
-            <EmailSignupForm dict={dict} locale={locale} />
-            <p className="mt-3 text-xs text-muted text-center">{e.note}</p>
-          </div>
+    <div id="prijava" style={{ margin: "0 18px 16px", border: "2px dashed #A5551F", borderRadius: "6px", padding: "18px", background: "#FBF3E0" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "10px", margin: "0 0 4px" }}>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#A5551F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="5.5" width="18" height="13" rx="1.5" />
+          <path d="M3.5 6.5 12 13l8.5-6.5" />
+        </svg>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", color: "#A5551F", textTransform: "uppercase" }}>
+          {e.eyebrow}
         </div>
       </div>
-    </section>
+      <p style={{ fontSize: "14px", lineHeight: 1.55, margin: "0 0 12px" }}>{e.intro}</p>
+      <EmailSignupForm dict={dict} locale={locale} />
+      <p style={{ fontSize: "12px", color: "#7a5b3d", marginTop: "8px", textAlign: "center" }}>{e.note}</p>
+    </div>
   );
 }
 
@@ -262,31 +262,41 @@ export function EmailSignupSection({ dict, locale }: { dict: Dictionary; locale:
 export function CoffeeSection({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const c = dict.coffee;
   return (
-    <section id="kafa" className="section border-t-2 border-line py-14 bg-sand">
-      <div className="container-content">
-        <div className="mx-auto max-w-2xl">
-          <div
-            className="border-2 border-ink bg-cream p-7 text-center"
-            style={{ borderRadius: "6px", boxShadow: "3px 3px 0 rgba(69,45,24,0.25)" }}
-          >
-            <h2
-              className="font-display text-3xl font-bold text-ink"
-            >
-              {c.title}
-            </h2>
-            <p className="mt-3 leading-relaxed text-ink/80">{c.text}</p>
-            <a href={`/${locale}/kafa`} className="btn-accent mt-5 inline-block">
-              {c.cta}
-            </a>
-            <div className="mt-4">
-              <Link href={`/${locale}/donatori`} className="text-sm font-semibold text-amber-deep hover:underline">
-                {c.donorLink} →
-              </Link>
-            </div>
-          </div>
-        </div>
+    <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", padding: "16px", background: "#E0A83A" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#452D18" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 10h12v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z" />
+          <path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2" />
+          <path d="M7.5 7c0-1 .8-1.2.8-2.2M11.5 7c0-1 .8-1.2.8-2.2" />
+        </svg>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", textTransform: "uppercase" }}>{c.title}</div>
       </div>
-    </section>
+      <p style={{ fontSize: "13.5px", lineHeight: 1.55, margin: "6px 0 10px" }}>{c.text}</p>
+      <Link
+        href={`/${locale}/kafa`}
+        style={{
+          display: "block",
+          textAlign: "center",
+          boxSizing: "border-box",
+          width: "100%",
+          padding: "12px",
+          background: "#D96C2C",
+          color: "#F6EBD3",
+          border: "2px solid #452D18",
+          borderRadius: "4px",
+          fontFamily: "var(--font-alfa), Georgia, serif",
+          fontSize: "13px",
+          letterSpacing: ".06em",
+          textDecoration: "none",
+          textTransform: "uppercase",
+        }}
+      >
+        {c.cta}
+      </Link>
+      <div style={{ fontSize: "12px", marginTop: "8px", textAlign: "center" }}>
+        <Link href={`/${locale}/donatori`} style={{ color: "#452D18" }}>{c.donorLink}</Link>
+      </div>
+    </div>
   );
 }
 
@@ -294,21 +304,24 @@ export function CoffeeSection({ dict, locale }: { dict: Dictionary; locale: Loca
 export function TransparencySection({ dict }: { dict: Dictionary }) {
   const t = dict.transparency;
   return (
-    <section id="transparentnost" className="section border-t-2 border-line py-14">
-      <div className="container-content">
-        <div className="mx-auto max-w-xl">
-          <h2 className="font-display text-2xl font-bold text-ink text-center mb-6">{t.title}</h2>
-          <ul className="space-y-2">
-            {t.items.map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-ink/85">
-                <span className="text-forest font-bold text-lg flex-none">✓</span>
-                <span className="font-semibold">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", padding: "16px", background: "#FBF3E0" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "10px", margin: "0 0 10px" }}>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#452D18" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="3.5" />
+          <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
+        </svg>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "16px", textTransform: "uppercase" }}>{t.title}</div>
       </div>
-    </section>
+      <div style={{ display: "flex", flexDirection: "column", gap: "7px", fontSize: "13.5px", lineHeight: 1.5 }}>
+        {t.items.map((item, i) => (
+          <div key={i} style={{ display: "flex", gap: "8px" }}>
+            <span style={{ color: "#55704F", fontWeight: 600 }}>✓</span>
+            {item}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -331,19 +344,28 @@ export function ShareSection({ dict }: { dict: Dictionary }) {
   }
 
   return (
-    <section id="podijeli" className="section border-t-2 border-line py-14 bg-sand">
-      <div className="container-content text-center">
-        <h2 className="font-display text-2xl font-bold text-ink mb-2">{s.title}</h2>
-        <p className="text-muted mb-5 max-w-md mx-auto">{s.text}</p>
-        <button
-          type="button"
-          onClick={handleShare}
-          className="btn-primary"
-        >
-          {copied ? s.copied : s.cta}
-        </button>
-      </div>
-    </section>
+    <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", padding: "16px", background: "#FBF3E0", textAlign: "center" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", margin: "0 0 6px", textTransform: "uppercase" }}>{s.title}</div>
+      <p style={{ fontSize: "13.5px", lineHeight: 1.55, margin: "0 0 12px" }}>{s.text}</p>
+      <button
+        type="button"
+        onClick={handleShare}
+        style={{
+          padding: "12px 22px",
+          background: "#D96C2C",
+          color: "#F6EBD3",
+          border: "2px solid #452D18",
+          borderRadius: "4px",
+          fontFamily: "var(--font-alfa), Georgia, serif",
+          fontSize: "13px",
+          letterSpacing: ".06em",
+          cursor: "pointer",
+          textTransform: "uppercase",
+        }}
+      >
+        {copied ? s.copied : s.cta}
+      </button>
+    </div>
   );
 }
 
@@ -351,25 +373,21 @@ export function ShareSection({ dict }: { dict: Dictionary }) {
 export function PartnersSection({ dict }: { dict: Dictionary }) {
   const p = dict.partnersSection;
   return (
-    <section id="partneri" className="section border-t-2 border-line py-14">
-      <div className="container-content text-center">
-        <h2 className="font-display text-2xl font-bold text-ink mb-2">{p.title}</h2>
-        <p className="text-muted mb-8 max-w-md mx-auto">{p.text}</p>
-        {/* Placeholder za logotipe partnera */}
-        <div className="flex flex-wrap justify-center gap-6 opacity-50">
-          {["Partner 1", "Partner 2", "Partner 3"].map((n) => (
-            <div
-              key={n}
-              className="border-2 border-line px-6 py-3 text-sm font-bold text-muted"
-              style={{ borderRadius: "6px" }}
-            >
-              {n}
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 text-xs text-muted/60">Pošalji mi imena i logotipe partnera da ih upišem.</p>
+    <div style={{ margin: "0 18px 22px", textAlign: "center" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", margin: "0 0 4px", textTransform: "uppercase" }}>{p.title}</div>
+      <div style={{ fontSize: "13px", color: "#7a5b3d", margin: "0 0 12px" }}>{p.text}</div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "center" }}>
+        {["Ime partnera 1", "Ime partnera 2", "Ime partnera 3"].map((n) => (
+          <span
+            key={n}
+            style={{ border: "1.5px solid #452D18", borderRadius: "999px", padding: "7px 14px", fontSize: "13px", background: "#FBF3E0", color: "#7a5b3d" }}
+          >
+            {n}
+          </span>
+        ))}
       </div>
-    </section>
+      <div style={{ fontSize: "12px", color: "#7a5b3d", marginTop: "10px" }}>Pošalji mi imena i logotipe partnera da ih upišem.</div>
+    </div>
   );
 }
 
@@ -379,27 +397,47 @@ export function FaqSection({ dict }: { dict: Dictionary }) {
   const [open, setOpen] = useState(-1);
 
   return (
-    <section id="faq" className="section border-t-2 border-line py-14 bg-sand">
-      <div className="container-content">
-        <h2 className="font-display text-2xl font-bold text-ink text-center mb-8">{f.title}</h2>
-        <div className="mx-auto max-w-2xl space-y-3">
-          {f.items.map((item, i) => (
-            <details
-              key={i}
-              open={open === i}
-              onToggle={(e) => setOpen((e.target as HTMLDetailsElement).open ? i : -1)}
-              className="border-2 border-ink bg-sand"
-              style={{ borderRadius: "6px", boxShadow: "3px 3px 0 rgba(69,45,24,0.20)" }}
-            >
-              <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 font-bold text-ink list-none">
-                {item.q}
-                <span className="flex-none text-xl font-black text-amber-deep">{open === i ? "–" : "+"}</span>
-              </summary>
-              <div className="px-5 pb-4 leading-relaxed text-ink/80">{item.a}</div>
-            </details>
-          ))}
-        </div>
+    <div style={{ margin: "0 18px 26px" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "0 0 12px", textTransform: "uppercase" }}>
+        {f.title}
       </div>
-    </section>
+      {f.items.map((item, i) => (
+        <div
+          key={i}
+          style={{ border: "2px solid #452D18", borderRadius: "4px", background: "#FBF3E0", margin: "0 0 8px", overflow: "hidden" }}
+        >
+          <button
+            type="button"
+            onClick={() => setOpen(open === i ? -1 : i)}
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "10px",
+              padding: "12px 14px",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              fontFamily: "var(--font-zilla), Georgia, serif",
+              fontSize: "14.5px",
+              fontWeight: 600,
+              color: "#452D18",
+              textAlign: "left",
+            }}
+          >
+            <span>{item.q}</span>
+            <span style={{ fontFamily: "var(--font-alfa), Georgia, serif", color: "#A5551F", flexShrink: 0 }}>
+              {open === i ? "–" : "+"}
+            </span>
+          </button>
+          {open === i && (
+            <div style={{ padding: "0 14px 12px", fontSize: "13.5px", lineHeight: 1.6, color: "#5d4630" }}>
+              {item.a}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }

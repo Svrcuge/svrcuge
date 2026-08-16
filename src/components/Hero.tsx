@@ -4,100 +4,70 @@ import type { Dictionary, Locale } from "@/lib/i18n";
 export default function Hero({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const h = dict.hero;
   return (
-    <section className="relative">
-      <div className="relative w-full">
-        {/* Slika sela */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/illustrations/hero.webp"
-            alt={h.mapCaption}
-            fetchPriority="high"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-        </div>
-
-        {/* Narandžasti baner */}
-        <div
-          className="bg-amber-deep text-cream text-center py-4 px-5"
-          style={{ borderTop: "2px solid #452D18", borderBottom: "2px solid #452D18" }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo/logo-white.png" alt="Svrčuge" className="mx-auto mb-1" style={{ height: "80px" }} />
-          <div className="text-[11px] font-bold tracking-[0.28em] uppercase mb-1">SELO U ZALEĐU HERCEG NOVOG</div>
-          <div
-            className="leading-tight text-cream mb-1"
-            style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "clamp(28px, 6vw, 44px)" }}
-          >
-            OD SVJETLA DO ŽIVOTA
-          </div>
-          <div className="text-[12px] tracking-[0.08em] text-cream/90">SELO KOJE SE BUDI IZ ZABORAVA</div>
-        </div>
-      </div>
-
-      {/* Uvodni tekst */}
-      <div className="container-content py-6">
-        <p className="text-base leading-relaxed sm:text-lg max-w-2xl mx-auto text-center">{h.subtitle}</p>
-      </div>
-
-      {/* Statistički chipovi */}
-      <div className="container-content pb-6">
-        <div className="flex flex-wrap gap-3 justify-center">
-          <div className="stat-chip" style={{ transform: "rotate(-2deg)" }}>
-            <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px" }}>14 km</div>
-            <div className="text-[9.5px] font-bold tracking-[0.1em] uppercase">od Herceg Novog</div>
-          </div>
-          <div className="stat-chip" style={{ transform: "rotate(1.5deg)", background: "#F6EBD3" }}>
-            <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px" }}>5</div>
-            <div className="text-[9.5px] font-bold tracking-[0.1em] uppercase">mještana</div>
-          </div>
-          <div
-            className="stat-chip text-cream"
-            style={{ transform: "rotate(-1deg)", background: "#55704F", borderColor: "#452D18" }}
-          >
-            <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px" }}>2026</div>
-            <div className="text-[9.5px] font-bold tracking-[0.1em] uppercase">prvo svjetlo</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Jovica kartica */}
-      <div className="container-content pb-8">
-        <div
-          className="max-w-2xl mx-auto flex gap-4 items-start p-4 bg-sand"
-          style={{ border: "2px solid #452D18", borderRadius: "6px", boxShadow: "3px 3px 0 rgba(69,45,24,0.35)" }}
-        >
-          <div
-            className="flex-none overflow-hidden border-2 border-ink"
-            style={{ width: "74px", height: "74px", borderRadius: "50%", flexShrink: 0 }}
-          >
+    <section>
+      {/* Outer hero card */}
+      <div style={{ margin: "18px", border: "2px solid #452D18", borderRadius: "6px", padding: "6px", background: "#EFDFC0" }}>
+        <div style={{ border: "1px dashed #452D18", borderRadius: "3px", overflow: "hidden" }}>
+          {/* Image */}
+          <div style={{ width: "100%", height: "300px", overflow: "hidden" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/putnici/01.webp" alt={h.jovicaName} className="h-full w-full object-cover" />
+            <img
+              src="/illustrations/hero.webp"
+              alt={h.mapCaption}
+              fetchPriority="high"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           </div>
-          <div>
-            <div className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-accent">{h.jovicaLabel}</div>
-            <div
-              className="mt-0.5 mb-1.5"
-              style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px" }}
-            >
-              {h.jovicaName}
+          {/* Orange banner */}
+          <div style={{ textAlign: "center", padding: "16px 14px 18px", background: "#D96C2C", color: "#F6EBD3" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo/logo-white.png" alt="Svrčuge" style={{ height: "96px", display: "block", margin: "0 auto 4px" }} />
+            <div style={{ fontSize: "11px", letterSpacing: ".28em", fontWeight: 600 }}>SELO U ZALEĐU HERCEG NOVOG</div>
+            <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "30px", lineHeight: 1.12, margin: "6px 0 4px" }}>
+              OD SVJETLA<br />DO ŽIVOTA
             </div>
-            <p className="text-[13.5px] leading-snug text-ink/85">{h.jovicaText}</p>
-            <Link href={`/${locale}/prica`} className="mt-2 inline-block text-sm font-semibold text-amber-deep hover:underline">
-              {h.jovicaLink} →
-            </Link>
+            <div style={{ fontSize: "12.5px", letterSpacing: ".08em" }}>SELO KOJE SE BUDI IZ ZABORAVA</div>
           </div>
         </div>
       </div>
 
-      {/* CTA dugmad */}
-      <div className="container-content pb-12 flex flex-wrap gap-3 justify-center">
-        <Link href={`/${locale}#prijava`} className="btn-primary">
-          {h.ctaPrimary}
-        </Link>
-        <Link href={`/${locale}/prica`} className="btn-secondary">
-          {h.ctaSecondary}
-        </Link>
+      {/* Intro text */}
+      <div style={{ padding: "4px 18px 8px" }}>
+        <p style={{ fontSize: "15px", lineHeight: 1.65, margin: 0 }}>
+          Svrčuge su selo u zelenom zaleđu Boke: <strong>14 km od Herceg Novog, 29 km od Trebinja</strong>. Nekad puno života, danas broji svega petoro mještana. Ali selo je odlučilo da ne nestane: prvo se vraća <strong>svjetlo</strong>, pa onda sve ostalo.
+        </p>
+      </div>
+
+      {/* Stat chips */}
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap", margin: "16px 18px 22px" }}>
+        <div style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "9px 11px", background: "#E0A83A", transform: "rotate(-2deg)", textAlign: "center" }}>
+          <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px" }}>14 km</div>
+          <div style={{ fontSize: "9.5px", letterSpacing: ".1em", fontWeight: 600, textTransform: "uppercase" }}>od Herceg Novog</div>
+        </div>
+        <div style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "9px 11px", background: "#F6EBD3", transform: "rotate(1.5deg)", textAlign: "center" }}>
+          <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px" }}>5</div>
+          <div style={{ fontSize: "9.5px", letterSpacing: ".1em", fontWeight: 600, textTransform: "uppercase" }}>mještana</div>
+        </div>
+        <div style={{ border: "2px solid #452D18", borderRadius: "4px", padding: "9px 11px", background: "#55704F", color: "#F6EBD3", transform: "rotate(-1deg)", textAlign: "center" }}>
+          <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px" }}>2026</div>
+          <div style={{ fontSize: "9.5px", letterSpacing: ".1em", fontWeight: 600, textTransform: "uppercase" }}>prvo svjetlo</div>
+        </div>
+      </div>
+
+      {/* Jovica card */}
+      <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", background: "#FBF3E0", padding: "16px", display: "flex", gap: "14px", alignItems: "flex-start", boxShadow: "3px 3px 0 rgba(69,45,24,.35)" }}>
+        <div style={{ width: "74px", height: "74px", flexShrink: 0, border: "2px solid #452D18", borderRadius: "50%", overflow: "hidden" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/putnici/01.webp" alt={h.jovicaName} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+        <div>
+          <div style={{ fontSize: "10.5px", letterSpacing: ".16em", fontWeight: 600, color: "#A5551F", textTransform: "uppercase" }}>{h.jovicaLabel}</div>
+          <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px", margin: "2px 0 4px" }}>{h.jovicaName}</div>
+          <p style={{ fontSize: "13.5px", lineHeight: 1.55, margin: 0 }}>{h.jovicaText}</p>
+          <Link href={`/${locale}/prica`} style={{ fontSize: "12.5px", display: "inline-block", marginTop: "6px" }}>
+            {h.jovicaLink}
+          </Link>
+        </div>
       </div>
     </section>
   );

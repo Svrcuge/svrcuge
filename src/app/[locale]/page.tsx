@@ -17,7 +17,6 @@ import {
   FaqSection,
 } from "@/components/Sections";
 import Footer from "@/components/Footer";
-import StickyCTA from "@/components/StickyCTA";
 
 export async function generateMetadata({
   params,
@@ -54,7 +53,7 @@ export default async function HomePage({
         <ProjectsSection dict={dict} locale={locale} />
         <EventsSection dict={dict} locale={locale} />
         <ExpeditionSection dict={dict} locale={locale} />
-        <LocationSection dict={dict} locale={locale} />
+        <LocationSection dict={dict} />
         <BlockquoteSection dict={dict} />
         <EmailSignupSection dict={dict} locale={locale} />
         <CoffeeSection dict={dict} locale={locale} />
@@ -64,7 +63,6 @@ export default async function HomePage({
         <FaqSection dict={dict} />
       </main>
       <Footer dict={dict} locale={locale} />
-      <StickyCTA dict={dict} locale={locale} />
     </>
   );
 }
