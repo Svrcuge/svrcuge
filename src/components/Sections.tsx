@@ -10,19 +10,21 @@ import { SOCIAL } from "@/lib/config";
 export function ProjectsSection({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const p = dict.projects;
   return (
-    <div id="projekti" style={{ padding: "0 18px 22px" }}>
-      {/* Lightbulb icon */}
-      <div style={{ display: "flex", justifyContent: "center", margin: "0 0 6px" }}>
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D96C2C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M9 18h6M10 21h4" />
-          <path d="M12 3a6 6 0 0 1 3.5 10.9c-.6.5-.5 1.3-.5 2.1h-6c0-.8.1-1.6-.5-2.1A6 6 0 0 1 12 3z" />
-        </svg>
+    <div id="projekti" style={{ marginBottom: "28px" }}>
+      {/* Section header banner */}
+      <div style={{ background: "#452D18", padding: "18px 18px 14px", marginBottom: "16px" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "8px" }}>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E0A83A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M9 18h6M10 21h4" />
+            <path d="M12 3a6 6 0 0 1 3.5 10.9c-.6.5-.5 1.3-.5 2.1h-6c0-.8.1-1.6-.5-2.1A6 6 0 0 1 12 3z" />
+          </svg>
+        </div>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "28px", textAlign: "center", color: "#F6EBD3", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+          {p.eyebrow}
+        </div>
+        <div style={{ fontSize: "14px", textAlign: "center", color: "#C9B694", marginTop: "6px" }}>{p.intro}</div>
       </div>
-      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "0 0 4px", textTransform: "uppercase" }}>
-        {p.eyebrow}
-      </div>
-      <div style={{ fontSize: "13px", textAlign: "center", color: "#7a5b3d", margin: "0 0 14px" }}>{p.intro}</div>
-      <div className="dgridp" style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+      <div className="dgridp" style={{ display: "flex", flexDirection: "column", gap: "10px", padding: "0 18px" }}>
         {p.items.map((item) => {
           const isInProgress = item.status === "in-progress";
           const isSoon = item.status === "soon";
@@ -30,34 +32,36 @@ export function ProjectsSection({ dict, locale }: { dict: Dictionary; locale: Lo
           const rowStyle: React.CSSProperties = {
             display: "flex",
             alignItems: "center",
-            gap: "10px",
-            borderRadius: "4px",
-            padding: "10px 12px",
+            gap: "14px",
+            borderRadius: "6px",
+            padding: "14px 16px",
             ...(isInProgress
-              ? { border: "2px solid #452D18", background: "#55704F", color: "#F6EBD3" }
+              ? { border: "2px solid #452D18", background: "#55704F", color: "#F6EBD3", boxShadow: "3px 3px 0 rgba(69,45,24,.3)" }
               : isSoon
-              ? { border: "2px solid #452D18", background: "#E0A83A", color: "#452D18" }
+              ? { border: "2px solid #452D18", background: "#E0A83A", color: "#452D18", boxShadow: "3px 3px 0 rgba(69,45,24,.3)" }
               : isDone
-              ? { border: "2px solid #452D18", background: "#55704F", color: "#F6EBD3" }
-              : { border: "2px dashed #A5551F" }),
+              ? { border: "2px solid #452D18", background: "#55704F", color: "#F6EBD3", boxShadow: "3px 3px 0 rgba(69,45,24,.3)" }
+              : { border: "2px dashed #A5551F", background: "#FBF3E0" }),
           };
-          const numColor = isInProgress || isDone ? "#F6EBD3" : isSoon ? "#452D18" : "#A5551F";
+          const numColor = isInProgress || isDone ? "#E0A83A" : isSoon ? "#452D18" : "#A5551F";
           const badgeStyle: React.CSSProperties = {
-            fontSize: "10.5px",
+            fontSize: "11px",
+            fontWeight: 700,
             letterSpacing: ".1em",
             borderRadius: "3px",
-            padding: "2px 6px",
+            padding: "3px 8px",
+            flexShrink: 0,
             ...(isInProgress || isDone
-              ? { border: "1px solid #F6EBD3" }
+              ? { border: "1.5px solid #F6EBD3", color: "#F6EBD3" }
               : isSoon
-              ? { border: "1px solid #452D18" }
+              ? { border: "1.5px solid #452D18", color: "#452D18" }
               : {}),
           };
           const badgeLabel = isInProgress ? "U TOKU" : isSoon ? "USKORO" : isDone ? "ZAVRŠENO" : "";
           return (
             <div key={item.num} style={rowStyle}>
-              <span style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "13px", color: numColor }}>{item.num}</span>
-              <span style={{ flex: 1, fontWeight: 600, fontSize: "14px" }}>{item.title}</span>
+              <span style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", color: numColor, minWidth: "28px" }}>{item.num}</span>
+              <span style={{ flex: 1, fontWeight: 700, fontSize: "16px", lineHeight: 1.3 }}>{item.title}</span>
               {badgeLabel && <span style={badgeStyle}>{badgeLabel}</span>}
             </div>
           );
@@ -78,10 +82,10 @@ export function EventsSection({ dict, locale }: { dict: Dictionary; locale: Loca
 
   return (
     <div style={{ margin: "0 18px 22px" }}>
-      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "0 0 4px", textTransform: "uppercase" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "26px", textAlign: "center", margin: "0 0 4px", textTransform: "uppercase" }}>
         {e.eyebrow}
       </div>
-      <div style={{ fontSize: "13px", textAlign: "center", color: "#7a5b3d", margin: "0 0 14px" }}>{e.subtitle}</div>
+      <div style={{ fontSize: "14.5px", textAlign: "center", color: "#7a5b3d", margin: "0 0 16px" }}>{e.subtitle}</div>
       <div className="dgrid" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         {e.items.map((ev, i) => (
           <Link
@@ -150,10 +154,10 @@ export function ExpeditionSection({ dict, locale }: { dict: Dictionary; locale: 
         <div style={{ fontSize: "10.5px", letterSpacing: ".16em", fontWeight: 600, color: "#A5551F", textAlign: "center", textTransform: "uppercase" }}>
           {e.eyebrow}
         </div>
-        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "4px 0 10px", textTransform: "uppercase" }}>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "24px", textAlign: "center", margin: "4px 0 12px", textTransform: "uppercase" }}>
           {e.title}
         </div>
-        <p style={{ fontSize: "14px", lineHeight: 1.6, margin: "0 0 12px" }}>{e.text}</p>
+        <p style={{ fontSize: "15px", lineHeight: 1.65, margin: "0 0 14px" }}>{e.text}</p>
         {/* Image slot */}
         <div className="dhalf" style={{ width: "100%", height: "190px", border: "1px solid #452D18", borderRadius: "3px", overflow: "hidden" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -230,10 +234,10 @@ export function BlockquoteSection({ dict }: { dict: Dictionary }) {
   const q = dict.blockquote;
   return (
     <div style={{ margin: "0 18px 22px", padding: "22px 18px", background: "#452D18", color: "#F6EBD3", borderRadius: "6px", textAlign: "center" }}>
-      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "17px", lineHeight: 1.35 }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "22px", lineHeight: 1.35 }}>
         „{q.text}"
       </div>
-      <div style={{ marginTop: "10px", fontSize: "13px", color: "#E0A83A" }}>{q.author}</div>
+      <div style={{ marginTop: "12px", fontSize: "14px", color: "#E0A83A" }}>{q.author}</div>
     </div>
   );
 }
@@ -243,10 +247,10 @@ export function EmailSignupSection({ dict, locale }: { dict: Dictionary; locale:
   const e = dict.emailSignup;
   return (
     <div id="prijava" style={{ margin: "0 18px 16px", border: "2px dashed #A5551F", borderRadius: "6px", padding: "18px", background: "#FBF3E0" }}>
-      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", color: "#A5551F", margin: "0 0 6px" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "22px", color: "#A5551F", margin: "0 0 8px" }}>
         {e.eyebrow}
       </div>
-      <p style={{ fontSize: "14px", lineHeight: 1.55, margin: "0 0 12px" }}>{e.intro}</p>
+      <p style={{ fontSize: "15px", lineHeight: 1.6, margin: "0 0 14px" }}>{e.intro}</p>
       <EmailSignupForm dict={dict} locale={locale} />
     </div>
   );
@@ -263,9 +267,9 @@ export function CoffeeSection({ dict, locale }: { dict: Dictionary; locale: Loca
           <path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2" />
           <path d="M7.5 7c0-1 .8-1.2.8-2.2M11.5 7c0-1 .8-1.2.8-2.2" />
         </svg>
-        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", textTransform: "uppercase" }}>{c.title}</div>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "20px", textTransform: "uppercase" }}>{c.title}</div>
       </div>
-      <p style={{ fontSize: "13.5px", lineHeight: 1.55, margin: "6px 0 10px" }}>{c.text}</p>
+      <p style={{ fontSize: "15px", lineHeight: 1.6, margin: "8px 0 12px" }}>{c.text}</p>
       <Link
         href={`/${locale}/kafa`}
         style={{
@@ -305,9 +309,9 @@ export function TransparencySection({ dict }: { dict: Dictionary }) {
           <circle cx="12" cy="12" r="3.5" />
           <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
         </svg>
-        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "16px", textTransform: "uppercase" }}>{t.title}</div>
+        <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "20px", textTransform: "uppercase" }}>{t.title}</div>
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "7px", fontSize: "13.5px", lineHeight: 1.5 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "9px", fontSize: "15px", lineHeight: 1.55 }}>
         {t.items.map((item, i) => (
           <div key={i} style={{ display: "flex", gap: "8px" }}>
             <span style={{ color: "#55704F", fontWeight: 600 }}>✓</span>
@@ -339,8 +343,8 @@ export function ShareSection({ dict }: { dict: Dictionary }) {
 
   return (
     <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", padding: "16px", background: "#FBF3E0", textAlign: "center" }}>
-      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "15px", margin: "0 0 6px", textTransform: "uppercase" }}>{s.title}</div>
-      <p style={{ fontSize: "13.5px", lineHeight: 1.55, margin: "0 0 12px" }}>{s.text}</p>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "22px", margin: "0 0 8px", textTransform: "uppercase" }}>{s.title}</div>
+      <p style={{ fontSize: "15px", lineHeight: 1.6, margin: "0 0 14px" }}>{s.text}</p>
       <button
         type="button"
         onClick={handleShare}
@@ -368,8 +372,8 @@ export function PartnersSection({ dict }: { dict: Dictionary }) {
   const p = dict.partnersSection;
   return (
     <div className="dnarrow" style={{ margin: "0 18px 22px", textAlign: "center" }}>
-      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", margin: "0 0 4px", textTransform: "uppercase" }}>{p.title}</div>
-      <div style={{ fontSize: "13px", color: "#7a5b3d", margin: "0 0 12px" }}>{p.text}</div>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "26px", margin: "0 0 6px", textTransform: "uppercase" }}>{p.title}</div>
+      <div style={{ fontSize: "14.5px", color: "#7a5b3d", margin: "0 0 14px" }}>{p.text}</div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "center" }}>
         {["Ime partnera 1", "Ime partnera 2", "Ime partnera 3"].map((n) => (
           <span
@@ -392,7 +396,7 @@ export function FaqSection({ dict }: { dict: Dictionary }) {
 
   return (
     <div className="dnarrow" style={{ margin: "0 18px 26px" }}>
-      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "0 0 12px", textTransform: "uppercase" }}>
+      <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "26px", textAlign: "center", margin: "0 0 14px", textTransform: "uppercase" }}>
         {f.title}
       </div>
       {f.items.map((item, i) => (
