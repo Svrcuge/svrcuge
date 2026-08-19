@@ -8,10 +8,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background-color: #EADCBE;
+  background-color: #F6EBD3;
   color: theme("colors.ink");
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -23,7 +24,6 @@ body {
   margin: 0 auto;
   background: #F6EBD3;
   min-height: 100vh;
-  box-shadow: 0 0 40px rgba(69,45,24,.25);
 }
 
 /* Desktop layout system (≥900px) */
@@ -53,6 +53,13 @@ body {
   .dhero > div:last-child  { display: flex; flex-direction: column; justify-content: center; text-align: left !important; padding: 32px !important }
   .dbreak            { height: 420px !important }
   .dbreak .bt        { font-size: 36px !important }
+
+  /* Full-bleed header i footer — izlaze iz .site containera na desktop */
+  .site > header,
+  .site > footer {
+    width: 100vw !important;
+    margin-left: calc((100% - 100vw) / 2) !important;
+  }
 }
 
 @layer base {
