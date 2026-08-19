@@ -79,10 +79,11 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
           className="dnav"
           style={{
             display: "none",
-            gap: "16px",
+            gap: "20px",
             alignItems: "center",
-            fontSize: "13.5px",
-            fontWeight: 600,
+            fontSize: "13px",
+            fontFamily: "var(--font-alfa), Georgia, serif",
+            letterSpacing: "0.03em",
           }}
         >
           {desktopLinks.map((l) => (
@@ -151,11 +152,12 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
             </div>
           </details>
 
-          {/* Hamburger — always visible */}
+          {/* Hamburger — samo na mobilnom */}
           <button
             type="button"
             onClick={() => setOpen(true)}
             aria-label="Meni"
+            className="dmobile-only"
             style={{
               display: "flex",
               flexDirection: "column",

@@ -54,6 +54,9 @@ body {
   .dbreak            { height: 420px !important }
   .dbreak .bt        { font-size: 36px !important }
 
+  /* Hamburger skriven na desktopu */
+  .dmobile-only { display: none !important }
+
   /* Full-bleed header i footer — izlaze iz .site containera na desktop */
   .site > header,
   .site > footer {
