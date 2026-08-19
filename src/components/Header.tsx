@@ -119,13 +119,13 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
               style={{
                 position: "absolute",
                 right: 0,
-                top: "40px",
-                background: "#FBF3E0",
-                border: "2px solid #452D18",
+                top: "44px",
+                background: "#2a1a0a",
+                border: "2px solid #F6EBD3",
                 borderRadius: "4px",
                 display: "flex",
                 flexDirection: "column",
-                minWidth: "130px",
+                minWidth: "140px",
                 zIndex: 60,
                 overflow: "hidden",
               }}
@@ -135,12 +135,12 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
                   key={loc}
                   href={`/${loc}`}
                   style={{
-                    padding: "9px 12px",
+                    padding: "10px 14px",
                     fontSize: "13px",
-                    fontWeight: loc === locale ? 600 : undefined,
-                    background: loc === locale ? "#452D18" : undefined,
-                    color: loc === locale ? "#F6EBD3" : "#452D18",
-                    borderTop: i > 0 ? "1px dashed #A5551F" : "none",
+                    fontWeight: loc === locale ? 700 : 500,
+                    background: loc === locale ? "#E0A83A" : undefined,
+                    color: loc === locale ? "#2a1a0a" : "#F6EBD3",
+                    borderTop: i > 0 ? "1px solid rgba(246,235,211,.15)" : "none",
                     textDecoration: "none",
                     display: "block",
                   }}
