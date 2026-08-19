@@ -52,8 +52,8 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
           justifyContent: "space-between",
           alignItems: "center",
           padding: "14px 18px",
-          borderBottom: "3px double #452D18",
-          background: "#F6EBD3",
+          borderBottom: "3px solid #2a1a0a",
+          background: "#452D18",
         }}
       >
         {/* Logo */}
@@ -70,8 +70,8 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo/logo-black.png" alt="Svrčuge" style={{ height: "34px" }} />
-          SVRČUGE
+          <img src="/logo/logo-white.png" alt="Svrčuge" style={{ height: "34px" }} />
+          <span style={{ color: "#F6EBD3" }}>SVRČUGE</span>
         </Link>
 
         {/* Desktop nav — hidden on mobile, shown via .dnav CSS class at ≥900px */}
@@ -89,7 +89,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
             <Link
               key={l.href}
               href={l.href}
-              style={{ color: "#452D18", textDecoration: "none" }}
+              style={{ color: "#F6EBD3", textDecoration: "none" }}
             >
               {l.label}
             </Link>
@@ -103,13 +103,14 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
               style={{
                 listStyle: "none",
                 cursor: "pointer",
-                border: "2px solid #452D18",
+                border: "2px solid #F6EBD3",
                 borderRadius: "4px",
                 padding: "8px 10px",
                 fontSize: "12px",
                 fontWeight: 600,
                 fontFamily: "var(--font-zilla), Georgia, serif",
                 userSelect: "none",
+                color: "#F6EBD3",
               }}
             >
               {locale.toUpperCase()} ▾
@@ -160,15 +161,15 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
               flexDirection: "column",
               gap: "4px",
               background: "none",
-              border: "2px solid #452D18",
+              border: "2px solid #F6EBD3",
               borderRadius: "4px",
               padding: "9px 8px",
               cursor: "pointer",
             }}
           >
-            <span style={{ width: "18px", height: "2px", background: "#452D18", display: "block" }} />
-            <span style={{ width: "18px", height: "2px", background: "#452D18", display: "block" }} />
-            <span style={{ width: "18px", height: "2px", background: "#452D18", display: "block" }} />
+            <span style={{ width: "18px", height: "2px", background: "#F6EBD3", display: "block" }} />
+            <span style={{ width: "18px", height: "2px", background: "#F6EBD3", display: "block" }} />
+            <span style={{ width: "18px", height: "2px", background: "#F6EBD3", display: "block" }} />
           </button>
         </div>
       </header>

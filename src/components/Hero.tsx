@@ -21,7 +21,7 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: Local
           {/* Orange banner */}
           <div style={{ textAlign: "center", padding: "16px 14px 18px", background: "#D96C2C", color: "#F6EBD3" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo/logo-white.png" alt="Svrčuge" style={{ height: "96px", display: "block", margin: "0 auto 4px" }} />
+            <img src="/logo/logo-white.png" alt="Svrčuge" style={{ height: "160px", display: "block", margin: "0 auto 8px" }} />
             <div style={{ fontSize: "11px", letterSpacing: ".28em", fontWeight: 600 }}>SELO U ZALEĐU HERCEG NOVOG</div>
             <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "30px", lineHeight: 1.12, margin: "6px 0 4px" }}>
               OD SVJETLA<br />DO ŽIVOTA
