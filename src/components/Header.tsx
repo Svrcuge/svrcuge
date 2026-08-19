@@ -23,8 +23,13 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
     { href: `${home}/prica`, label: n.story },
     { href: `${home}/novosti`, label: n.news },
     { href: `${home}/dogadjaji`, label: n.events },
+    { href: `${home}/istorija`, label: n.history },
     { href: `${home}/posjeti`, label: n.visit },
+    { href: `${home}#projekti`, label: n.projects },
+    { href: `${home}/donatori`, label: n.friends },
+    { href: `${home}/mediji`, label: n.media },
     { href: `${home}/prodavnica`, label: n.shop },
+    { href: `${home}/knjiga`, label: n.guestbook },
   ];
 
   const mobileLinks = [
@@ -79,11 +84,11 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
           className="dnav"
           style={{
             display: "none",
-            gap: "20px",
+            gap: "14px",
             alignItems: "center",
-            fontSize: "13px",
+            fontSize: "12px",
             fontFamily: "var(--font-alfa), Georgia, serif",
-            letterSpacing: "0.03em",
+            letterSpacing: "0.02em",
           }}
         >
           {desktopLinks.map((l) => (
