@@ -27,7 +27,7 @@ export default async function TermsPage({
   const t = dict.terms;
 
   return (
-    <>
+    <div className="site site-840">
       <Header dict={dict} locale={locale} />
       <main className="section">
         <article className="container-content max-w-3xl">
@@ -51,6 +51,6 @@ export default async function TermsPage({
         </article>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

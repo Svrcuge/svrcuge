@@ -40,7 +40,7 @@ export default async function ProjectsPage({
   const p = dict.projects;
 
   return (
-    <>
+    <div className="site site-1060">
       <Header dict={dict} locale={locale} />
       <main>
         <div
@@ -96,6 +96,6 @@ export default async function ProjectsPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

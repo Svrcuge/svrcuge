@@ -29,12 +29,12 @@ export default async function KafaPage({
   const dict = getDictionary(locale);
 
   return (
-    <>
+    <div className="site site-900">
       <Header dict={dict} locale={locale} />
       <main>
         <KafaClient locale={locale} />
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

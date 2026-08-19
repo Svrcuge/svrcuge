@@ -43,7 +43,7 @@ export default async function MediaPage({
   const dict = getDictionary(locale);
 
   return (
-    <>
+    <div className="site site-1060">
       <Header dict={dict} locale={locale} />
       <main>
         {/* Hero text */}
@@ -132,6 +132,6 @@ export default async function MediaPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

@@ -28,7 +28,7 @@ export default async function VisitPage({
   const p = dict.visitPage;
 
   return (
-    <>
+    <div className="site site-1060">
       <Header dict={dict} locale={locale} />
       <main>
         {/* Hero card — forest green banner */}
@@ -162,6 +162,6 @@ export default async function VisitPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

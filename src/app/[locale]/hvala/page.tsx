@@ -21,7 +21,7 @@ export default async function ThankYouPage({
   const shareUrl = `${SITE_URL}/${locale}`;
 
   return (
-    <>
+    <div className="site site-840">
       <Header dict={dict} locale={locale} />
       <main className="section">
         <div className="container-content max-w-2xl text-center">
@@ -45,6 +45,6 @@ export default async function ThankYouPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

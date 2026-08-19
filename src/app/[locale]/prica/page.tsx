@@ -35,7 +35,7 @@ export default async function PricaPage({
   const dict = getDictionary(locale);
 
   return (
-    <>
+    <div className="site site-840">
       <Header dict={dict} locale={locale} />
       <main>
         {/* Hero card — forest green banner */}
@@ -190,6 +190,6 @@ export default async function PricaPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

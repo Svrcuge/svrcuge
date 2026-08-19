@@ -33,7 +33,7 @@ export default async function HistoryPage({
   const dict = getDictionary(locale);
 
   return (
-    <>
+    <div className="site site-840">
       <Header dict={dict} locale={locale} />
       <main>
         {/* Hero text */}
@@ -129,6 +129,6 @@ export default async function HistoryPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

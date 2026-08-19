@@ -59,7 +59,7 @@ export default async function NewsPage({
   const dict = getDictionary(locale);
 
   return (
-    <>
+    <div className="site site-840">
       <Header dict={dict} locale={locale} />
       <main>
         {/* Hero text */}
@@ -105,6 +105,6 @@ export default async function NewsPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

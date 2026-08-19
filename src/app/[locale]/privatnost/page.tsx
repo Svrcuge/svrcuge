@@ -27,7 +27,7 @@ export default async function PrivacyPage({
   const t = dict.privacy;
 
   return (
-    <>
+    <div className="site site-840">
       <Header dict={dict} locale={locale} />
       <main className="section">
         <article className="container-content max-w-3xl">
@@ -60,6 +60,6 @@ export default async function PrivacyPage({
         </article>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }

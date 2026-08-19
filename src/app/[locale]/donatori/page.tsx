@@ -39,7 +39,7 @@ export default async function DonoriPage({
   const countries = new Set(list.map((d) => d.country_code).filter(Boolean)).size;
 
   return (
-    <>
+    <div className="site site-1060">
       <Header dict={dict} locale={locale} />
       <main>
         {/* Hero text */}
@@ -105,6 +105,6 @@ export default async function DonoriPage({
         </div>
       </main>
       <Footer dict={dict} locale={locale} />
-    </>
+    </div>
   );
 }
