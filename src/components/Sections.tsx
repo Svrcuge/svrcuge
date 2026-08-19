@@ -22,7 +22,7 @@ export function ProjectsSection({ dict, locale }: { dict: Dictionary; locale: Lo
         {p.eyebrow}
       </div>
       <div style={{ fontSize: "13px", textAlign: "center", color: "#7a5b3d", margin: "0 0 14px" }}>{p.intro}</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+      <div className="dgridp" style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
         {p.items.map((item) => {
           const isInProgress = item.status === "in-progress";
           const isSoon = item.status === "soon";
@@ -82,7 +82,7 @@ export function EventsSection({ dict, locale }: { dict: Dictionary; locale: Loca
         {e.eyebrow}
       </div>
       <div style={{ fontSize: "13px", textAlign: "center", color: "#7a5b3d", margin: "0 0 14px" }}>{e.subtitle}</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      <div className="dgrid" style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
         {e.items.map((ev, i) => (
           <Link
             key={i}
@@ -155,7 +155,7 @@ export function ExpeditionSection({ dict, locale }: { dict: Dictionary; locale: 
         </div>
         <p style={{ fontSize: "14px", lineHeight: 1.6, margin: "0 0 12px" }}>{e.text}</p>
         {/* Image slot */}
-        <div style={{ width: "100%", height: "190px", border: "1px solid #452D18", borderRadius: "3px", overflow: "hidden" }}>
+        <div className="dhalf" style={{ width: "100%", height: "190px", border: "1px solid #452D18", borderRadius: "3px", overflow: "hidden" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/illustrations/reno-put.webp" alt="Kolona na putu za Pariz" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </div>
@@ -203,7 +203,7 @@ export function ExpeditionSection({ dict, locale }: { dict: Dictionary; locale: 
 export function LocationSection({ dict }: { dict: Dictionary }) {
   const l = dict.location;
   return (
-    <div style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", overflow: "hidden", background: "#FBF3E0" }}>
+    <div className="dcol" style={{ margin: "0 18px 22px", border: "2px solid #452D18", borderRadius: "6px", overflow: "hidden", background: "#FBF3E0" }}>
       <div style={{ padding: "14px 16px 10px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D96C2C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -216,6 +216,7 @@ export function LocationSection({ dict }: { dict: Dictionary }) {
       </div>
       <iframe
         src="https://www.openstreetmap.org/export/embed.html?bbox=18.40%2C42.42%2C18.72%2C42.60&layer=mapnik&marker=42.51%2C18.56"
+        className="dgrow"
         style={{ width: "100%", height: "240px", border: "none", borderTop: "2px solid #452D18", display: "block" }}
         title="Mapa: Svrčuge"
         loading="lazy"
@@ -366,7 +367,7 @@ export function ShareSection({ dict }: { dict: Dictionary }) {
 export function PartnersSection({ dict }: { dict: Dictionary }) {
   const p = dict.partnersSection;
   return (
-    <div style={{ margin: "0 18px 22px", textAlign: "center" }}>
+    <div className="dnarrow" style={{ margin: "0 18px 22px", textAlign: "center" }}>
       <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", margin: "0 0 4px", textTransform: "uppercase" }}>{p.title}</div>
       <div style={{ fontSize: "13px", color: "#7a5b3d", margin: "0 0 12px" }}>{p.text}</div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "center" }}>
@@ -390,7 +391,7 @@ export function FaqSection({ dict }: { dict: Dictionary }) {
   const [open, setOpen] = useState(-1);
 
   return (
-    <div style={{ margin: "0 18px 26px" }}>
+    <div className="dnarrow" style={{ margin: "0 18px 26px" }}>
       <div style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px", textAlign: "center", margin: "0 0 12px", textTransform: "uppercase" }}>
         {f.title}
       </div>

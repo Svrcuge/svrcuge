@@ -3,9 +3,15 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { Dictionary, Locale } from "@/lib/i18n";
-import LanguageSwitcher from "./LanguageSwitcher";
-import { LOCALES, LOCALE_LABELS } from "@/lib/i18n";
-import { SOCIAL } from "@/lib/config";
+import { LOCALES } from "@/lib/i18n";
+
+const LOCALE_FULL: Record<string, string> = {
+  me: "ME · Crnogorski",
+  en: "EN · English",
+  fr: "FR · Français",
+  ru: "RU · Русский",
+  de: "DE · Deutsch",
+};
 
 export default function Header({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const [open, setOpen] = useState(false);
@@ -13,6 +19,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
   const n = dict.nav;
 
   const desktopLinks = [
+    { href: home, label: "Početna" },
     { href: `${home}/prica`, label: n.story },
     { href: `${home}/novosti`, label: n.news },
     { href: `${home}/dogadjaji`, label: n.events },
@@ -27,7 +34,7 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
     { href: `${home}/dogadjaji`, label: n.events },
     { href: `${home}/istorija`, label: n.history },
     { href: `${home}/posjeti`, label: n.visit },
-    { href: `${home}/projekti`, label: n.projects },
+    { href: `${home}#projekti`, label: n.projects },
     { href: `${home}/donatori`, label: n.friends },
     { href: `${home}/mediji`, label: n.media },
     { href: `${home}/prodavnica`, label: n.shop },
@@ -37,79 +44,183 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
   return (
     <>
       <header
-        className="sticky top-0 z-40 bg-cream"
-        style={{ borderBottom: "3px double #452D18" }}
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "14px 18px",
+          borderBottom: "3px double #452D18",
+          background: "#F6EBD3",
+        }}
       >
-        <div className="container-content flex items-center justify-between gap-4 py-3.5">
-          {/* Logo */}
-          <Link
-            href={home}
-            className="flex items-center gap-2.5 text-ink"
-            style={{ fontFamily: "var(--font-alfa), Georgia, serif", fontSize: "18px" }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo/logo-black.png" alt="Svrčuge" style={{ height: "34px" }} />
-            SVRČUGE
-          </Link>
+        {/* Logo */}
+        <Link
+          href={home}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            fontFamily: "var(--font-alfa), Georgia, serif",
+            fontSize: "17px",
+            color: "#452D18",
+            textDecoration: "none",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo/logo-black.png" alt="Svrčuge" style={{ height: "34px" }} />
+          SVRČUGE
+        </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-5 lg:flex">
-            {desktopLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="text-[13.5px] font-semibold text-ink transition hover:text-amber-deep"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2.5">
-            <LanguageSwitcher current={locale} />
-            {/* Hamburger */}
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-              aria-label="Meni"
-              className="flex flex-col gap-[5px] border-2 border-ink bg-cream px-2.5 py-2.5 lg:hidden"
-              style={{ borderRadius: "4px" }}
+        {/* Desktop nav — hidden on mobile, shown via .dnav CSS class at ≥900px */}
+        <nav
+          className="dnav"
+          style={{
+            display: "none",
+            gap: "16px",
+            alignItems: "center",
+            fontSize: "13.5px",
+            fontWeight: 600,
+          }}
+        >
+          {desktopLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              style={{ color: "#452D18", textDecoration: "none" }}
             >
-              <span className="block h-0.5 w-[18px] bg-ink" />
-              <span className="block h-0.5 w-[18px] bg-ink" />
-              <span className="block h-0.5 w-[18px] bg-ink" />
-            </button>
-          </div>
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          {/* Language dropdown */}
+          <details style={{ position: "relative" }}>
+            <summary
+              style={{
+                listStyle: "none",
+                cursor: "pointer",
+                border: "2px solid #452D18",
+                borderRadius: "4px",
+                padding: "8px 10px",
+                fontSize: "12px",
+                fontWeight: 600,
+                fontFamily: "var(--font-zilla), Georgia, serif",
+                userSelect: "none",
+              }}
+            >
+              {locale.toUpperCase()} ▾
+            </summary>
+            <div
+              style={{
+                position: "absolute",
+                right: 0,
+                top: "40px",
+                background: "#FBF3E0",
+                border: "2px solid #452D18",
+                borderRadius: "4px",
+                display: "flex",
+                flexDirection: "column",
+                minWidth: "130px",
+                zIndex: 60,
+                overflow: "hidden",
+              }}
+            >
+              {LOCALES.map((loc, i) => (
+                <Link
+                  key={loc}
+                  href={`/${loc}`}
+                  style={{
+                    padding: "9px 12px",
+                    fontSize: "13px",
+                    fontWeight: loc === locale ? 600 : undefined,
+                    background: loc === locale ? "#452D18" : undefined,
+                    color: loc === locale ? "#F6EBD3" : "#452D18",
+                    borderTop: i > 0 ? "1px dashed #A5551F" : "none",
+                    textDecoration: "none",
+                    display: "block",
+                  }}
+                >
+                  {LOCALE_FULL[loc]}
+                </Link>
+              ))}
+            </div>
+          </details>
+
+          {/* Hamburger — always visible */}
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label="Meni"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+              background: "none",
+              border: "2px solid #452D18",
+              borderRadius: "4px",
+              padding: "9px 8px",
+              cursor: "pointer",
+            }}
+          >
+            <span style={{ width: "18px", height: "2px", background: "#452D18", display: "block" }} />
+            <span style={{ width: "18px", height: "2px", background: "#452D18", display: "block" }} />
+            <span style={{ width: "18px", height: "2px", background: "#452D18", display: "block" }} />
+          </button>
         </div>
       </header>
 
       {/* Fullscreen mobile overlay */}
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-ink px-5 py-5 text-cream lg:hidden">
-          <div className="flex items-center justify-between">
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 100,
+            background: "#452D18",
+            color: "#F6EBD3",
+            display: "flex",
+            flexDirection: "column",
+            padding: "18px",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/logo/logo-white.png" alt="Svrčuge" style={{ height: "64px" }} />
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="border-2 border-cream px-3 py-1.5 text-cream text-base"
-              style={{ fontFamily: "var(--font-zilla), Georgia, serif", borderRadius: "4px" }}
+              style={{
+                background: "none",
+                border: "2px solid #F6EBD3",
+                borderRadius: "4px",
+                color: "#F6EBD3",
+                fontSize: "16px",
+                padding: "6px 12px",
+                cursor: "pointer",
+                fontFamily: "var(--font-zilla), Georgia, serif",
+              }}
             >
               ✕
             </button>
           </div>
 
-          <nav className="mt-6 flex flex-col overflow-y-auto">
+          <nav style={{ display: "flex", flexDirection: "column", gap: "2px", margin: "22px 0 0", overflowY: "auto", minHeight: 0 }}>
             {mobileLinks.map((l, i) => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-cream transition hover:text-amber"
                 style={{
                   fontFamily: "var(--font-alfa), Georgia, serif",
                   fontSize: "20px",
-                  borderBottom: i < mobileLinks.length - 1 ? "1px dashed rgba(246,235,211,0.3)" : "none",
+                  color: i === 0 ? "#E0A83A" : "#F6EBD3",
+                  textDecoration: "none",
+                  padding: "8px 0",
+                  borderBottom: i < mobileLinks.length - 1 ? "1px dashed rgba(246,235,211,.3)" : "none",
                 }}
               >
                 {l.label}
@@ -117,26 +228,8 @@ export default function Header({ dict, locale }: { dict: Dictionary; locale: Loc
             ))}
           </nav>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            {LOCALES.map((loc) => (
-              <Link
-                key={loc}
-                href={`/${loc}`}
-                onClick={() => setOpen(false)}
-                className={`border px-3 py-1 text-xs font-bold uppercase transition ${
-                  loc === locale
-                    ? "border-amber bg-amber text-ink"
-                    : "border-cream/40 text-cream/75 hover:border-amber hover:text-amber"
-                }`}
-                style={{ borderRadius: "999px" }}
-              >
-                {LOCALE_LABELS[loc]}
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-auto pt-6 text-xs text-cream/50">
-            Instagram @svrcuge.me · TikTok · {SOCIAL.email}
+          <div style={{ marginTop: "auto", fontSize: "13px", color: "#C9B694" }}>
+            Instagram @svrcuge.me · TikTok<br />zdravo@svrcuge.me
           </div>
         </div>
       )}

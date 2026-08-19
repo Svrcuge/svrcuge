@@ -11,10 +11,47 @@ html {
 }
 
 body {
-  background-color: theme("colors.cream");
+  background-color: #EADCBE;
   color: theme("colors.ink");
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Site wrapper — mobile 480px column, desktop wider */
+.site {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #F6EBD3;
+  min-height: 100vh;
+  box-shadow: 0 0 40px rgba(69,45,24,.25);
+}
+
+/* Desktop layout system (≥900px) */
+@media (min-width: 900px) {
+  .site              { max-width: 1060px !important }
+  .site-840          { max-width: 840px !important }
+  .site-900          { max-width: 900px !important }
+  .dnav              { display: flex !important }
+  .dgrid             { display: grid !important; grid-template-columns: 1fr 1fr; gap: 14px !important }
+  .dgrid3            { display: grid !important; grid-template-columns: repeat(3,1fr); gap: 10px !important }
+  .dgrid4            { display: grid !important; grid-template-columns: repeat(4,1fr); gap: 10px !important }
+  .dimg              { height: 460px !important }
+  .dhalf             { height: 280px !important }
+  .drow2             { display: grid !important; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; margin: 0 18px 22px }
+  .drow2 > *         { margin: 0 !important }
+  .dnarrow           { max-width: 640px; margin-left: auto !important; margin-right: auto !important }
+  .dstack            { display: flex !important; flex-direction: column; justify-content: center }
+  .dr32              { grid-template-columns: 3fr 2fr !important }
+  .dr12              { grid-template-columns: 1fr 2fr !important }
+  .drowS             { align-items: start !important }
+  .dgridp            { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px !important }
+  .dcol              { display: flex !important; flex-direction: column }
+  .dgrow             { flex: 1 1 auto !important; height: auto !important; min-height: 320px }
+  .dhero             { display: grid !important; grid-template-columns: 3fr 2fr; align-items: stretch }
+  .dhero > div:first-child { height: 100% !important; min-height: 420px }
+  .dhero > div:last-child  { display: flex; flex-direction: column; justify-content: center; text-align: left !important; padding: 32px !important }
+  .dbreak            { height: 420px !important }
+  .dbreak .bt        { font-size: 36px !important }
 }
 
 @layer base {
